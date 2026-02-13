@@ -1,0 +1,28 @@
+project:
+  type: book
+  output-dir: ../../docs/statistics-probability
+
+book:
+  title: "Statistiques & Probabilités"
+  author: "Guillaume Gilles"
+  date: "1/27/2026"
+  lang: fr
+  search: 
+    location: sidebar
+  navbar:
+    right:
+      - href: ../about/README.html
+      - href: ../blog.html 
+  chapters:
+    - index.qmd
+    - part: stat-descriptives.qmd
+      chapters: 
+    # References
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+      light: light.scss
