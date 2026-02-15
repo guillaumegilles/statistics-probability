@@ -1,0 +1,85 @@
+# Syllabus {.unnumbered}
+
+
+Centré sur une approche d'apprentissage _actif_, le cours transforme les
+étudiants en joueurs, les modules en quêtes, les évaluations en points
+d’expérience (XP), et les compétences en niveaux à atteindre
+[@sheldon_multiplayer_2020].
+
+## Évaluation du module
+
+Dans le cadre de ce cours, les étudiants évoluent dans un univers
+pédagogique _gamifié_, Chaque activité, qu’il s’agisse d’une mission
+individuelle, d’un travail en groupe ou d’une présentation, permet de
+gagner des **points d’expérience (XP)**. Ces XP reflètent l’engagement,
+la qualité du travail et la progression dans l’acquisition des
+compétences. Le système est structuré en **niveaux** : _Analyste Junior_,
+_Analyste Confirmé_, _Stratège Financier_, et enfin _Experts en
+Stratégie Financière_.
+
+À mesure qu’ils accumulent des XP, les étudiants débloquent des **badges**
+valorisant leurs compétences techniques (diagnostic, ratios, ESG), leur
+esprit collaboratif, et leur capacité stratégique. Ce dispositif favorise
+la motivation, la participation active et la montée en compétence
+progressive, tout en rendant l’apprentissage plus immersif et stimulant.
+
+### Niveaux
+
+| Niveaux  | Titres                         | XP nécessaires |
+| :------: | ------------------------------ | :------------: |
+| Niveau 1 | Analyste Junior                | < 400          |
+| Niveau 2 | Analyste Confirmé              | > 400          |
+| Niveau 3 | Stratège Financier             | > 800          |
+| Niveau 4 | Expert en Stratégie Financière | > 1200         |
+
+
+
+<!--
+
+### Système de Badges : Les Insignes de StratFin Corp
+
+#### 🎓 Badges de Compétence
+
+Ces badges valorisent la maîtrise des savoirs et savoir-faire financier.
+
+| 🏅 Badge                      | Nom                                                   | Critère d’obtention      |
+| ------------------------------ |-------------------------------------------------------|--------------------------|
+| 📊 **Maître des Bilans**      | Lecture et interprétation parfaite d’un bilan         | Score élevé à la quête 1 |
+| 🔍 **Œil du Diagnostiqueur**  | Diagnostic complet et pertinent d’une entreprise      | Boss de fin de jour 1    |
+| 📈 **Champion des Ratios**    | Maîtrise des ratios ROE, ROCE, solvabilité, etc.      | Quête 4 réussie          |
+| 🧭 **Architecte Stratégique** | Élaboration d’un plan financier cohérent              | Quête 8 réussie          |
+| 🌱 **Gardien ESG**            | Intégration réussie des critères ESG dans une analyse | Boss de fin de jour 3    |
+
+#### 🤝 Badges de Collaboration
+
+Ces badges encouragent le travail en équipe et la co-construction.
+
+| 🏅 Badge                | Nom                                              | Critère d’obtention |
+|--------------------------|--------------------------------------------------|---------------------|
+| 🧠 **Esprit d’Équipe**  | Participation active à une mission collaborative | Quêtes 2, 5 ou 7    |
+| 🗣️ **Orateur Stratège** | Présentation orale claire et convaincante        | Boss de jour 1 ou 3 |
+| 🧩 **Puzzle Master**    | Résolution d’un défi complexe en groupe          | Escape game ou SWOT |
+
+
+#### 🚀 Badges de Progression
+
+Ces badges marquent les étapes franchies dans le parcours.
+
+| 🏅 Badge                  | Nom               | Critère d’obtention |
+|----------------------------|-------------------|---------------------|
+| 🥉 **Analyste Junior**    | Atteindre 400 XP  | Niveau 1            |
+| 🥈 **Analyste Confirmé**  | Atteindre 800 XP  | Niveau 2            |
+| 🥇 **Stratège Financier** | Atteindre 1200 XP | Niveau 3            |
+| 🏆 **Expert RNCP**        | Atteindre 1600 XP | Niveau 4            |
+
+#### 💡 Badges Bonus
+
+Pour valoriser l’engagement, la créativité et la curiosité.
+
+| 🏅 Badge                      | Nom                                              | Critère d’obtention  |
+|--------------------------------|--------------------------------------------------|----------------------|
+| 🔎 **Veilleur du Marché**     | Contribution à la veille réglementaire           | Quête 7              |
+| 🧠 **Initiative Personnelle** | Proposition d’une amélioration ou idée originale | Hors mission         |
+| 💬 **Feedback Constructif**   | Aide à améliorer le cours ou le jeu              | Retour écrit ou oral |
+
+-->

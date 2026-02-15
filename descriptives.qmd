@@ -1,0 +1,471 @@
+# Statistiques descriptives – Variable quantitative
+
+::: {.callout-important}
+
+## 🎯 Objectifs pédagogiques de la séance
+
+- Distinguer population / échantillon
+- Construire un tableau statistique
+- Calculer moyenne, médiane, variance, écart-type
+- Interpréter ces indicateurs
+- Utiliser Python pour vérifier et visualiser
+- Comprendre les limites de la moyenne
+
+:::
+
+## Introduction
+
+L’objet de la statistique descriptive est de décrire une ou plusieurs
+caractéristiques des individus d’une population et de les structurer.
+
+On peut distinguer deux types de données :
+
+- les données, ou séries, temporelles sont celles qu’on oberserve à
+travers le temps! Par exemple, l’évolution du PIB, les variations de
+change d’une devises, etc.
+- les données instantanées sont les données issu
+
+## Vocabulaire
+
+la **population**, $P$ est un ensemble d’éléments partageant une ou
+plusieurs caractéristiques qui permettent de les regrouper, comme un
+lot d’ampoules d’une ligne de production ou les étudiants issus de la 
+même promotion.
+
+Les **individus**, ou unités statistiques, sont les éléments de $P$.
+
+On appelle **caractère** ou **variables** toute application de la population
+$P$ dans un ensemble $E$ de valeurs appelées **modalités**. Le couple,
+Population et variables, s’appelle une **série statistique**.
+
+### Variables
+
+Il existe _quatre_ types de variables:
+
+#### Variables qualitatives
+
+Les **modalités** des variables qualitatives ne sont pas des nombres.
+
+- **Nominales** : 
+
+- **Ordinales** :
+
+::: {.callout-important}
+Les variables qualitatives ne permettent pas On se concentrera donc sur l’étude des variables **quantitatives**
+:::
+
+#### Variables quantitative
+
+Les modalités des variables quantitatives sont des nombres.
+
+- **Discrètes** : l’ensemble $E$ des modalités est discontinu (fini ou
+  dénombrable). Par exemple : âge, nombre d’enfants par famille, etc.
+
+- **Continues** : L’ensemble $E$ des modalités est un intervalle. Comme
+  par exemple, la taille, le poids, etc.
+
+```{mermaid}
+flowchart TB
+    Variable --> Qualitative
+    Variable --> Quantitative
+    Qualitative --> Nominale
+    Qualitative --> Ordinale
+    Quantitative --> Discrète
+    Quantitative --> Continue
+```
+
+## Synthèse par tableau
+
+En statistique, un tableau est une méthode permettant de visualiser des
+données. Il peut être aussi bien utilisé pour représenter des données
+brutes que des résultats statistiques.
+
+### Cas de variable quantitative discrète
+
+On considère que $E = {x_1, x_2, …, x_r}$ est l’ensemble **fini** des
+modalités rangé dans l’ordre croissant, $x_1 < x_2 < … < x_r$.
+
+On note $n = card(P)$ l’effectif totale de la population $(P)$ et pour
+chaque modalités :
+
+- **Effectif** : c’est le nombre de fois qu’une valeur apparaît dans
+  une série.
+- **Effectif cumulé** : c’est la somme des valeurs. Il peut être
+  _croissant_, c’est-à-dire la somme des effectifs des valeurs
+  inférieures. Il peut aussi être _décroissant_ pour la somme des
+  effectifs des valeurs supérieures.
+- **Fréquence** : c’est la part qu’une valeur représente dans le total.
+- **Fréquence cumulée** : à l’image des effectifs cumulés, c’est la
+  somme des fréquences inférieures pour la fréquence cumulée croissante et inversement pour décroissante. 
+
+#### Exemple
+
+::: {.callout-warning}
+Déterminer $n_i$, $n_i^+$, $n_i^-$, $f_i$, $f_i^+$ et $f_i^-$.
+:::
+
+> Lors de l’étude de la population d’un village on obtient la
+> distribution suivante du nombre d’enfants par ménage :
+
+```{python}
+#| echo: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Fixer la graine pour reproductibilité
+np.random.seed(42)
+
+# Créer un dataset fictif (distribution discrète)
+# Par exemple : nombre d'enfants (0 à 5)
+data = np.random.choice(
+    [0, 1, 2, 3, 4, 5],                 # valeurs possibles
+    size=200,                           # nombre d'observations
+    p=[0.1, 0.2, 0.35, 0.2, 0.1, 0.05]  # probabilités
+)
+
+# Créer l'histogramme
+plt.figure()
+plt.hist(data, bins=np.arange(-0.5, 6.5, 1), edgecolor='black')
+plt.xticks(range(6))
+plt.xlabel("Nombre d'enfants")
+plt.ylabel("Fréquence")
+plt.title("Histogramme - Variable discrète")
+plt.show()
+```
+
+| Nombre d’enfants | $0$ | $1$ | $2$ | $3$ | $4$ | $5$ | Total |
+|------------------|-----|-----|-----|-----|-----|-----|-------|
+| Effectif $n_i$   |     |     |     |     |     |     |       |
+| Effectif cumulé **croissant** $n_i^+$   |     |     |     |     |     |     |       |
+| Effectif cumulé **décroissant** $n_i^-$   |     |     |     |     |     |     |       |
+| Fréquence $f_i$  en $%$ |     |     |     |     |     |     |       |
+| Fréquence cumulée **croissante** $f_i^+$   |     |     |     |     |     |     |       |
+| Fréquence cumulée **décroissante** $f_i^-$   |     |     |     |     |     |     |       |
+
+### Cas d’une variable quantitative
+
+Lorsqu’il y a un grand nombre de de données, on les regroupe en
+**classes**, c’est-à-dire que l’on agrège les données en intervalle
+$[a_i; a_i+1[$ avec $i = 1, …, r$ et $a < a_2 < … < a_r+1$.
+
+On définit pour chaque classe $[a_i; a_i+1[$ :
+
+- **Amplitude** :
+- **Centre** :
+- **Densité** :
+
+```{python}
+#| echo: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+# -------------------------
+# Données
+# -------------------------
+bornes = np.array([0, 10, 30, 50, 100])  # bornes des classes
+effectifs = np.array([5, 20, 30, 10])    # effectifs
+
+amplitudes = np.diff(bornes)
+
+# =============================
+# 1️⃣ Histogramme FAUX
+# =============================
+plt.figure()
+plt.bar(bornes[:-1], effectifs,
+        width=amplitudes,
+        align='edge',
+        edgecolor='black')
+
+plt.title("Histogramme FAUX (hauteur = effectif)")
+plt.xlabel("Classe")
+plt.ylabel("Effectif")
+plt.show()
+
+# =============================
+# 2️⃣ Histogramme CORRECT
+# =============================
+densites = effectifs / amplitudes
+
+plt.figure()
+plt.bar(bornes[:-1], densites,
+        width=amplitudes,
+        align='edge',
+        edgecolor='black')
+
+plt.title("Histogramme CORRECT (hauteur = densité)")
+plt.xlabel("Classe")
+plt.ylabel("Densité")
+plt.show()
+```
+
+## Paramètres de position 
+
+### Moyenne
+
+[
+\bar{x} = \frac{1}{n} \sum x_i
+]
+
+Interprétation :
+
+> centre de gravité des données
+
+---
+
+## Médiane
+
+Définition rigoureuse :
+
+* Si n impair
+* Si n pair
+
+Interprétation :
+
+> valeur qui coupe la population en deux
+
+---
+
+## Comparaison moyenne / médiane
+
+Cas asymétrique :
+
+* Salaires
+* Temps d’attente
+
+
+- **mode** : on appelle mode toute statistique d’effectif maximal.
+Une série statistique peut posséder plusieurs modes : séries bimodale, timodale, etc.
+
+## Paramètres de dispersion
+
+### Variance
+
+[
+s^2 = \frac{1}{n}\sum (x_i - \bar{x})^2
+]
+
+Expliquer :
+
+* Pourquoi le carré ?
+* Pourquoi pas somme simple des écarts ?
+
+---
+
+## Écart-type
+
+[
+s = \sqrt{s^2}
+]
+
+Interprétation :
+
+> distance moyenne au centre
+
+---
+
+## ⚠ Point pédagogique clé
+
+Beaucoup d’étudiants calculent sans comprendre.
+
+Faire verbaliser :
+
+> Si écart-type grand → processus instable
+
+
+----
+
+# 🟦 0:00 – 0:15 (15 min) — Introduction & mise en contexte
+
+### 🎯 Objectif
+
+Créer l’intérêt et positionner le cours.
+
+### Mise en situation
+
+Tu poses un cas concret :
+
+> Une entreprise mesure le temps de production (en minutes) de 30 pièces usinées.
+> Le responsable veut savoir si le processus est stable.
+
+Question aux étudiants :
+
+* Que doit-on calculer ?
+* Une moyenne suffit-elle ?
+
+Faire émerger :
+
+* dispersion
+* variabilité
+* notion d’échantillon
+
+---
+
+
+## 1️⃣ Population vs échantillon
+
+* Population
+* Individu
+* Variable
+* Échantillon
+
+Insister : en ingénierie → on n’a presque jamais la population entière.
+
+---
+
+
+Puis :
+
+* Histogramme
+* Diagramme en bâtons
+
+👉 Insister : représentation ≠ vérité, mais outil de lecture.
+
+---
+
+
+---
+
+# 🟦 2:30 – 3:30 (1h) — PHASE EXERCICES AVEC PYTHON 💻
+
+## 🎯 Objectif
+
+Faire comprendre que Python est un outil de validation et d’analyse.
+
+---
+
+## 🔹 Exercice 1 (20 min)
+
+Jeu de données : temps de production simulés.
+
+Les étudiants doivent :
+
+1. Calculer à la main :
+
+   * moyenne
+   * médiane
+   * variance
+
+2. Puis vérifier avec Python :
+
+```python
+import numpy as np
+
+data = [12, 15, 14, 13, 16, 15, 14, 13, 15, 14]
+
+np.mean(data)
+np.median(data)
+np.var(data)
+np.std(data)
+```
+
+Discussion :
+
+* Pourquoi léger écart si formule 1/n ou 1/(n-1) ?
+
+Introduire :
+
+* variance empirique corrigée
+
+```python
+np.var(data, ddof=1)
+```
+
+---
+
+## 🔹 Exercice 2 (20 min)
+
+Simulation :
+
+```python
+np.random.normal(10, 2, 1000)
+```
+
+Questions :
+
+* Que vaut la moyenne approximativement ?
+* Que vaut l’écart-type ?
+* Que se passe-t-il si on augmente n ?
+
+Faire constater :
+→ stabilisation des indicateurs
+
+On prépare inconsciemment la loi des grands nombres.
+
+---
+
+## 🔹 Exercice 3 (20 min)
+
+Créer un jeu de données avec une valeur aberrante :
+
+```python
+data = np.append(np.random.normal(10, 2, 30), 50)
+```
+
+Comparer :
+
+* moyenne
+* médiane
+
+Discussion :
+
+> Robustesse des indicateurs
+
+Très important pédagogiquement.
+
+---
+
+# 🟦 3:30 – 3:50 (20 min) — Synthèse & formalisation
+
+Récapitulatif au tableau :
+
+| Indicateur | Sens                   | Sensibilité           |
+| ---------- | ---------------------- | --------------------- |
+| Moyenne    | centre                 | sensible aux extrêmes |
+| Médiane    | position centrale      | robuste               |
+| Variance   | dispersion quadratique | sensible              |
+| Écart-type | dispersion moyenne     | interprétable         |
+
+---
+
+# 🟦 3:50 – 4:00 (10 min) — Conclusion & ouverture
+
+Annoncer :
+
+> Prochaine séance : données groupées et approximation.
+
+Lien avec probabilités :
+
+> Quand les données deviennent aléatoires, on modélise → variables aléatoires.
+
+---
+
+# 📌 Matériel pédagogique fourni
+
+Je peux te fournir :
+
+* Fichier Jupyter Notebook prêt à distribuer
+* PDF étudiant
+* Feuille d’exercices indépendante
+* Corrigé détaillé
+* Mini-évaluation 15 min pour séance 2
+
+---
+
+# 🎯 Pourquoi cette séance est solide ?
+
+✔ Progression naturelle
+✔ Alternance calcul / interprétation
+✔ Python = outil d’ingénieur
+✔ Introduction douce à la variabilité
+✔ Préparation aux probabilités
+
+---
+
+Si tu veux, je peux maintenant :
+
+* Rédiger la **séance 2 complète**
+* Te créer le **Notebook prêt à l’emploi**
+* Concevoir un **mini contrôle noté pour la séance 3**
+* Structurer tout le semestre avec plan d’évaluation intégré**
+
+On peut construire un cours d’ingénieur vraiment cohérent 💪

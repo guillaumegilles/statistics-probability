@@ -6,7 +6,6 @@ book:
   title: "Statistiques & Probabilités"
   author: "Guillaume Gilles"
   date: "1/27/2026"
-  lang: fr
   search: 
     location: sidebar
   navbar:
@@ -15,10 +14,13 @@ book:
       - href: ../blog.html 
   chapters:
     - index.qmd
-    - part: stat-descriptives.qmd
-      chapters: 
+    - part: "Statistiques desciptives" 
+      chapters:
+        - descriptives.qmd
     # References
     - references.qmd
+
+lang: fr
 
 bibliography: references.bib
 
