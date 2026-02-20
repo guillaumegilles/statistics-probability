@@ -1,0 +1,15 @@
+1. 
+
+
+- https://www.youtube.com/@kozyrkov/videos
+- https://medium.com/@kozyrkov
+- https://www.linkedin.com/pulse/ultimate-guide-starting-ai-cassie-kozyrkov/
+
+
+- à la maison, stat descriptive sur des datasets publics en python.
+- Quarto codespaces
+- Syllabus
+- créer un cours autour du multiclassroom concept : stat des groupes en annexe
+- https://www.openintro.org/book/os/
+
+- https://quarto.org/docs/authoring/appendices.html

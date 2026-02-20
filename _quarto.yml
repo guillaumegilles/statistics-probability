@@ -14,11 +14,19 @@ book:
       - href: ../blog.html 
   chapters:
     - index.qmd
-    - part: "Statistiques desciptives" 
+    - part: descriptive-statistics.qmd 
       chapters:
-        - descriptives.qmd
-    # References
+        - univariate-analysis.qmd
+        - bivariate-analysis.qmd
+    - part: inferential-statistics.qmd
+      chapters:
+        - probability
+  appendices:
+    - leaderboard.qmd
     - references.qmd
+
+
+
 
 lang: fr
 

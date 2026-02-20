@@ -1,6 +1,8 @@
 # Syllabus {.unnumbered}
 
 
+https://verbaltovisual.com/all-models-are-wrong-but-some-are-useful/#:~:text=%E2%80%9CAll%20models%20are%20wrong%2C%20but,for%20the%20situation%20at%20hand.
+
 Centré sur une approche d'apprentissage _actif_, le cours transforme les
 étudiants en joueurs, les modules en quêtes, les évaluations en points
 d’expérience (XP), et les compétences en niveaux à atteindre
@@ -32,6 +34,7 @@ progressive, tout en rendant l’apprentissage plus immersif et stimulant.
 | Niveau 3 | Stratège Financier             | > 800          |
 | Niveau 4 | Expert en Stratégie Financière | > 1200         |
 
+Include a section in your syllabus devoted to explaining how you’d like students to use the course website. Create a new (but short) syllabus section on all of the activities you’d like students to do in the course website. Many students need some explicit explanation of what role the course website will serve in your class because they may never have used a course website before. Try to operationalize student activities using action words (e.g. “Respond to in-class reading assignments using the “Discussions” tool” or “Post reading responses in the course website's blog.").
 
 
 <!--
