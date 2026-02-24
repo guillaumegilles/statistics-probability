@@ -23,7 +23,10 @@ book:
         - probability
   appendices:
     - leaderboard.qmd
+    - tables.qmd
+    - td.qmd
     - references.qmd
+
 
 
 
