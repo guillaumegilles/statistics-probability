@@ -14,6 +14,14 @@ book:
       - href: ../blog.html 
   chapters:
     - index.qmd
+    - density-function.qmd
+    - normal-distribution.qmd
+    - couples-variables-densite.qmd
+    - stat-1.qmd
+    - stat-2.qmd
+    - sampling.qmd
+    - convergence-va.qmd
+    - estimate.qmd
     - part: descriptive-statistics.qmd 
       chapters:
         - univariate-analysis.qmd

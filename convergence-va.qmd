@@ -1,0 +1,244 @@
+ECE LYON - ING 3 - ANNÉE 2022/2023
+COURS DE MATHÉMATIQUES
+PROBABILITÉS ET STATISTIQUES
+CHAPITRE 07 : CONVERGENCE DE VARIABLES ALÉATOIRES
+Dans tout ce chapitre, les v.a.r. considérées sont définies sur un même espace probabilisé (Ω,τ,P).
+I CONVERGENCE EN PROBABILITÉ, LOI FAIBLE DES GRANDS NOMBRES
+1. Inégalité de Bienaymé-Tchebychev
+PROPOSITION : INÉGALITÉ DE MARKOV
+Soit X une v.a.r. intégrable positive. Alors :
+∀a > 0, P (X ≥ a) ≤
+E(X)
+a
+DÉMONSTRATION 1 :...
+Remarques :
+• La probabilité que X prenne des valeurs plus grandes que a est d’autant plus petite que a est grand.
+• Si a < E(X) alors cette inégalité n’a pas d’intérêt puisqu’alors
+E(X)
+a
+> 1.
+Exemple 1 - salaire moyen en France
+En 2022, le salaire brutmensuel moyen en France était de 2988 e.
+Majorer la probabilité qu’un salarié français choisi au hasard gagne plus de 8964 e.
+Remarque : Il n’est pas nécessaire de connaître la loi de la v.a.r. pour utiliser cette inégalité, mais seulement
+son espérance.
+PROPOSITION : INÉGALITÉ DE BIENAYMÉ-TCHEBYCHEV
+Soit X une v.a.r. de carré intégrable. Alors :
+∀ϵ > 0, P (|X −E(X)| ≥ ϵ) ≤
+Var(X)
+ϵ2
+DÉMONSTRATION 2 :...
+Page 1/4
+Remarques :
+• Cette inégalité relie la probabilité de s’écarter de lamoyenne à la variance.
+• La probabilité que les valeurs prises par X s’écartent d’au moins ϵ est d’autant plus petite que ϵ est
+grand.
+• Numériquement, cette inégalité est souvent médiocre.
+Par exemple, si X suit une loi normaleN
+¡
+m; σ2¢
+, on obtient P (|X −m| ≥ 2σ) ≤
+1
+4
+alors qu’on sait que
+cette probabilité vaut environ 0,05 ...
+• Cette inégalité a un intérêt théorique (loi faible des grands nombres) et permet de déterminer la taille
+à choisir pour avoir un échantillon où la proportion observée d’un caractère est maîtrisée.
+Exemple 2 - Nombre de paniers parmatch
+Lors d’une saison, une équipe amarqué en moyenne 40 paniers par match avec une variance de 5.
+Majorer la probabilité que lors de son prochain match, l’équipe marque moins de 30 paniers ou plus de 50
+paniers.
+2. Convergence en probabilités
+DÉFINITION :
+On dit qu’une suite de v.a. (Xn) converge en probabilité vers une v.a. X, et on note Xn
+P
+−→ X si et seulement
+si :
+∀ϵ > 0, lim
+n→+∞
+P (|Xn −X| > ϵ) = 0
+Exemple 3 - Convergence en probabilité et lois uniformes
+Soit (Un) une suite de v.a.r. indépendantes de même loi U[0 ;1].
+On pose, pour tout entier n ≥ 1, Xn = min(U1 ; ... ;Un).Montrer que Xn
+P
+−→0.
+DÉFINITION :
+On dit qu’une suite de v.a. (Xn) converge en moyenne quadratique vers une v.a. X, et on note Xn
+L2
+−→X si
+et seulement si lim
+n→+∞
+E
+¡
+(Xn −X)2¢
+= 0.
+PROPOSITION :
+Soit (Xn) une suite de v.a.r. Alors : Xn
+L2
+−→X ⇒Xn
+P
+−→X.
+DÉMONSTRATION 3 :...
+PROPOSITION (ADMISE) :
+Soit (Xn) une suite de v.a.r. Alors
+Xn
+L2
+−→m ⇐⇒
+
+
+E(Xn) −→
+n→+∞
+m
+Var(Xn) −→
+n→+∞
+0
+Remarque : Dans ce cas, on a donc également Xn
+P
+−→m.
+Page 2/4
+3. Loi faible des grands nombres
+On considère une suite (Xn) de v.a.r. indépendantes identiquement distribuées (i.i.d.) de carré intégrable,
+d’espérancem et de variance σ2. On rappelle l’expression de lamoyenne empirique : Xn =
+1
+n
+Xn
+i=1
+Xi .
+PROPOSITION : LOI FAIBLE DES GRANDS NOMBRES
+Soit (Xn) une suite de v.a.r.i.i.d. de carré intégrable, d’espérancem et de variance σ2. Alors :
+∀ϵ > 0, P
+³
+|Xn −m| ≥ ϵ
+´
+≤
+σ2
+nϵ2
+En particulier, Xn
+P
+−→m.
+DÉMONSTRATION 4 :...
+Exemple 4 - population de daltoniens
+Une population d’individus contient 3% de daltoniens. On prélève un échantillon de n individus avec remise.
+Déterminer n pour que la probabilité que l’échantillon contienne entre 2,5% et 3,5% de daltoniens soit supérieure
+à 95%.
+PROPOSITION (ADMISE) : CONVERGENCE EN PROBABILITÉ ET VARIANCE EMPIRIQUE
+Soit (Xn) une suite de v.a.r.i.i.d. d’espérancem et de variance σ2.
+La variance empirique et la variance empirique corrigée convergent en probabilité vers σ2.
+Autrement dit,
+S
+′2
+n =
+1
+n
+Xn
+i=1
+³
+Xi −Xn
+´2 P
+−→σ2
+S2n
+=
+1
+n −1
+Xn
+i=1
+³
+Xi −Xn
+´2 P
+−→σ2
+II CONVERGENCE EN LOI, THÉORÈME LIMITE CENTRAL
+DÉFINITION :
+Soit (Xn) une suite de v.a.r. de fonctions de répartition FXn et X une v.a.r. de fonction de répartition FX .
+On dit que Xn converge en loi vers X, et on note Xn
+L
+−→ X, si et seulement si, en tout point où FX est
+continue,
+lim
+n→+∞
+FXn (x) = FX (x)
+Remarque : Pour une suite de v.a.r. discrètes, Xn
+L
+−→X ⇐⇒ ∀k ∈N, P (Xn = k) = P(X = k).
+PROPOSITION (ADMISE) : LIEN ENTRE CONVERGENCE EN PROBABILITÉ ET CONVERGENCE EN LOI
+Xn
+P
+−→X ⇒Xn
+L
+−→X
+Exemple 5
+En reprenant l’exemple 3, justifier que Xn
+L
+−→0.
+Page 3/4
+PROPOSITION (ADMISE) : THÉORÈME LIMITE CENTRAL
+Soit (Xn) une suite de v.a.r.i.i.d. de carré intégrable, d’espérancem et de variance σ2. Alors :
+Zn =
+Xn −m
+σ/
+p
+n
+L
+−→N (0 ; 1)
+Autrement dit, FZn (t ) −→
+n→+∞
+Φ(t ) où Φ désigne la fonction de répartition de la loiN (0 ; 1).
+Remarque : Ce théorème signifie que lorsque n → +∞, Xn se comporte en loi comme la loi normale
+N
+µ
+m;
+σ2
+n
+¶
+, et ce quelque soit la loi des Xn.
+PROPOSITION : APPROXIMATION DE LA LOI BINOMIALE
+Soit (Xn) une suite de v.a.r.i.i.d suivant une loi de Bernoulli de paramètre p.
+On sait alors que X =
+Xn
+i=1
+Xi ,→B
+¡
+n ; p
+¢
+.
+Xn −p
+p
+p(1−p)/
+p
+n
+L
+−→N (0 ; 1)
+En particulier,
+X −np
+p
+np(1−p)
+L
+−→N (0 ; 1) ou encore X L
+−→N
+¡
+np ; np(1−p)
+¢
+.
+Dans la pratique, on peut ainsi approximer une loiB
+¡
+n ; p
+¢
+par une loiN
+¡
+np ; np(1−p)
+¢
+, et ce dès lors
+que n ≥ 30, np ≥ 5 et n(1−p) ≥ 5.
+DÉMONSTRATION 5 :...
+Remarque : Ce théorème est valable si p reste fixe lorsque n devient grand. Si p est petit (ou si p −→
+n→+∞
+0)
+alors une loiB
+¡
+n ; p
+¢
+est plutôt approximée par une loi de poisson P (np).
+Dans la pratique, on utilise cette approximation lorsque n ≥ 30, p ≤ 0,1 et np < 15.
+Exemple 6
+On suppose que la population est composée de 3% de daltoniens et on interroge 1000 personnes (avec remise).
+Quelle est la probabilité qu’il y ait plus de 25 daltoniens dans l’échantillon?
+Page 4/4

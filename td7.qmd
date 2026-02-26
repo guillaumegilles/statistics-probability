@@ -1,0 +1,87 @@
+ECE LYON - ING 3 - ANNÉE 2022/2023
+TD DE MATHÉMATIQUES
+PROBABILITÉS ET STATISTIQUES
+TD7 - CONVERGENCE DE VARIABLES ALÉATOIRES
+EXERCICE 1 :
+Dans une ville moyenne de 20 000 habitants, lors d’une consultation portant sur la rénovation du théâtre
+municipal, 75 % des personnes consultées ont émis un avis positif.
+1. On interroge n personnes. Pour 1 ≤ k ≤ n, la variable aléatoire Xk donne 1 si la k-ième personne
+interrogée est favorable au projet et 0 sinon.
+Donner la loi de probabilité de Xk, son espérancem et sa variance σ2.
+2. On note Mn la variable aléatoire moyenne de X1,X2, . . . ,Xn.
+a. Déterminer une taille n d’échantillon afin d’obtenir pour Mn une précision de 0,05 et un risque
+de 0,1, c’est-à-dire telle que P (|Mn −m| ≥ 0,05) ≤ 0, 1.
+b. Déterminer une taille n d’échantillon afin d’obtenir pour Mn une précision de 0,01 et un risque
+de 0,05.
+Peut-on envisager raisonnablement cette situation?
+EXERCICE 2 :
+On effectue une suite infinie de lancers indépendants d’un dé équilibré à six faces. Pour n ≥ 1, on note Xn
+la moyenne des n premiers lancers.
+1. Calculer les espérances et variances des variables X1 et Xn.
+2. En utilisant l’inégalité de Bienaymé-Tchebychev, déterminer n tel que P
+³
+3,4 ≤ Xn ≤ 3,6
+´
+≥ 0,8
+3. Montrer que la suite
+³
+Xn
+´
+converge lorsque n tend vers +∞ vers un réelm à préciser :
+a. Xn
+P
+−→m en utilisant la loi faible des grands nombres.
+b. Xn
+L2
+−→m en utilisant une proposition du cours.
+c. Xn
+L
+−→m.
+EXERCICE 3 :
+On considère une suite de v.a. (Xn) définie sur N∗ par P (Xn = n) =
+1
+n
+et P (Xn = 0) = 1−
+1
+n
+.
+1. Pour ϵ > 0, que vaut P (|Xn| > ϵ) ?
+En déduire que cette suite converge vers 0 en probabilité.
+2. Calculer E(Xn) et Var (Xn) et en déduire qu’elle ne converge pas en moyenne quadratique.
+Page 1/2
+EXERCICE 4 :
+On considère une suite (λn) de réels strictement positifs admettant une limite λ > 0 (éventuellement infinie),
+ansi qu’une suite de v.a. (Xn) de loi E (λ\).
+1. Etudier la convergence en loi de cette suite.
+2. Etudier la convergence de cette suite vers 0 en probabilité, puis en moyenne quadratique.
+EXERCICE 5 :
+On contrôle un lot de n = 1000 ordinateurs. On suppose que 1% d’entre-eux connaîtront une panne dans le
+mois.
+On pose, pour i = 1, ...,1000, Xi = 1 si le i-ème ordinateur tombe en panne, et 0 sinon, et pour n ∈ N∗,
+Sn =
+Xn
+i=1
+Xi et Xn =
+Sn
+n
+.
+1. Que désignent les variables Sn et Xn ?
+Donner la loi de Sn.
+2. Calculer la moyenne et la variance de X1.
+3. Déterminer, à l’aide du théorème central limite, une valeur approchée de la probabilité que la fréquence
+de panne parmi les ordinateurs sur ce mois soit comprise entre 0,5 % et 1,5 % (arrondie à 0,1
+% près).
+EXERCICE 6 :
+Une école compte 2000 élèves et le gérant du restaurant scolaire a observé qu’en moyenne 60 % des élèves
+fréquentent son restaurant.
+Combien doit-il prévoir de repas pour que la probabilité d’en manquer soit inférieure à 0,28 %?
+EXERCICE 7 :
+Après la panne d’un de ses avions, la compagnie Zoé Airlines veut évacuer les 400 passagers vers deux avions
+identiques plus petits de n places chacun.
+Les passagers se répartissent au hasard dans ces deux avions en nombre X et Y . On suppose X et Y inférieures
+à 400, n ≥ 200 et qu’un passager ayant choisi un avion ne peut se reporter sur l’autre.
+1. Donner, en justifiant, la loi de X et de Y .
+Par quelle loi continue peut-on approcher cette loi ?
+2. Déterminer la valeur minimale de n pour que la probabilité qu’un voyageur n’ait pas de place soit
+inférieure à 1 pour 1000.
+Page 2/2

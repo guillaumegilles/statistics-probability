@@ -1,0 +1,288 @@
+ECE LYON - ING 3
+COURS DE MATHÉMATIQUES
+PROBABILITÉS ET STATISTIQUES
+CHAPITRE 01 : LOIS À DENSITÉ
+Dans tout ce chapitre, nous nous plaçons dans un espace probabilisé quelconque (Ω,τ,P).
+I RAPPELS SUR LES INTÉGRALES GÉNÉRALISÉES
+Soit f une fonction définie sur R et continue parmorceaux (c.p.m).
+Soit a ∈ R.
+•
+󰁝
++∞
+a
+f (t )dt converge si lim
+X→+∞
+󰁝X
+a
+f (t )dt est finie.
+•
+󰁝a
+−∞
+f (t )dt converge si lim
+X→−∞
+󰁝a
+X
+f (t )dt est finie.
+•
+󰁝
++∞
+−∞
+f (t )dt converge si et seulement si il existe un réel a tel que
+󰁝
++∞
+a
+f (t )dt et
+󰁝a
+−∞
+f (t )dt convergent.
+Remarque : Dans le cadre des intégrales généralisées, la propriété de linéarité de l’intégrale, la méthode
+d’intégration par parties et laméthode du changement de variable restent valables.
+Exemple 1
+1. Calculer I =
+󰁝
++∞
+0
+e−4tdt .
+2. A l’aide d’une intégration par parties, calculer J =
+󰁝
++∞
+0
+(x +1)e−xdx.
+3. A l’aide du changement de variable u =
+1
+x
+, calculer K =
+󰁝
++∞
+1
+−1
+x2+x
+dx.
+Page 1/6
+II VARIABLES ALÉATOIRES RÉELLES ABSOLUMENT CONTINUES
+1. Densité de probabilité
+DÉFINITION :
+Une densité de probabilité f sur R est une fonction c.p.m., positive et telle que
+󰁝
+R
+f (x)dx = 1.
+DÉFINITION :
+Une variable aléatoire réelle (v.a.r.) X : Ω→R est dite absolument continue∗ s’il existe une densité de
+probabilité fX telle que pour tout I = [a ; b] ⊂ R, P(X ∈ [a ; b]) =
+󰁝b
+a
+fX (x)dx.
+Cette densité est caractéristique de la loi de X.
+∗ Une v.a.r. absolument continue est également appelée v.a.r. à densité.
+Remarques : Pour tous réels a et b,
+• P(X = a) =
+󰁝a
+a
+fX (x)dx = 0.
+• P(X ∈ [a ; b]) = P(X ∈]a ; b]) = P(X ∈ [a ; b[) = P(X ∈]a ; b[).
+2. Fonction de répartition
+DÉFINITION :
+La fonction de répartition de la v.a.r. X de densité fX est la fonction FX : R→[0 ; 1] définie par :
+FX (x) = P(X ≤ x) =
+󰁝x
+−∞
+fX (t )dt .
+Proposition :
+La fonction de répartition FX d’une v.a.r. à densité est croissante et continue sur R et telle que
+lim
+x→−∞
+FX (x) = 0 et lim
+x→+∞
+FX (x) = 1.
+Remarque : La fonction de répartition d’une variable aléatoire continue détermine la loi de cette variable.
+Exemple 2
+Soit a un réel strictement positif et soit f la fonction définie sur R par f (x) = ax21[0 ;2](x).∗
+1. Déterminer la valeur de a pour laquelle f est une densité de probabilité sur R.
+2. X est une variable aléatoire dont la loi de probabilité a pour densité la fonction f .
+a. Calculer P(X < 1,5).
+b. Déterminer la fonction de répartition de X.
+∗ Soit I un intervalle, on appelle indicatrice de I , la fonction 1 définie par : 1I (x) =
+󰀫
+1 si x ∈ I
+0 sinon
+.
+Remarque :
+Si X est une v.a.r. à densité alors pour tout intervalle [a ; b] inclus dans R : P(X ∈ [a ; b]) = FX (b)−FX (a).
+Page 2/6
+Exemple 3 : Retour sur les variables aléatoires discrètes
+1. Soit X une variable aléatoire suivant la loiB(p) avec p ∈]0 ; 1[.
+Déterminer la fonction de répartition de X et tracer sa représentation graphique.
+2. On lance un dé équilibré à six faces. On réalise un gain nul si l’on obtient 1, un gain de 1e si l’on obtient 2,
+3 ou 4 et un gain de 2e si le résultat est 5 ou 6.
+On note X la variable aléatoire égale au gain obtenu.
+a. Déterminer la loi de X.
+b. Déterminer la fonction de répartition de X et tracer sa représentation graphique.
+3. Expliquer pourquoi, dans chacune des situations précédentes, X n’est pas une variable aléatoire à densité.
+Remarque : Dans le cas discret, la fonction de répartition n’est pas continue sur R, elle est cependant continue
+à droite.
+3. Lois à densité classiques et à connaître
+LOI UNIFORME SUR UN INTERVALLE [a ; b] :
+• Dire qu’une v.a.r. X suit la loi uniforme sur [a ; b] (X 󲅦→U[a ;b]) signifie qu’elle admet pour densité la
+fonction fX définie sur R par :
+fX (x) =
+1
+b −a
+1[a ;b](x).
+• La fonction de répartition FX d’une v.a.r. suivant la loi U[a ;b] est définie par :
+FX (x) =
+󰀻 󰁁 󰁁 󰀿
+󰁁 󰁁 󰀽
+0 si x < a
+x −a
+b −a
+si a ≤ x ≤ b
+1 si x > b
+.
+DÉMONSTRATION 1 :...
+Exemple 4 :
+Dans un supermarché un jour de grande affluence, le temps d’attente T à la caisse, en minutes, suit la loi
+uniforme sur l’intervalle [2 ; 20].
+1. Définir la fonction densité de probabilité f de la loi de T .
+2. Quelle est la probabilité que le temps d’attente soit inférieur à un quart d’heure?
+Page 3/6
+LOI EXPONENTIELLE DE PARAMÈTRE λ > 0 :
+• Dire qu’une v.a.r. X suit la loi exponentielle de paramètre λ (X 󲅦→ E (λ)) signifie qu’elle admet pour
+densité la fonction fX définie sur R par fX (x) = λe−λx1[0 ;+∞[(x).
+• La fonction de répartition FX d’une v.a.r. suivant la loi E (λ) est définie par FX (x) =
+󰀫
+1−e−λx si x ≥ 0
+0 si x < 0
+.
+DÉMONSTRATION 2 :...
+Exemple 5 :
+X 󲅦→E (2). Calculer P(X ≥ 1), P(X = 1), P(X < 1), P(−1 ≤ X ≤ 3) et P(X ≤ −1).
+Remarque : D’autres lois à densité seront étudiées en TD et dans le prochain chapitre.
+4. Densité et fonction de répartition
+PROPOSITION :
+Soit X une variable aléatoire réelle.
+Si la fonction de répartition FX est dérivable presque partout alors X est une v.a.r. à densité.
+Dans ce cas, sa densité fX est la dérivée de FX : F′X (x) = fX (x).
+Exemple 6 :
+1. Soit X une variable aléatoire continue de fonction de répartition FX (x) =
+󰀻 󰀿
+󰀽
+0 si x < 1
+1−
+1
+x
+si x ≥ 1
+.
+Déterminer une densité de X.
+2. Soit Y une variable aléatoire continue de densité fY (x) =
+󰀻 󰁁 󰁁 󰁁 󰁁 󰀿
+󰁁 󰁁 󰁁 󰁁 󰀽
+0 si x ≤ 0
+1
+4󲅮x
+si 0 < x < 1
+1
+2x2 si 1 ≤ x
+.
+Déterminer la fonction de répartition FY de Y .
+Page 4/6
+III ESPÉRANCE ET VARIANCE D’UNE VARIABLE ALÉATOIRE À DENSITÉ
+1. Espérance
+DÉFINITION :
+Soit X une v.a.r. de densité fX .
+X est dite intégrable lorsque
+󰁝
+R |x|fX (x)dx converge.
+Dans ce cas, on appelle espérance de X, le réel noté E(X) et défini par : E(X) =
+󰁝
+R
+x fX (x)dx.
+Exemple 7 :
+1. Démontrer que la variable aléatoire X de l’exemple 6 n’admet pas d’espérance.
+2. Soit Y la variable aléatoire continue de densité fY (x) = e−x1[0 ;+∞[(x) .
+Y admet-elle une espérance? Si oui, la calculer.
+Remarque : On peut faire un parallèle avec les lois discrètes :
+X discrète P(X ∈ A) =
+󰁛
+x∈A
+P(X = x) E(X) =
+󰁛
+x∈X(Ω)
+xP(X = x)
+X absolument
+continue
+P(X ∈ [a ; b]) =
+󰁝b
+a
+fX (x)dx E(X) =
+󰁝
+R
+x fX (x)dx
+THÉORÈME DE TRANSFERT :
+Soit X une v.a.r. de densité fX .
+Soit h une fonction définie et c.p.m. sur R telle que h(X) est une variable aléatoire continue intégrable.
+Alors h(X) admet une espérance et on a : E[(h(X)] =
+󰁝
+R
+h(x) fX (x)dx.
+PROPOSITION : (conséquence du théorème de transfert)
+Soit X et Y deux v.a.r. intégrables et soit (λ; μ) ∈ R2.
+1. Linéarité : λX +μY est intégrable et E(λX +μY ) = λE(X)+μE(Y ).
+2. Positivité : Si X ≥ 0 alors E(X) ≥ 0.
+3. Croissance : Si Y ≥ X alors E(Y ) ≥ E(X).
+Exemple 8 : une utilisation du théorème de transfert
+Soit X 󲅦→U[0 ;1]. Déterminer par changement de variable la loi de la variable aléatoire Y =
+1
+X
+.
+Page 5/6
+Remarque :
+Si Y = g (X) et que, pour h fonction c.p.m. à support compact, E[(h(Y )] =
+󰁝
+R
+h(x) f (x)dx alors f est une
+densité de la v.a.r. Y = g (X).
+2. Variance
+DÉFINITION :
+Soit X une v.a.r. de densité fX .
+On dit que X est de carré intégrable lorsque E(X2) =
+󰁝
+R
+x2 fX (x)dx converge.
+Remarque :
+Lorsque X est de carré intégrable, on dit qu’elle possède un moment d’ordre 2. Dans ce cas, la variable X
+est alors intégrable (donc admet une espérance) et possède donc unmoment d’ordre 1.
+DÉFINITION :
+Soit X une v.a.r. de densité fX et de carré intégrable.
+On appelle variance de X, notée Var(X), l’espérance de la variable (X −E(X))2.
+Ainsi, par le théorème de transfert, Var(X) =
+󰁝
+R
+(x −E(X))2 fX (x)dx.
+FORMULE DE KÖNIG-HUYGENS : Var(X) = E(X2)−(E(X))2.
+DÉFINITION :
+Soit X une v.a.r. de carré intégrable.
+On appelle écart-type de X, le réel noté σ(X) et défini par : σ(X) =󲅮Var(X).
+Remarque :
+L’espérance et l’écart-type de X constituent un résumé intéressant de la répartition de X.
+L’espérance donne une idée de l’ordre de grandeur de la variable et l’écart-type une idée de la dispersion
+des valeurs X autour de l’espérance.
+Ces deux paramètres interviennent dans plusieurs inégalités que nous étudierons prochainement.
+3. Retour sur les lois classiques à connaître
+LOI UNIFORME SUR UN INTERVALLE [a ; b] :
+Si X 󲅦→U[a ;b] alors E(X) =
+a +b
+2
+et Var(X) =
+(b −a)2
+12
+.
+DÉMONSTRATION 3 :...
+LOI EXPONENTIELLE DE PARAMÈTRE λ > 0 :
+Si X 󲅦→E (λ) alors E(X) =
+1
+λ
+et Var(X) =
+1
+λ2 .
+DÉMONSTRATION 4 :...
+Page 6/6

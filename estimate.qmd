@@ -1,0 +1,619 @@
+ECE LYON - ING 3 - ANNÉE 2021/2022
+COURS DE MATHÉMATIQUES
+PROBABILITÉS ET STATISTIQUES
+CHAPITRE 08 : ESTIMATION
+Soit (X1, ...,Xn) un échantillon de loiL dépendant d’un paramètre θ.
+L’estimation ponctuelle consiste à approcher θ par une fonction des (x1, ...,xn) réalisations de l’échantillon.
+Exemple 1
+On procède à une succession de 10 tirages avec remise dans une urne contenant des boules rouges en proportion
+inconnue p ∈]0 ; 1[. Si X est la v.a. égale au nombre de boules rouges tirées, alors X suit une loi binomiale
+de paramètres n = 10 et p inconnu.
+I ESTIMATION PONCTUELLE
+1. Définition d’un estimateur
+DÉFINITIONS :
+• Un estimateur de θ est une statistique cθn = Tn (X1, ...,Xn) qui ne dépend pas de θ.
+• Une estimation est une réalisation de l’estimateur.
+Un estimateur de θ est destiné à approcher la valeur de θ à partir de sa réalisation sur un échantillon.
+2. Biais d’un estimateur
+DÉFINITIONS :
+• Le biais de l’estimateur cθn d’un paramètre θ est le réel défini par bn (θ) = E
+³
+cθn
+´
+−θ.
+• Un estimateur cθn est dit sans biais si E
+³
+cθn
+´
+= θ, c’est-à-dire si bn (θ) = 0.
+Il est dit asymptotiquement sans biais si lim
+n→+∞
+E
+³
+cθn
+´
+= θ.
+• L’erreur quadratique d’un estimateur cθn de θ est définie par R
+³
+cθn
+´
+= E
+µ³
+cθn −θ
+´2
+¶
+.
+Un estimateur cθ′
+n est dit meilleur que cθn au sens de l’erreur quadratique s’il existe une taille d’échantillon
+N telle que ∀n ≥ N, R
+³
+cθ′
+n
+´
+≤ R
+³
+cθn
+´
+.
+PROPOSITION :
+Soit cθn un estimateur de θ. Alors :
+R
+³
+cθn
+´
+= Var
+³
+cθn
+´
++b2n
+(θ)
+DÉMONSTRATION 1 :...
+Remarque : Pour des estimateurs sans biais, la variance est un indicateur d’efficacité. Plus elle est petite,
+plus l’estimateur est dit efficace.
+Page 1/7
+3. Convergence
+DÉFINITIONS : Soit cθn un estimateur de θ.
+• cθn est convergent ou consistant si et seulement si cθn
+P
+−→θ.
+Cela signifie que ∀ϵ > 0, lim
+n→+∞
+P
+³¯¯¯
+cθn −θ
+¯¯¯
+> ϵ
+´
+= 0.
+• cθn est convergent enmoyenne quadratique si et seulement si cθn
+L2
+−→θ.
+Cela signifie que R(cθn) = E
+µ³
+cθn −θ
+´2
+¶
+−→
+n→+∞
+0.
+Remarque : D’après le chapitre sur la convergence des variables aléatoires :
+• un estimateur est convergent en moyenne quadratique si et seulement s’il est sans biais ou asymptotiquement
+sans biais et si Var
+³
+cθn
+´
+−→
+n→+∞
+0.
+• un estimateur convergent en moyenne quadratique est convergent (la réciproque est fausse).
+Exemple 2 -Moyenne empirique, Variance empirique et variance empirique corrigée
+Soit (X1, ...,Xn) un échantillon de v.a. de carré intégrable avec E(Xi ) =m et Var (Xi ) = σ2.
+On pose Xn =
+1
+n
+Xn
+i=1
+Xi S
+′2
+n =
+1
+n
+Xn
+i=1
+³
+Xi −Xn
+´2
+S2n
+=
+1
+n −1
+Xn
+i=1
+³
+Xi −Xn
+´2
+.
+Justifier que :
+1. Xn est un estimateur sans biais convergent dem.
+2. S
+′2
+n est un estimateur biaisé, asymptotiquement sans biais et convergent de σ2.
+3. S2n
+est un estimateur sans biais et convergent de σ2.
+II MÉTHODES DE CONSTRUCTION D’ESTIMATEURS PONCTUELS
+1. Méthode desmoments (EMM)
+C’est la méthode la plus naturelle. L’idée de base est d’estimer une espérance par une moyenne empirique,
+une variance par une variance empirique, etc.
+Si le paramètre à estimer θ est E(Xi ) par exemple, on peut l’estimer par cθn = Xn =
+1
+n
+Xn
+i=1
+Xi .
+Exemple 3
+Soit (X1, ...,Xn) un échantillon de v.a.i.i.d. Dans chaque cas, donner l’EMMde θ :
+1. les Xi suivent une loiB(p) et θ = p.
+2. les Xi suivent une loiN
+¡
+m; σ2¢
+et θ =m.
+3. les Xi suivent une loiN
+¡
+m; σ2¢
+et θ = σ2.
+4. les Xi suivent une loi E (λ) et θ = λ.
+De manière plus générale, si la loi parente est telle que E
+¡
+f (X)
+¢
+= ϕ(θ), on a alors θ = ϕ−1 ¡
+E
+¡
+f (X)
+¢¢
+.
+DÉFINITION :
+L’estimateur par la méthode desmoments (EMM) de ϕ(θ) est défini par :
+cθn = ϕ−1
+Ã
+1
+n
+Xn
+i=1
+f (Xi )
+!
+Page 2/7
+PROPOSITION (ADMISE) :
+L’EMM cθn est un estimateur asymptotiquement sans biais et convergent de θ.
+Exercice 1
+Soient X une v.a., n ∈N∗, et (X1, . . . ,Xn) un n-échantillon de X.
+Déterminer un EMM de a dans chacun des cas :
+1. Si a > 0 et X est une v.a. discrète telle que P(X = 0) =
+a
+a +1
+et P(X = 1) =
+1
+a +1
+.
+2. Si a ∈]0 ; 1[ et X est une v.a. de densité f définie par :
+f (x) =
+
+
+1
+2a
+si 0 ≤ x ≤ a
+1
+2(1−a)
+si a < x ≤ 1
+0 sinon .
+2. Méthode du maximum de vraisemblance (EMV)
+DÉFINITION :
+Soit (X1, ...,Xn) un n-échantillon de loi parenteL dépendant d’un paramètre θ.
+On appelle vraisemblance de l’échantillon X la fonction L définie par :
+• SiL est discrète : ∀(x1, ...,xn) ∈Nn,
+L (x1, ...,xn ; θ) = P (X1 = x1)×...×P (Xn = xn)
+• SiL est absolument continue de densité f : ∀(x1, ...,xn) ∈ Rn,
+L (x1, ...,xn ; θ) = f (x1)×...× f (xn)
+Exemple 4
+Une urne contient une proportion p ∈]0 ; 1[ de boules rouges. On tire 15 boules avec remise et on observe 5
+boules rouges. On veut estimer p.
+1. Exprimer L(5 ; p) en fonction de p.
+2. On donne les valeurs suivantes :
+p 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9
+L(5 ; p) 0.01 0.10 0.21 0.19 0.09 0.02 0.003 10−4 2×10−7
+Quelle valeur de p vous semble-t-elle la plus "vraisemblable" parmi celles testées ?
+DÉFINITION :
+Supposons que le paramètre θ prenne ses valeurs dans un intervalle.
+On appelle estimateur de maximumde vraisemblance (EMV) tout estimateur cθn = g (X1, ...,Xn) où
+θ = g (x1, ...,xn) est une solution du problème d’optimisation :Max
+θ
+L (x1, ...,xn,θ).
+PROPOSITION (ADMISE) :
+Soit ϕ une fonction cpm sur R. Si cθn est un EMV de θ alors ϕ
+³
+cθn
+´
+est un EMV de ϕ(θ).
+Page 3/7
+Remarque : Rien n’assure que l’EMV existe ou soit unique.
+PROPOSITION (ADMISE) :
+Si la fonction θ 7→ L (x1, ...,xn ; θ) est deux fois dérivable, la recherche d’un EMV revient à chercher θ tel
+que
+∂L
+∂θ
+(x1, ...,xn ; θ) = 0 et
+∂2L
+∂θ2 (x1, ...,xn ; θ) < 0.
+Remarque : Il est souvent plus facile de maximiser la log-vraisemblance lnL : θ 7→ ln(L (x1, ...,xn ; θ)).
+Exemple 5
+Soit X1, ...,Xn un échantillon de v.a.i.i.d. Dans chaque cas, donner l’EMV de θ :
+1. les Xi suivent une loiB(p) et θ = p.
+2. les Xi suivent une loi E (λ) et θ = λ.
+3. les Xi suivent une loiN
+¡
+m; σ2¢
+et θ =m.
+4. les Xi suivent une loiN
+¡
+m; σ2¢
+et θ = σ2.
+Exercice 2
+La hauteur maximale en mètres de la crue annuelle d’un fleuve est une variable aléatoire réelle X de densité
+f définie par :
+f (x) =
+x
+a
+e−x2
+2a 1R+(x) avec a > 0
+.
+1. Soient n ∈N∗ et (X1, . . . ,Xn) un n-échantillon de X. Déterminer l’EMV can de a.
+2. Une crue supérieure à 6 mètres serait catastrophique. Pendant 8 ans, on a observé les hauteurs de crue
+du fleuve en mètres. Les résultats sont : 2,5 ; 2,9 ; 1,8; 0,9 ; 1,7 ; 2,1 ; 2,2 ; 2,8.
+A partir de ces mesures, donner une estimation ponctuelle de a et une estimation de la probabilité
+d’avoir une catastrophe une année donnée.
+Page 4/7
+III ESTIMATION PAR INTERVALLE DE CONFIANCE
+On cherche maintenant à savoir si on peut avoir "confiance" en l’estimateur qui vient d’être construit.
+Pour cela, on construit un intervalle de confiance dans lequel on peut affirmer avec une certaine probabilité
+que la vraie valeur du paramètre θ appartiendra.
+Cet intervalle dépend de la loi de l’estimateur et de la taille de l’échantillon.
+DÉFINITION :
+Soient (X1, ...,Xn) un échantillon de loi parenteL dépendant d’un paramètre θ et α ∈]0 ; 1[.
+On appelle intervalle de confiance pour θ au niveau de confiance 1−α tout intervalle
+Iα = [a (X1, . . . ,Xn) ; b (X1, . . . ,Xn)], où a et b sont des fonctions de l’échantillon indépendantes de θ, vérifiant
+P (θ ∈ Iα) ≥ 1−α.
+Remarques :
+• Plus 1−α est grand, plus Iα sera large.
+• La détermination de a et b se fait en utilisant la loi de l’estimateur de θ.
+• Si la loi est symétrique, on choisit un intervalle symétrique (lois normales), si la loi est unilatérale on
+choisit un intervalle unilatéral (loi du khi-2).
+1. Pour une proportion
+Soit une population contenant des individus possédant un caractère c en proportion p ∈]0 ; 1[.
+On prélève un échantillon bernoullien (X1, ...,Xn). La loi parente est une loiB
+¡
+p
+¢
+.
+Un EMV de p est cpn = Xn =
+1
+n
+Xn
+i=1
+Xi .
+On sait que Sn =
+Xn
+i=1
+Xi suit une loi B
+¡
+n ; p
+¢
+, et en supposant que n ≥ 30, np ≥ 5 et n(1− p) ≥ 5, on peut
+approcher la loi de Sn par la loiN
+¡
+np ; np(1−p)
+¢
+(TCL).
+La loi de cpn peut donc être approchée par la loiN
+µ
+p ;
+p(1−p)
+n
+¶
+.
+Pour t > 0, on a donc P
+
+cpn −t
+s
+p(1−p)
+n
+≤ p ≤ cpn +t
+s
+p(1−p)
+n
+
+ = P
+
+ 
+−
+t
+≤
+cpn −p
+q
+p(1−p)
+n
+≤ t
+
+
+= 2Φ(t )−1,
+où Φ désigne la fonction de répartition de la loiN (0 ; 1).
+Lorsque np(1−p) ≥ 3, on considère que l’on peut approcher
+p(1−p)
+n
+par
+cpn
+¡
+1−cpn
+¢
+n
+.
+De plus, 2Φ(t )−1 = 1−α ⇐⇒ t =Φ−1
+³
+1−
+α
+2
+´
+.
+DÉFINITION :
+Soient p ∈]0 ; 1[, X1, ...,Xn un n-échantillon, cpn =
+1
+n
+Xn
+i=1
+Xi un EMV de p, α ∈]0 ; 1[, et t =Φ−1
+³
+1−
+α
+2
+´
+.
+Si n ≥ 30, np ≥ 5, n(1−p) ≥ 5 et np(1−p) ≥ 3, un intervalle de confiance pour une proportion p ∈]0 ; 1[
+au niveau 1−α est l’intervalle Iα défini par :
+Iα =
+
+cpn −t
+s
+cpn
+¡
+1−cpn
+¢
+n
+; cpn +t
+s
+cpn
+¡
+1−cpn
+¢
+n
+
+
+Page 5/7
+Exemple 6
+Dans un échantillon de 1000 personnes d’une population, on a observé que 8% des gens avaient un problème
+de cholestérol. Déterminer un intervalle de confiance de la proportion de personnes ayant un problème de
+cholestérol dans cette population au niveau 95%.
+2. Pour une moyenne
+Soit (X1, ...,Xn) un n-échantillon de loiN
+¡
+m; σ2¢
+.
+On sait que Xn =
+1
+n
+Xn
+i=1
+Xi ,→N
+µ
+m;
+σ2
+n
+¶
+est un estimateur sans biais dem.
+Ainsi, pour t > 0, P
+µ
+Xn −t
+σ
+p
+n
+≤m ≤ Xn +t
+σ
+p
+n
+¶
+= P
+Ã
+−t ≤
+Xn −m
+σ/
+p
+n
+≤ t
+!
+= 2Φ(t )−1.
+D’après le TCL, si (Xn) est une suite de v.a.r.i.i.d. de carré intégrable, de moyennem et d’écart-type σ2 alors
+Zn =
+Xn −m
+σ/
+p
+n
+converge en loi vers une v.a.r. de loiN (0 ; 1).
+On va donc pouvoir, lorsque n ≥ 30, utiliser cet intervalle quelque soit la loi des Xi .
+DÉFINITION :
+Soient α ∈]0 ; 1[, et t =Φ−1
+³
+1−
+α
+2
+´
+.
+Soit (X1, ...,Xn) un échantillon de loi N
+¡
+m; σ2¢
+avec σ2 connu, ou un échantillon i.i.d. de loi inconnu
+avec n ≥ 30.
+Un intervalle de confiance surm au niveau de confiance 1−α est donné par :
+Iα =
+·
+Xn −t
+σ
+p
+n
+; Xn +t
+σ
+p
+n
+¸
+Remarques :
+• Si n ≥ 30, on peut remplacer σ par son estimation s si celle-ci est connue.
+• Si n < 30 et si la variance σ2 est inconnue , on choisit l’estimateur sans biais S2n
+=
+1
+n −1
+Xn
+i=1
+³
+Xi −Xn
+´2
+, qui
+est convergent et tel que
+Xn −m
+Sn/
+p
+n
+suit une loi de Student à n −1 degrés de liberté.
+Dans ce cas, Iα =
+·
+Xn −t
+Sn
+p
+n
+; Xn +t
+Sn
+p
+n
+¸
+où t est le fractile d’ordre 1−
+α
+2
+de la loi de Student à n−1 degrés
+de liberté, c’est-à-dire la valeur telle que P
+Ã
+Xn −m
+Sn/
+p
+n
+≤ t
+!
+= 1−
+α
+2
+.
+Exemple 7
+Dans un échantillon de 1000 bacheliers d’une même année, on a observé que la moyenne des notes obtenues
+à l’examen est de 12,15 avec un écart-type de 2.
+Déterminer un intervalle de confiance de la moyenne des notes obtenues à l’examen (de l’année en question)
+au niveau 95%.
+Page 6/7
+3. Pour une variance
+On utilise l’estimateur cσ2
+n =
+1
+n
+Xn
+i=1
+(Xi −m)2, sans biais et convergent, et tel que
+ncσ2
+n
+σ2 suit une loi du khi-2 à
+n degrés de liberté.
+On a alors P
+Ã
+t1 ≤
+ncσ2
+n
+σ2
+≤ t2
+!
+= P
+Ã
+n
+cσ2
+n
+t2
+≤ σ2 ≤ n
+cσ2
+n
+t1
+!
+= 1−α où t1 et t2 sont les quartiles d’ordre
+α
+2
+et 1−
+α
+2
+de la loi du khi-2 à n degrés de liberté.
+DÉFINITION :
+Soient α ∈]0 ; 1[, (X1, ...,Xn) un échantillon de loiN
+¡
+m; σ2¢
+avec σ2 inconnue etm connue, et
+cσ2
+n =
+1
+n
+Xn
+i=1
+(Xi −m)2.
+Un intervalle de confiance sur σ2 au niveau de confiance 1−α est donné par :
+Iα =
+"
+n
+cσ2
+n
+t2
+; n
+cσ2
+n
+t1
+#
+où t1 et t2 sont les fractiles d’ordre
+α
+2
+et 1−
+α
+2
+de la loi du khi-2 à n degrés de liberté.
+Remarque : Si lamoyennemn’est pas connue, on remplace cσ2
+n par la variance empirique S2n
+=
+1
+n −1
+Xn
+i=1
+³
+Xi −Xn
+´2
+qui suit une loi du khi-2 à n −1 degrés de libertés.
+L’intervalle de confiance sur σ2 au niveau de confiance 1−α est alors défini par Iα =
+·
+(n −1)
+S2n
+t2
+; (n −1)
+S2n
+t1
+¸
+Exemple 8
+Dans un échantillon de 1000 personnes, on a observé que la moyenne des notes obtenues à un examen de
+certification est de 12 avec un écart-type de 3.
+Déterminer un intervalle de confiance de la variance des notes obtenues à cet examen au niveau 95%.
+Page 7/7

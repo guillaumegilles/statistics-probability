@@ -1,0 +1,186 @@
+ECE LYON - ING 3 - ANNÉE 2022/2023
+COURS DE MATHÉMATIQUES
+PROBABILITÉS ET STATISTIQUES
+CHAPITRE 05 : STATISTIQUES À DEUX VARIABLES
+I DISTRIBUTION CONJOINTE
+Soit P une population et (x ; y) un couple de variables, c’est-à-dire une application qui à chaque élément u
+de P associe un couple
+¡
+x(u) ; y(u)
+¢
+.
+Les variables x et y peuvent être qualitatives ou quantitatives, discrètes ou continues.
+DÉFINITIONS :
+Si x1,x2, ...,xp sont les modalités de x et y1, y2, ..., yq les modalités de y, alors :
+• les couples
+¡
+xi ; y j
+¢
+sont les modalités du couple (x ; y), d’effectif conjoint ni j et de fréquence conjointe
+fi j
+• L’ensemble des triplets
+¡
+xi ; y j ; ni j
+¢
+est appelé distribution conjointe du couple (x ; y).
+Remarque : On a en particulier
+X
+1≤i≤p
+1≤j≤q
+ni j = n (effectif total) et
+X
+1≤i≤p
+1≤j≤q
+fi j = 1.
+On représente généralement la distribution conjointe par un tableau de contingence, c’est-à-dire un tableau
+à double entrée avec les effectifs ou les fréquences :
+x
+y
+. . . y j . . . Total
+...
+...
+xi . . . ni j (ou fi j ) . . .
+...
+Total n (ou 100, ou 1)
+Page 1/4
+Exemple 1 - Quartier et revenu annuel
+On a fait une enquête sur 2000 habitants d’une ville en relevant le quartier d’appartenance et le revenu annuel
+en euros.
+1. Compléter le tableau suivant :
+Quartier
+Revenu
+[10000;20000[ [20000;50000[ [50000;100000[ Total
+A 413 298 288
+B 227 193 170
+C 167 132 112
+Total
+2. Quelle est la fréquence des habitants qui perçoivent au moins 20 000 euros par an?
+II DISTRIBUTIONS MARGINALES
+A partir de la distribution conjointe de (x ; y) on peut obtenir les distributions de x et de y, appelées distributions
+marginales.
+DÉFINITIONS :
+Avec les mêmes notations que dans le paragraphe précédent, on définit :
+• L’effectif marginal de xi :
+ni • =
+X
+1≤j≤q
+ni j
+Il correspond au total de la ligne de xi du tableau
+de contingence.
+• La fréquence marginale de xi : fi• =
+ni•
+n
+.
+• L’ensemble des couples (xi ; ni •) est la distribution
+marginale de x.
+• L’effectif marginal de y j :
+n•j =
+X
+1≤i≤p
+ni j
+Il correspond au total de la colonne de y j du tableau
+de contingence.
+• La fréquence marginale de y j : f•j =
+n•j
+n
+.
+• L’ensemble des couples
+¡
+y j ; n•j
+¢
+est la distribution
+marginale de y.
+Remarques :
+• On peut calculer tous les paramètres statistiques de chaque distribution marginale (médiane, moyenne,
+écart-type, etc.)
+• Si les variables x et y sont indépendantes, on pourra retrouver la distribution conjointe à partir des distributions
+marginales.
+Exemple 2 - Quartier et revenu annuel
+1. Déterminer les distributions marginales des variables "Quartier" et "Revenu annuel" de l’exemple 1.
+2. Calculer la moyenne et l’écart-type des deux distributions obtenues.
+Page 2/4
+III DISTRIBUTIONS CONDITIONNELLES
+La i -ème ligne du tableau de contingence représente la distribution de la sous-population de P des individus
+pour lesquels x = xi en fonction desmodalités de y. L’effectif de cette sous population est ni•.
+De même, la j -ème colonne du tableau de contingence représente la distribution de la sous-population de
+P des individus pour lesquels y = y j en fonction des modalités de x. L’effectif de cette sous population est
+n•j .
+DÉFINITIONS :
+Avec les mêmes notations que dans le paragraphe précédent, on définit :
+• La fréquence conditionnelle de y j sachant xi :
+f y j /xi
+=
+ni j
+ni•
+• L’ensemble des couples
+¡
+xi ; ni j
+¢
+est la distribution
+conditionnelle de y sachant x = xi .
+• La fréquence conditionnelle de xi sachant y j :
+fxi /y j
+=
+ni j
+n•j
+• L’ensemble des couples
+¡
+y j ; ni j
+¢
+est la distribution
+conditionnelle de x sachant y = y j .
+Exemple 3 - Quartier et revenu annuel
+1. Déterminer la distribution conditionnelle du revenu annuel sachant qu’on ne s’intéresse qu’aux habitants
+du quartier A.
+2. Calculer le revenu médian dans ce quartier.
+IV VARIABLES INDÉPENDANTES
+DÉFINITION :
+x et y sont dites indépendantes si et seulement si les fréquences conditionnelles f y j /xi ne dépendent pas
+de la condition xi , ou les fréquences conditionnelles fxi /y j ) ne dépendent pas de la condition y j .
+PROPOSITION (ADMISE) :
+x et y sont indépendantes si et seulement si
+ni j =
+ni•×n•j
+n
+ou encore fi j = fi•× f•j
+quelque soient i et j
+Remarque : x et y sont donc indépendantes si les lignes ou les colonnes du tableau de contingence sont
+proportionnelles entre elles.
+Exemple 4 - Quartier et revenu annuel
+Les variables "Quartier" et "revenu annuel" sont-elle indépendantes?
+Page 3/4
+V TEST D’INDÉPENDANCE DU KHI-2
+On teste ici l’hypothèse (H0) d’indépendance des deux variables.
+Etape 1 : On construit sous (H0) le tableau des effectifs théoriques n′
+i j tels que pour tous i , j ,
+n′
+i j
+=
+ni•n•j
+n
+.
+Remarque : (Règle deCochran) Le test est valable si au moins 80%des n′
+i j sont≥ 5. Sinon, il faut regrouper
+certainesmodalités et recommencer.
+Etape 2 : On calcule les distances di j avec les effectifs observés ni j définies par :
+di j =
+³
+ni j −n′
+i j
+´2
+n′
+i j
+.
+Etape 3 : On additionne les distances obtenues pour obtenir dobs =
+X
+i , j
+di j .
+Etape 4 : Sous H0, dobs est une observation d’une variable aléatoire d pouvant être approchée par une loi
+du khi-2 dont le nombre de degrés de libertés est ν = (p−1)(q −1) (pour un tableau à p lignes et q colonnes
+sans compter les totaux).
+Etape 5 : Pour un risque α donné, on lit dans la table du khi-2 la distance critique dc correspondant au degré
+de liberté ν et au niveau de confiance P = 1−α.
+Etape 6 : Si dobs > dc , on rejette H0 au risque α de se tromper, sinon on l’accepte.
+Exemple 5 - Quartier et revenu annuel
+D’après le test du khi-2, les variables "Quartier" et "revenu annuel" sont-elle indépendantes au risque α = 5%?
+Page 4/4

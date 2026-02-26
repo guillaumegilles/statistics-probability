@@ -86,3 +86,321 @@ Pour valoriser l’engagement, la créativité et la curiosité.
 | 💬 **Feedback Constructif**   | Aide à améliorer le cours ou le jeu              | Retour écrit ou oral |
 
 -->
+
+Voici un **plan de cours complet sur 13 séances de 4h (≈ 46–52h)** conçu pour des **élèves ingénieurs**, avec alternance structurée :
+
+* 2h théorie
+* 2h TP Python
+* progression probabilités → statistiques → intégration
+* forte composante simulation et données réelles
+
+---
+
+# 🎓 Cours : Probabilités & Statistiques pour Ingénieurs
+
+**Format : 13 séances × 4h**
+
+---
+
+# 🧱 BLOC 1 — Fondations probabilistes (Séances 1 à 5)
+
+---
+
+## 🔹 Séance 1 — Modéliser l’incertitude
+
+### 🎯 Objectifs
+
+* Comprendre la notion de modèle probabiliste
+* Introduire variable aléatoire
+* Lois discrètes
+
+### 📚 Théorie (2h)
+
+* Expérience aléatoire
+* Espace probabilisé
+* Variable aléatoire discrète
+* Loi de Bernoulli
+* Loi binomiale
+* Espérance et variance
+
+### 💻 TP Python (2h)
+
+* Simulation de lancers de pièces
+* Simulation loi binomiale
+* Visualisation histogrammes
+* Convergence fréquence → probabilité
+* Mini-projet : modélisation d’un système binaire défaillant
+
+---
+
+## 🔹 Séance 2 — Lois usuelles & modélisation continue
+
+### 📚 Théorie
+
+* Variable continue
+* Densité
+* Loi uniforme
+* Loi exponentielle (fiabilité)
+* Introduction loi normale
+
+### 💻 TP
+
+* Simulation exponentielle (temps de panne)
+* Estimation empirique moyenne/variance
+* Ajustement d’une loi normale
+* QQ-plot
+* Cas industriel : durée de vie composant
+
+---
+
+## 🔹 Séance 3 — Vecteurs aléatoires & dépendance
+
+### 📚 Théorie
+
+* Loi jointe
+* Indépendance
+* Covariance
+* Corrélation
+* Loi normale multidimensionnelle (intuition)
+
+### 💻 TP
+
+* Simulation corrélation
+* Nuages de points
+* Matrice de covariance
+* Visualisation ellipse gaussienne
+* Cas capteurs corrélés
+
+---
+
+## 🔹 Séance 4 — Théorème Central Limite
+
+### 📚 Théorie
+
+* Sommes de variables
+* TCL
+* Approximation normale
+* Importance pour ingénieurs
+
+### 💻 TP
+
+* Simulation TCL (différentes lois)
+* Visualisation convergence vers normale
+* Approximation binomiale par normale
+* Erreurs d’approximation
+
+---
+
+## 🔹 Séance 5 — Introduction à l’inférence
+
+### 📚 Théorie
+
+* Population vs échantillon
+* Estimateur
+* Biais
+* Variance
+* Introduction au maximum de vraisemblance (intuition)
+
+### 💻 TP
+
+* Estimation moyenne inconnue
+* Simulation biais/variance
+* Comparaison estimateurs
+* Cas : calibration capteur
+
+---
+
+# 🧪 BLOC 2 — Statistiques inférentielles (Séances 6 à 9)
+
+---
+
+## 🔹 Séance 6 — Intervalles de confiance
+
+### 📚 Théorie
+
+* Intervalle moyenne (variance connue/inconnue)
+* Loi de Student
+* Interprétation correcte
+
+### 💻 TP
+
+* Construction IC
+* Simulation taux de couverture
+* Visualisation répétitions échantillonnage
+* Cas industriel : contrôle qualité
+
+---
+
+## 🔹 Séance 7 — Tests d’hypothèses
+
+### 📚 Théorie
+
+* Hypothèse nulle
+* Risque α, β
+* Puissance
+* Test moyenne
+* p-value
+
+### 💻 TP
+
+* Simulation erreurs type I / II
+* Calcul puissance
+* Cas : détection dérive production
+* Visualisation régions critiques
+
+---
+
+## 🔹 Séance 8 — Régression linéaire
+
+### 📚 Théorie
+
+* Modèle linéaire
+* Moindres carrés
+* Interprétation géométrique
+* Hypothèses du modèle
+
+### 💻 TP
+
+* Implémentation OLS
+* Visualisation résidus
+* Intervalle de confiance coefficients
+* Cas : modélisation consommation énergie
+
+---
+
+## 🔹 Séance 9 — Validation & limites du modèle
+
+### 📚 Théorie
+
+* Surapprentissage
+* Variance vs biais
+* R²
+* Introduction validation croisée
+
+### 💻 TP
+
+* Simulation overfitting
+* Comparaison modèles polynomiaux
+* Split train/test
+* Cas prédiction industrielle
+
+---
+
+# 🧠 BLOC 3 — Approfondissement & vision ingénieur (Séances 10 à 13)
+
+---
+
+## 🔹 Séance 10 — Maximum de vraisemblance
+
+### 📚 Théorie
+
+* Définition formelle
+* Exemple binomiale
+* Exemple normale
+* Propriétés
+
+### 💻 TP
+
+* Implémentation MLE à la main
+* Optimisation numérique
+* Visualisation surface vraisemblance
+* Cas : estimation paramètre fiabilité
+
+---
+
+## 🔹 Séance 11 — Introduction au bayésien
+
+### 📚 Théorie
+
+* Théorème de Bayes
+* Interprétation ingénieur
+* Conjugaison Beta-Binomiale
+* Différence fréquentiste / bayésien
+
+### 💻 TP
+
+* Mise à jour croyance
+* Visualisation posterior
+* Cas : taux défaut inconnu
+* Comparaison IC vs intervalle crédible
+
+---
+
+## 🔹 Séance 12 — Méthodes Monte Carlo
+
+### 📚 Théorie
+
+* Simulation
+* Intégration Monte Carlo
+* Estimation numérique
+* Propagation d’incertitude
+
+### 💻 TP
+
+* Estimation π
+* Propagation erreur modèle physique
+* Simulation chaîne logistique
+* Analyse risque projet
+
+---
+
+## 🔹 Séance 13 — Projet final intégré
+
+### 🎯 Objectif
+
+Mobiliser tout le cours
+
+### 📦 Cas possible
+
+* Analyse données production industrielle
+* Fiabilité système multi-composants
+* Détection défaut capteurs
+* Analyse données environnementales
+
+### Travail demandé
+
+* Modélisation probabiliste
+* Estimation paramètres
+* IC / tests
+* Régression si pertinent
+* Interprétation ingénieur
+* Rapport + notebook
+
+---
+
+# 📊 Évaluation recommandée
+
+* 30% TP notés
+* 30% projet final
+* 40% examen écrit (théorie + interprétation)
+
+---
+
+# 🧩 Logiciels recommandés
+
+* Python
+* numpy
+* scipy
+* matplotlib
+* pandas
+* seaborn (visualisation)
+* statsmodels
+
+---
+
+# 🏗 Philosophie pédagogique
+
+1. Toujours partir d’un problème réel
+2. Introduire la théorie pour résoudre le problème
+3. Simuler avant de démontrer
+4. Visualiser systématiquement
+5. Relier aux applications industrielles
+
+---
+
+Si vous le souhaitez, je peux aussi vous fournir :
+
+* 📁 Une trame complète de notebooks Python pour chaque séance
+* 📘 Un polycopié structuré prêt à distribuer
+* 🧪 Une banque d’exercices corrigés
+* 🎯 Une version adaptée à une école spécifique (Centrale, INSA, Mines, etc.)

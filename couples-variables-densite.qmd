@@ -1,0 +1,310 @@
+ECE LYON - ING 3 - ANNÉE 2022/2023+
+COURS DE MATHÉMATIQUES
+PROBABILITÉS ET STATISTIQUES
+CHAPITRE 03 : COUPLES DE VARIABLES À DENSITÉ
+Dans tout ce chapitre, nous nous plaçons dans un espace probabilisé quelconque (Ω,τ,P).
+I INTÉGRALES SUR R2
+Un prérequis à ce paragraphe est entre autre le chapitre 4 sur les intégralesmultiples du cours ING 2.
+THÉORÈME DE TONELLI (ADMIS) :
+Soit une fonction f : R2→R, continue parmorceaux et positive.
+Alors
+󲅉
+R2
+f (x, y)dxdy =
+󰁝
++∞
+−∞
+󰀕󰁝
++∞
+−∞
+f (x, y)dy
+󰀖
+dx =
+󰁝
++∞
+−∞
+󰀕󰁝
++∞
+−∞
+f (x, y)dx
+󰀖
+dy en tolérant le fait que
+l’intégrale peut avoir pour valeur +∞.
+Remarque : Pour les fonctions qui ne sont pas de signe constant, le résultat précédent se généralise et
+s’appelle le théorème de Fubini.
+DÉFINITION :
+Soit une fonction f : R2→R, continue parmorceaux et positive.
+On dit que f est intégrable sur R2 lorsque pour tout réel x,
+󰁝
++∞
+−∞
+f (x, y)dy est convergente et
+󰁝
++∞
+−∞
+󰀕󰁝
++∞
+−∞
+f (x, y)dy
+󰀖
+dx est convergente.
+Remarques :
+• On peut également dire que f est intégrable sur R2 lorsque pour tout réel y,
+󰁝
++∞
+−∞
+f (x, y)dx est convergente
+et
+󰁝
++∞
+−∞
+󰀕󰁝
++∞
+−∞
+f (x, y)dx
+󰀖
+dy est convergente.
+• Dans le cas des fonctions de signe quelconque, il faut remplacer f (x, y) par |f (x, y)| dans la défintion
+précédente.
+Exemple 1
+1. Soit D = {(x, y) ∈ R2 ; x ≥ 0, y ≥ 0,x + y ≤ 1}. Calculer
+󲅉
+D
+f (x, y)dxdy dans les cas suivants :
+a. f (x, y) = x2+ y2 b. f (x, y) = x y(x + y).
+2. Soit f la fonction définie sur R2 par : f (x, y) =
+󰀫
+2e−(x+y) si 0 ≤ x ≤ y
+0 sinon
+. Calculer
+󲅉
+R2
+f (x, y)dxdy.
+Page 1/5
+II LOI CONJOINTE D’UN COUPLE DE V.A.R. ABSOLUMENT CONTINUES
+On généralise la notion de couple de v.a.r. discrètes au cas des v.a.r. absolument continues.
+DÉFINITION :
+Un couple de v.a.r. continues est une application :
+(X ; Y ) : Ω → R2
+ω 󲅬→ (X(ω) ; Y (ω))
+Exemple 2 : A l’origine du problème des aiguilles de Buffon
+On lance une aiguille sur un parquet constitué de lames parallèles demême largeur. Le problème des aiguilles
+de Buffon vise à déterminer la probabilité que l’aiguille tombe à cheval sur une rainure du parquet.
+On note a la longueur de l’aiguille et b la largeur de la lame de parquet.
+Pourmodéliser l’expérience, on note O le centre de l’aiguille et on
+définit le couple (X ; Y ) de v.a.r. continues de la façon suivante :
+• X est la distance entre le point O et la rainure la plus proche.
+• Y est l’angle entre l’aiguille et la parallèle aux rainures passant
+par O.
+1. Densité de probabilité sur R2
+DÉFINITION :
+Soit f : R2→R une fonction c.p.m.
+f est une densité de probabilité sur R2 si f est positive, intégrable sur R2 et
+󲅉
+R2
+f (x, y)dxdy = 1.
+Exemple 3
+Soit la fonction f définie sur R2 par f (x, y) =
+󰀫
+e−(x+y) si x ≥ 0 et y ≥ 0
+0 sinon
+.
+Démontrer que f est une densité de probabilité.
+DÉFINITION :
+Un couple de v.a.r. (X ; Y ) est dit absolument continu s’il existe une densité de probabilité f telle que
+pour tout intervalle I et J de R : P(X ∈ I ,Y ∈ J ) =
+󲅉
+I×J
+f (x, y)dxdy.
+Exemple 4
+Soit D(O; 1) = {(x ; y) ∈ R2 ; x2+ y2 ≤ 1}.
+Soit f la fonction définie sur R2 par f (x, y) =
+1
+π
+1D(O;1)(x, y).
+1. Démontrer que f est une densité de probabilité.
+2. Calculer P((X ; Y ) ∈D1) où D1 = {(x ; y) ∈ R2 ; 0 ≤ x ≤ 1,0 ≤ y ≤ 1}.
+Remarque : Un couple ayant cette densité suit la loi uniforme sur le disque unité D(O; 1).
+Page 2/5
+2. Fonction de répartition
+DÉFINITION :
+La fonction de répartition du couple de v.a.r. (X ; Y ) de densité f est la fonction F : R2 →[0 ; 1] définie
+par : F(x, y) = P(X ≤ x,Y ≤ y) =
+󰁝x
+−∞
+󰁝y
+−∞
+f (x, y)dxdy.
+Remarque : On peut aussi écrire que F(x, y) =
+󰁝y
+−∞
+󰁝x
+−∞
+f (x, y)dydx.
+PROPOSITION (ADMISE) :
+Si (X ; Y ) est un couple de v.a.r. de densité f alors F admet des dérivées partielles secondes en tout point
+de R2 où f est continue et on a : f (x, y) =
+∂2F
+∂x∂y
+(x, y).
+Remarque : La fonction de densité et la fonction de répartition caractérisent la loi du couple (X ; Y ) appelée
+également loi conjointe du couple.
+III LOIS MARGINALES
+PROPOSITION :
+Soit (X ; Y ) un couple de v.a.r. de densité f .
+X et Y sont alors des variables aléatoires à densité fX et fY définies sur R par :
+fX (x) =
+󰁝
+R
+f (x, y)dy et fY (y) =
+󰁝
+R
+f (x, y)dx.
+Ces deux fonctions sont appelées densitésmarginales du couple (X ; Y ).
+Remarque : On peut alors définir les fonctions de répartition marginales FX et FY des variables X et Y
+(voir démonstration 1).
+DÉMONSTRATION 1 :
+Soit t un réel et soit FX la fonction de répartition de X.
+FX (t ) = P(X ≤ t ) = P[(X ≤ t )∩(Y ∈ R)] =
+󰁝t
+−∞
+󰀕󰁝
++∞
+−∞
+f (x, y)dy
+󰀖
+dx =
+󰁝t
+−∞
+g (x)dx.
+D’une part, F′X (t ) = g (t ) et d’autre part F′X (t ) = fX (t ). Donc fX (t ) =
+󰁝
++∞
+−∞
+f (t , y)dy.
+On procède demême pour la densité de Y .
+Exemple 5 : Retour sur l’exemple 4
+1. Déterminer les loismarginales fX et fY du couple (X ; Y ) qui suit la loi uniforme sur le disque unitéD(O; 1).
+2. Vérifier que
+󰁝
+R
+fX (x)dx =
+󰁝
+R
+fY (y)dy = 1.
+Page 3/5
+IV COUPLE DE VARIABLES ALÉATOIRES INDÉPENDANTES
+DÉFINITION :
+Les v.a.r. continues X et Y sont indépendantes si pour tous intervalles I et J on a :
+P(X ∈ I et Y ∈ J ) = P(X ∈ I )×P(Y ∈ J ).
+PROPOSITION :
+Soit (X ; Y ) un couple de v.a.r. de densité f et de fonction de répartition F.
+Soient fX et fY les densitésmarginales et FX et FY les fonctions de répartitionmarginales.
+Les conditions suivantes sont équivalentes :
+1. X et Y sont indépendantes.
+2. ∀(x, y) ∈ R2,F(x, y) = FX (x)×FY (y).
+3. ∀(x, y) ∈ R2, f (x, y) = fX (x)× fY (y).
+DÉMONSTRATION 2 :...
+Exemple 6 :
+1. Retour sur l’exemple 5 : Les variables X et Y sont-elles indépendantes ?
+2. Retour sur l’exemple 3 : Déterminer les loismarginales puis dire si les variables X et Y sont indépendantes.
+V ESPÉRANCE ET COVARIANCE
+On généralise les définitions de l’espérance et de la variance des couples de v.a.r. discrètes aux couples de
+v.a.r. continues. Demême le theorème de transfert se généralise au cas des couples de v.a.r. continues.
+DÉFINITIONS :
+• L’espérance d’un couple de v.a.r. continues et intégrables est le couple des espérances :
+E(X,Y ) = (E(X),E(Y )) où E(X) =
+󰁝
+R
+x fX (x)dx et E(Y ) =
+󰁝
+R
+y fY (y)dy.
+• Si les variables aléatoires sont de carrés intégrables, on définit la covariance de X et Y par :
+Cov(X,Y ) = E[(X −E(X))(Y −E(Y ))] = E(XY )−E(X)E(Y ) où E(XY ) =
+󲅉
+R2
+x y f (x, y)dxdy.
+Remarques :
+• On peut aussi définir les espérances de X et Y de la façon suivante :
+E(X) =
+󲅉
+R2
+x f (x, y)dxdy et E(Y ) =
+󲅉
+R2
+y f (x, y)dxdy.
+• Cov(X,X) = Var(X).
+Page 4/5
+PROPOSITION :
+Si X et Y sont indépendantes alors Cov(X,Y ) = 0.
+󲆊La réciproque de cette proposition est fausse!∗
+DÉMONSTRATION 3 :...
+Exemple 7 :
+1. ∗Soit (X ; Y ) le couple de v.a.r. suivant la loi uniforme sur le disque unité D(O; 1).
+Calculer Cov(X,Y ). Les variables X et Y sont-elles indépendantes ?
+2. Soit (X ; Y ) le couple de v.a.r. de densité la fonction f définie sur R2 par :
+f (x, y) = 21T (x, y) où T = {(x ; y) ∈ R2 ; 0 ≤ x ≤ 1,0 ≤ y ≤ 1,x + y ≤ 1}.
+Calculer Cov(X,Y ). Les variables X et Y sont-elles indépendantes ?
+Remarque :
+Lorsque X et Y sont des v.a.r. de carré intégrable, on appelle coefficient de corrélation de X et Y le réel
+ρ(X,Y ) =
+Cov(X,Y )
+σ(X)σ(Y )
+. Ce coefficient indique la « force » de la relation entre les deux variables.
+VI LOI DE LA SOMME DE DEUX VARIABLES ALÉATOIRES INDÉPENDANTES
+X et Y sont deux v.a.r. indépendantes de densité respective fX et fY .
+Notons Z = X +Y et déterminons la loi de Z.
+Soit FZ la fonction de répartition de Z.
+Pour z réel, FZ (z) = P(Z ≤ z) = P(X +Y ≤ z) =
+󲅉
+D
+f (x, y)dxdy où D = {(x ; y) ∈ R2 ; x + y ≤ z}.
+X et Y étant indépendantes, f (x, y) = fX (x) fY (y).
+Donc FZ (z) =
+󰁝
+R
+󰁝z−x
+−∞
+fY (y) fX (x)dydx =
+󰁝
+R
+󰀕󰁝z−x
+−∞
+fY (y)dy
+󰀖
+fX (x)dx.
+On pose t = x + y donc FZ (z) =
+󰁝
+R
+󰀕󰁝z
+−∞
+fY (t −x)dt
+󰀖
+fX (x)dx =
+󰁝z
+−∞
+󰀕󰁝
+R
+fY (t −x) fX (x)dx
+󰀖
+dt .
+Donc FZ (z) =
+󰁝z
+−∞
+h(t )dt avec h(t ) =
+󰁝
+R
+fY (t −x) fX (x)dx. Ainsi, fZ (z) = F′Z (z) = h(z).
+PROPOSITION :
+X et Y sont deux v.a.r. indépendantes de densités respectives fX et fY .
+Alors la variable aléatoire Z = X +Y est une variable aléatoire à densité fZ définie sur R par :
+fZ (z) =
+󰁝
+R
+fX (x) fY (z −x)dx.
+Remarque : On dit que la densité de Z est le produit de convolution des densitésmarginales.
+Exemple 8 :
+Soient X et Y deux v.a.r. indépendantes suivant la loi U[0 ;1].
+Déterminer la loi de la variable aléatoire Z = X +Y .
+Page 5/5

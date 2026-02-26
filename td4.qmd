@@ -1,0 +1,33 @@
+ECE LYON - ING 3 - ANNÉE 2022/2023
+TD DE MATHÉMATIQUES
+PROBABILITÉS ET STATISTIQUES
+TD4 - STATISTIQUES À UNE VARIABLE
+EXERCICE 1 :
+Le nombre de clients reçus chaque jour dans une boutique a été relevé pendant une semaine et voici les
+résultats :
+Jour lundi mardi mercredi jeudi vendredi samedi
+Nombre de clients 23 42 38 41 55 51
+Déterminer la moyenne, la variance et l’écart-type de la série.
+EXERCICE 2 :
+Voici un relevé des tirs au but marqués par des joueurs lors d’une campagne de tirs. Le tableau montre le
+nombre de tirs réussis sur 6 tirs :
+Tirs réussis 0 1 2 3 4 5 6
+Nombre de tireurs 3 15 9 11 8 4 2
+1. Déterminer la population, le caractère, et le type du caractère étudiés.
+2. Représenter cette série par un diagramme en bâtons.
+3. Déterminer les couples (mode, étendue), (médiane, écart interquartile) et (moyenne, écart-type) de
+cette série.
+EXERCICE 3 :
+Dans une région l’étude des exploitations agricoles a conduit au tableau suivant représentant le nombre
+d’exploitations en fonction de leur surface en hectare :
+Surface en ha [0;2[ [2;3[ [3;4[ [4;5[ [5;6[
+Nombre d’exploitations 15 25 30 25 5
+1. Déterminer la population, le caractère, et le type du caractère étudiés.
+2. Représenter cette série par un histogramme.
+3. Représenter la fonction de répartition de cette série.
+4. Calculer les couples (médiane, écart interquartile) et (moyenne, écart-type) de cette série.
+EXERCICE 4 :
+Un service de ressources humaines fait une étude statistique sur sa masse salariale S et trouve unemoyenne
+de 37000 euros et un écart-type de 700 euros. Pour faciliter les calcules le service pose Y = (S−35000)/1000.
+Que valent la moyenne, variance, et l’écart-type de cette nouvelle série?
+Page 1/1
