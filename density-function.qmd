@@ -1,288 +1,630 @@
-ECE LYON - ING 3
-COURS DE MATHÉMATIQUES
-PROBABILITÉS ET STATISTIQUES
-CHAPITRE 01 : LOIS À DENSITÉ
-Dans tout ce chapitre, nous nous plaçons dans un espace probabilisé quelconque (Ω,τ,P).
-I RAPPELS SUR LES INTÉGRALES GÉNÉRALISÉES
-Soit f une fonction définie sur R et continue parmorceaux (c.p.m).
-Soit a ∈ R.
-•
-󰁝
-+∞
-a
-f (t )dt converge si lim
-X→+∞
-󰁝X
-a
-f (t )dt est finie.
-•
-󰁝a
-−∞
-f (t )dt converge si lim
-X→−∞
-󰁝a
-X
-f (t )dt est finie.
-•
-󰁝
-+∞
-−∞
-f (t )dt converge si et seulement si il existe un réel a tel que
-󰁝
-+∞
-a
-f (t )dt et
-󰁝a
-−∞
-f (t )dt convergent.
-Remarque : Dans le cadre des intégrales généralisées, la propriété de linéarité de l’intégrale, la méthode
-d’intégration par parties et laméthode du changement de variable restent valables.
-Exemple 1
-1. Calculer I =
-󰁝
-+∞
-0
-e−4tdt .
-2. A l’aide d’une intégration par parties, calculer J =
-󰁝
-+∞
-0
-(x +1)e−xdx.
-3. A l’aide du changement de variable u =
-1
-x
-, calculer K =
-󰁝
-+∞
-1
-−1
-x2+x
-dx.
-Page 1/6
-II VARIABLES ALÉATOIRES RÉELLES ABSOLUMENT CONTINUES
-1. Densité de probabilité
-DÉFINITION :
-Une densité de probabilité f sur R est une fonction c.p.m., positive et telle que
-󰁝
-R
-f (x)dx = 1.
-DÉFINITION :
-Une variable aléatoire réelle (v.a.r.) X : Ω→R est dite absolument continue∗ s’il existe une densité de
-probabilité fX telle que pour tout I = [a ; b] ⊂ R, P(X ∈ [a ; b]) =
-󰁝b
-a
-fX (x)dx.
-Cette densité est caractéristique de la loi de X.
-∗ Une v.a.r. absolument continue est également appelée v.a.r. à densité.
-Remarques : Pour tous réels a et b,
-• P(X = a) =
-󰁝a
-a
-fX (x)dx = 0.
-• P(X ∈ [a ; b]) = P(X ∈]a ; b]) = P(X ∈ [a ; b[) = P(X ∈]a ; b[).
-2. Fonction de répartition
-DÉFINITION :
-La fonction de répartition de la v.a.r. X de densité fX est la fonction FX : R→[0 ; 1] définie par :
-FX (x) = P(X ≤ x) =
-󰁝x
-−∞
-fX (t )dt .
-Proposition :
-La fonction de répartition FX d’une v.a.r. à densité est croissante et continue sur R et telle que
-lim
-x→−∞
-FX (x) = 0 et lim
-x→+∞
-FX (x) = 1.
-Remarque : La fonction de répartition d’une variable aléatoire continue détermine la loi de cette variable.
-Exemple 2
-Soit a un réel strictement positif et soit f la fonction définie sur R par f (x) = ax21[0 ;2](x).∗
-1. Déterminer la valeur de a pour laquelle f est une densité de probabilité sur R.
-2. X est une variable aléatoire dont la loi de probabilité a pour densité la fonction f .
-a. Calculer P(X < 1,5).
-b. Déterminer la fonction de répartition de X.
-∗ Soit I un intervalle, on appelle indicatrice de I , la fonction 1 définie par : 1I (x) =
-󰀫
-1 si x ∈ I
-0 sinon
-.
-Remarque :
-Si X est une v.a.r. à densité alors pour tout intervalle [a ; b] inclus dans R : P(X ∈ [a ; b]) = FX (b)−FX (a).
-Page 2/6
-Exemple 3 : Retour sur les variables aléatoires discrètes
-1. Soit X une variable aléatoire suivant la loiB(p) avec p ∈]0 ; 1[.
-Déterminer la fonction de répartition de X et tracer sa représentation graphique.
-2. On lance un dé équilibré à six faces. On réalise un gain nul si l’on obtient 1, un gain de 1e si l’on obtient 2,
-3 ou 4 et un gain de 2e si le résultat est 5 ou 6.
-On note X la variable aléatoire égale au gain obtenu.
-a. Déterminer la loi de X.
-b. Déterminer la fonction de répartition de X et tracer sa représentation graphique.
-3. Expliquer pourquoi, dans chacune des situations précédentes, X n’est pas une variable aléatoire à densité.
-Remarque : Dans le cas discret, la fonction de répartition n’est pas continue sur R, elle est cependant continue
-à droite.
-3. Lois à densité classiques et à connaître
-LOI UNIFORME SUR UN INTERVALLE [a ; b] :
-• Dire qu’une v.a.r. X suit la loi uniforme sur [a ; b] (X 󲅦→U[a ;b]) signifie qu’elle admet pour densité la
-fonction fX définie sur R par :
-fX (x) =
-1
-b −a
-1[a ;b](x).
-• La fonction de répartition FX d’une v.a.r. suivant la loi U[a ;b] est définie par :
-FX (x) =
-󰀻 󰁁 󰁁 󰀿
-󰁁 󰁁 󰀽
-0 si x < a
-x −a
-b −a
-si a ≤ x ≤ b
-1 si x > b
-.
-DÉMONSTRATION 1 :...
-Exemple 4 :
-Dans un supermarché un jour de grande affluence, le temps d’attente T à la caisse, en minutes, suit la loi
-uniforme sur l’intervalle [2 ; 20].
-1. Définir la fonction densité de probabilité f de la loi de T .
-2. Quelle est la probabilité que le temps d’attente soit inférieur à un quart d’heure?
-Page 3/6
-LOI EXPONENTIELLE DE PARAMÈTRE λ > 0 :
-• Dire qu’une v.a.r. X suit la loi exponentielle de paramètre λ (X 󲅦→ E (λ)) signifie qu’elle admet pour
-densité la fonction fX définie sur R par fX (x) = λe−λx1[0 ;+∞[(x).
-• La fonction de répartition FX d’une v.a.r. suivant la loi E (λ) est définie par FX (x) =
-󰀫
-1−e−λx si x ≥ 0
-0 si x < 0
-.
-DÉMONSTRATION 2 :...
-Exemple 5 :
-X 󲅦→E (2). Calculer P(X ≥ 1), P(X = 1), P(X < 1), P(−1 ≤ X ≤ 3) et P(X ≤ −1).
-Remarque : D’autres lois à densité seront étudiées en TD et dans le prochain chapitre.
-4. Densité et fonction de répartition
-PROPOSITION :
-Soit X une variable aléatoire réelle.
-Si la fonction de répartition FX est dérivable presque partout alors X est une v.a.r. à densité.
-Dans ce cas, sa densité fX est la dérivée de FX : F′X (x) = fX (x).
-Exemple 6 :
-1. Soit X une variable aléatoire continue de fonction de répartition FX (x) =
-󰀻 󰀿
-󰀽
-0 si x < 1
-1−
-1
-x
-si x ≥ 1
-.
-Déterminer une densité de X.
-2. Soit Y une variable aléatoire continue de densité fY (x) =
-󰀻 󰁁 󰁁 󰁁 󰁁 󰀿
-󰁁 󰁁 󰁁 󰁁 󰀽
-0 si x ≤ 0
-1
-4󲅮x
-si 0 < x < 1
-1
-2x2 si 1 ≤ x
-.
-Déterminer la fonction de répartition FY de Y .
-Page 4/6
-III ESPÉRANCE ET VARIANCE D’UNE VARIABLE ALÉATOIRE À DENSITÉ
-1. Espérance
-DÉFINITION :
-Soit X une v.a.r. de densité fX .
-X est dite intégrable lorsque
-󰁝
-R |x|fX (x)dx converge.
-Dans ce cas, on appelle espérance de X, le réel noté E(X) et défini par : E(X) =
-󰁝
-R
-x fX (x)dx.
-Exemple 7 :
-1. Démontrer que la variable aléatoire X de l’exemple 6 n’admet pas d’espérance.
-2. Soit Y la variable aléatoire continue de densité fY (x) = e−x1[0 ;+∞[(x) .
-Y admet-elle une espérance? Si oui, la calculer.
-Remarque : On peut faire un parallèle avec les lois discrètes :
-X discrète P(X ∈ A) =
-󰁛
-x∈A
-P(X = x) E(X) =
-󰁛
-x∈X(Ω)
-xP(X = x)
-X absolument
-continue
-P(X ∈ [a ; b]) =
-󰁝b
-a
-fX (x)dx E(X) =
-󰁝
-R
-x fX (x)dx
-THÉORÈME DE TRANSFERT :
-Soit X une v.a.r. de densité fX .
-Soit h une fonction définie et c.p.m. sur R telle que h(X) est une variable aléatoire continue intégrable.
-Alors h(X) admet une espérance et on a : E[(h(X)] =
-󰁝
-R
-h(x) fX (x)dx.
-PROPOSITION : (conséquence du théorème de transfert)
-Soit X et Y deux v.a.r. intégrables et soit (λ; μ) ∈ R2.
-1. Linéarité : λX +μY est intégrable et E(λX +μY ) = λE(X)+μE(Y ).
-2. Positivité : Si X ≥ 0 alors E(X) ≥ 0.
-3. Croissance : Si Y ≥ X alors E(Y ) ≥ E(X).
-Exemple 8 : une utilisation du théorème de transfert
-Soit X 󲅦→U[0 ;1]. Déterminer par changement de variable la loi de la variable aléatoire Y =
-1
-X
-.
-Page 5/6
-Remarque :
-Si Y = g (X) et que, pour h fonction c.p.m. à support compact, E[(h(Y )] =
-󰁝
-R
-h(x) f (x)dx alors f est une
-densité de la v.a.r. Y = g (X).
-2. Variance
-DÉFINITION :
-Soit X une v.a.r. de densité fX .
-On dit que X est de carré intégrable lorsque E(X2) =
-󰁝
-R
-x2 fX (x)dx converge.
-Remarque :
-Lorsque X est de carré intégrable, on dit qu’elle possède un moment d’ordre 2. Dans ce cas, la variable X
-est alors intégrable (donc admet une espérance) et possède donc unmoment d’ordre 1.
-DÉFINITION :
-Soit X une v.a.r. de densité fX et de carré intégrable.
-On appelle variance de X, notée Var(X), l’espérance de la variable (X −E(X))2.
-Ainsi, par le théorème de transfert, Var(X) =
-󰁝
-R
-(x −E(X))2 fX (x)dx.
-FORMULE DE KÖNIG-HUYGENS : Var(X) = E(X2)−(E(X))2.
-DÉFINITION :
-Soit X une v.a.r. de carré intégrable.
-On appelle écart-type de X, le réel noté σ(X) et défini par : σ(X) =󲅮Var(X).
-Remarque :
-L’espérance et l’écart-type de X constituent un résumé intéressant de la répartition de X.
-L’espérance donne une idée de l’ordre de grandeur de la variable et l’écart-type une idée de la dispersion
-des valeurs X autour de l’espérance.
-Ces deux paramètres interviennent dans plusieurs inégalités que nous étudierons prochainement.
-3. Retour sur les lois classiques à connaître
-LOI UNIFORME SUR UN INTERVALLE [a ; b] :
-Si X 󲅦→U[a ;b] alors E(X) =
-a +b
-2
-et Var(X) =
-(b −a)2
-12
-.
-DÉMONSTRATION 3 :...
-LOI EXPONENTIELLE DE PARAMÈTRE λ > 0 :
-Si X 󲅦→E (λ) alors E(X) =
-1
-λ
-et Var(X) =
-1
-λ2 .
-DÉMONSTRATION 4 :...
-Page 6/6
+---
+title: "Lois à densité"
+abstract: |
+  Ce chapitre introduit les **variables aléatoires absolument continues**, qui
+  modélisent des grandeurs pouvant prendre n'importe quelle valeur dans un
+  intervalle — durées, distances, températures. Contrairement aux variables
+  discrètes, la probabilité d'observer une valeur exacte est toujours nulle ;
+  c'est la répartition de la probabilité sur des intervalles, décrite par une
+  **fonction densité**, qui porte toute l'information. Après un rappel sur les
+  **intégrales généralisées** (convergence, intégration par parties, changement
+  de variable), outils indispensables au calcul des probabilités et des moments,
+  on définit rigoureusement la densité de probabilité et la **fonction de
+  répartition**, et on établit leur lien fondamental : dériver l'une redonne
+  l'autre. Deux lois classiques sont présentées en détail — la **loi uniforme**
+  (équiprobabilité sur un intervalle) et la **loi exponentielle** (modèle de
+  durée sans mémoire) — avec leurs propriétés et leurs formules d'espérance et
+  de variance. Le chapitre se conclut sur le calcul de l'**espérance** et de la
+  **variance** au sens continu, via le théorème de transfert et la formule de
+  König-Huygens, en établissant le parallèle systématique avec le cas discret.
+date: 2026-03-03
+date-modified: 2026-03-04
+code-links:
+  href: worksheet-density-function.qmd
+---
+
+> Dans tout ce chapitre, nous nous plaçons dans un espace probabilisé quelconque $(\Omega, \mathcal{F}, P)$.
+
+## I — Rappels sur les intégrales généralisées
+
+Soit $f$ une fonction définie sur $\mathbb{R}$, continue par morceaux (c.p.m.), et soit $a \in \mathbb{R}$.
+
+::: {.callout-note}
+## Définitions — Convergence
+
+- $\displaystyle\int_a^{+\infty} f(t)\,dt$ **converge** si $\displaystyle\lim_{X \to +\infty} \int_a^X f(t)\,dt$ est finie.
+
+- $\displaystyle\int_{-\infty}^a f(t)\,dt$ **converge** si $\displaystyle\lim_{X \to -\infty} \int_X^a f(t)\,dt$ est finie.
+
+- $\displaystyle\int_{-\infty}^{+\infty} f(t)\,dt$ **converge** si et seulement s'il existe un réel $a$ tel que
+$\displaystyle\int_a^{+\infty} f(t)\,dt$ et $\displaystyle\int_{-\infty}^a f(t)\,dt$ convergent toutes les deux.
+:::
+
+L'idée fondamentale derrière ces définitions est qu'on ne sait pas calculer directement une intégrale sur un intervalle infini — l'infini n'est pas un nombre. On contourne cette difficulté en remplaçant la borne infinie par une borne finie $X$, qu'on fait tendre vers l'infini. Si l'aire accumulée sous la courbe se stabilise lorsque $X$ grandit indéfiniment, on dit que l'intégrale **converge**, et sa valeur est cette limite.
+
+Pour $\displaystyle\int_a^{+\infty} f(t)\,dt$, l'image à garder en tête est celle d'un explorateur qui avance vers la droite sur la courbe de $f$ : à chaque pas, il accumule de l'aire. Si au bout d'un voyage infini il a accumulé une aire totale finie, l'intégrale converge. Dans le cas contraire (la quantité d'aire devient arbitrairement grande), elle **diverge**.
+
+Pour $\displaystyle\int_{-\infty}^{+\infty} f(t)\,dt$, il est crucial de séparer l'intégrale en deux parties distinctes et d'exiger la convergence de **chacune** indépendamment. En effet, si l'on permettait de faire tendre les deux bornes simultanément vers $\pm\infty$, on pourrait créer des annulations artificielles entre des parties infinies de signe opposé : par exemple $\displaystyle\lim_{X\to+\infty}\int_{-X}^X t\,dt = 0$ alors que l'intégrale de $t$ sur $\mathbb{R}$ diverge. La convergence simultanée des deux demi-droites garantit que la valeur obtenue est robuste et ne dépend pas du découpage choisi.
+
+::: {.callout-tip}
+## Remarque
+
+Dans le cadre des intégrales généralisées, les propriétés suivantes restent valables :
+
+- **linéarité** de l'intégrale,
+- **intégration par parties**,
+- **changement de variable**.
+:::
+
+Ces trois outils hérités du calcul intégral classique s'étendent sans difficulté aux intégrales généralisées **à condition que les intégrales impliquées convergent**. En pratique, on les applique d'abord sur un intervalle borné $[a, X]$, puis on passe à la limite $X \to +\infty$ (ou $X \to -\infty$). La linéarité permet de décomposer des intégrales complexes en sommes plus simples ; l'intégration par parties transforme un produit difficile à intégrer directement ; le changement de variable permet de se ramener à une intégrale connue ou plus simple. Ces techniques seront systématiquement utilisées dans le calcul d'espérances et de variances en section III.
+
+::: {.callout-caution}
+## Exemple 1
+
+1. Calculer $\displaystyle I = \int_0^{+\infty} e^{-4t}\,dt$.
+
+2. À l'aide d'une intégration par parties, calculer $\displaystyle J = \int_0^{+\infty} (x+1)e^{-x}\,dx$.
+
+3. À l'aide du changement de variable $u = \dfrac{1}{x}$, calculer $\displaystyle K = \int_1^{+\infty} \frac{-1}{x^2 + x}\,dx$.
+:::
+
+::: {.callout-tip collapse="true"}
+## Solution — Exemple 1
+
+**1.** On calcule sur $[0, X]$ puis on passe à la limite :
+$$I = \lim_{X \to +\infty} \int_0^X e^{-4t}\,dt = \lim_{X \to +\infty} \left[-\frac{1}{4}e^{-4t}\right]_0^X = \lim_{X \to +\infty} \left(-\frac{1}{4}e^{-4X} + \frac{1}{4}\right) = \frac{1}{4}.$$
+
+**2.** On pose $u = x+1$ et $dv = e^{-x}\,dx$, d'où $du = dx$ et $v = -e^{-x}$ :
+$$J = \lim_{X\to+\infty}\Bigl[-(x+1)e^{-x}\Bigr]_0^X + \int_0^{+\infty} e^{-x}\,dx.$$
+Or $\lim_{X\to+\infty}(X+1)e^{-X} = 0$ (l'exponentielle l'emporte sur le polynôme), donc :
+$$J = \bigl(0 - (-(1))\bigr) + \Bigl[-e^{-x}\Bigr]_0^{+\infty} = 1 + \bigl(0-(-1)\bigr) = 1 + 1 = 2.$$
+
+**3.** On pose $u = \dfrac{1}{x}$, soit $x = \dfrac{1}{u}$, $dx = -\dfrac{1}{u^2}\,du$. Quand $x=1$, $u=1$ ; quand $x\to+\infty$, $u\to 0^+$. De plus :
+$$x^2 + x = \frac{1}{u^2} + \frac{1}{u} = \frac{1+u}{u^2}.$$
+Donc :
+$$K = \int_1^{+\infty} \frac{-1}{x^2+x}\,dx = \int_1^0 \frac{-u^2}{1+u}\cdot\frac{-1}{u^2}\,du = \int_1^0 \frac{1}{1+u}\,du = -\int_0^1 \frac{1}{1+u}\,du.$$
+$$K = -\Bigl[\ln(1+u)\Bigr]_0^1 = -(\ln 2 - \ln 1) = -\ln 2.$$
+:::
+
+---
+
+## II — Variables aléatoires réelles absolument continues
+
+### 1. Densité de probabilité
+
+::: {.callout-note}
+## Définition — Densité de probabilité
+
+Une **densité de probabilité** $f$ sur $\mathbb{R}$ est une fonction c.p.m., **positive** et telle que
+$$\int_{\mathbb{R}} f(x)\,dx = 1.$$
+:::
+
+Une densité de probabilité est une façon de **répartir l'unité de probabilité** sur toute la droite réelle. L'axiome fondamental des probabilités exige que $P(\Omega) = 1$ : quelque chose se produit forcément. Cette contrainte se traduit, pour une fonction densité, par l'égalité $\int_{\mathbb{R}} f(x)\,dx = 1$ : toute l'aire sous la courbe de $f$ vaut exactement 1.
+
+La condition de **positivité** est tout aussi essentielle : une probabilité ne peut pas être négative. Si $f$ prenait des valeurs négatives sur un intervalle, on obtiendrait $P(X \in [a,b]) < 0$, ce qui est absurde. Notons que $f(x)$ n'est pas une probabilité : c'est une **densité**, une probabilité par unité de longueur. Rien n'empêche $f(x)$ d'être supérieure à 1 en un point — seule l'aire doit valoir 1.
+
+Intuitivement, là où $f$ est grande, les valeurs de $X$ sont **concentrées** ; là où $f$ est petite ou nulle, elles sont **rares ou impossibles**. La densité décrit donc la forme de la distribution, comme un relevé topographique décrit le relief d'un terrain.
+
+::: {.callout-note}
+## Définition — Variable aléatoire à densité
+
+Une variable aléatoire réelle (v.a.r.) $X : \Omega \to \mathbb{R}$ est dite **absolument continue**^[Une v.a.r. absolument continue est également appelée **v.a.r. à densité**.] s'il existe une densité de probabilité $f_X$ telle que pour tout intervalle $[a\,;\,b] \subset \mathbb{R}$ :
+$$P(X \in [a\,;\,b]) = \int_a^b f_X(x)\,dx.$$
+
+Cette densité est caractéristique de la loi de $X$.
+:::
+
+Cette définition est le cœur de tout le chapitre. Elle établit un **dictionnaire de traduction** entre probabilités et intégrales : calculer la probabilité que $X$ prenne une valeur dans $[a, b]$ revient à calculer l'**aire sous la courbe** de $f_X$ entre $a$ et $b$.
+
+Le terme *absolument continue* vient de la théorie de la mesure : il signifie que la loi de $X$ ne charge aucun point isolé (contrairement aux lois discrètes). On peut comprendre cela intuitivement : une variable continue modélise une grandeur qui peut prendre n'importe quelle valeur dans un intervalle — une durée, une température, une taille — et la probabilité d'observer une valeur **exacte** est nulle (voir remarque ci-dessous).
+
+Le fait que la densité soit **caractéristique de la loi** signifie que deux densités différentes donnent deux lois différentes, et réciproquement : connaître $f_X$, c'est connaître parfaitement le comportement probabiliste de $X$.
+
+::: {.callout-tip}
+## Remarques
+
+Pour tous réels $a$ et $b$ :
+
+- $P(X = a) = \displaystyle\int_a^a f_X(x)\,dx = 0$.
+- $P(X \in [a\,;\,b]) = P(X \in\, ]a\,;\,b]) = P(X \in [a\,;\,b[) = P(X \in\, ]a\,;\,b[)$.
+:::
+
+La première remarque est à la fois surprenante et fondamentale : **la probabilité qu'une variable aléatoire continue prenne une valeur exacte est nulle**. Géométriquement, l'intégrale sur un intervalle de longueur nulle $[a, a]$ est nulle — un segment n'a pas d'aire. Probabilistiquement, cela reflète le fait que les variables continues modélisent des grandeurs physiques mesurées avec une précision finie : dire qu'un individu mesure exactement $1{,}75000\ldots$ m (avec infiniment de décimales) est un événement impossible.
+
+La deuxième remarque en découle immédiatement : puisque les extrémités $a$ et $b$ ont une probabilité nulle, les ouvrir ou les fermer ne change rien à la valeur de l'intégrale. C'est une différence majeure avec le cas discret, où $P(X \leq a)$ et $P(X < a)$ peuvent être différents.
+
+### 2. Fonction de répartition
+
+::: {.callout-note}
+## Définition — Fonction de répartition
+
+La **fonction de répartition** de la v.a.r. $X$ de densité $f_X$ est la fonction $F_X : \mathbb{R} \to [0\,;\,1]$ définie par :
+$$F_X(x) = P(X \leq x) = \int_{-\infty}^x f_X(t)\,dt.$$
+:::
+
+La fonction de répartition est un **outil universel** : elle s'applique à toutes les variables aléatoires, discrètes comme continues. Elle répond à la question naturelle : *quelle est la probabilité que $X$ soit inférieure ou égale à $x$ ?*
+
+Pour une v.a.r. à densité, $F_X(x)$ est l'aire sous la courbe de $f_X$ de $-\infty$ jusqu'à $x$. On peut la voir comme une **primitive** de $f_X$ : elle accumule progressivement la probabilité de gauche à droite, comme un réservoir qui se remplit. Plus $x$ augmente, plus on balaye de terrain, et plus $F_X(x)$ augmente.
+
+La variable d'intégration est notée $t$ (et non $x$) pour éviter toute confusion avec la borne supérieure d'intégration $x$ : $t$ est une variable muette qui disparaît après le calcul.
+
+::: {.callout-important}
+## Proposition
+
+La fonction de répartition $F_X$ d'une v.a.r. à densité est **croissante** et **continue** sur $\mathbb{R}$, et vérifie :
+$$\lim_{x \to -\infty} F_X(x) = 0 \qquad \text{et} \qquad \lim_{x \to +\infty} F_X(x) = 1.$$
+
+De plus, pour tout intervalle $[a\,;\,b] \subset \mathbb{R}$ :
+$$P(X \in [a\,;\,b]) = F_X(b) - F_X(a).$$
+:::
+
+Ces propriétés ont toutes une explication intuitive claire.
+
+**Croissance** : si $x_1 < x_2$, alors l'événement $\{X \leq x_1\}$ est inclus dans $\{X \leq x_2\}$ ; donc $F_X(x_1) \leq F_X(x_2)$. En termes d'intégrale, on accumule plus d'aire en allant plus loin à droite.
+
+**Continuité** : c'est une propriété propre aux v.a.r. à densité, qui les distingue des v.a. discrètes. Elle est garantie par le fait que $F_X$ est une intégrale (donc une fonction différentiable presque partout), et que les points isolés n'ont aucun poids.
+
+**Limites** : $\lim_{x\to-\infty} F_X(x) = 0$ signifie qu'il est impossible que $X$ prenne une valeur infiniment petite — l'événement $\{X \leq -\infty\}$ est vide. À l'opposé, $\lim_{x\to+\infty} F_X(x) = 1$ traduit la certitude : $X$ prend nécessairement une valeur finie quelque part sur $\mathbb{R}$, et toute la probabilité est contenue dans $\mathbb{R}$.
+
+**Formule de l'intervalle** $P(X \in [a,b]) = F_X(b) - F_X(a)$ : c'est la conséquence directe du **théorème fondamental de l'analyse**. Puisque $F_X$ est une primitive de $f_X$, on a :
+$$\int_a^b f_X(x)\,dx = F_X(b) - F_X(a).$$
+En pratique, cette formule est extraordinairement utile : pour calculer une probabilité sur un intervalle, il suffit de deux évaluations de $F_X$, sans avoir à recalculer une intégrale.
+
+::: {.callout-tip}
+## Remarque
+
+La fonction de répartition d'une variable aléatoire continue **détermine entièrement** sa loi.
+:::
+
+Ce résultat signifie que $F_X$ contient autant d'information que $f_X$ : connaître l'une permet de retrouver l'autre (par dérivation, voir section 4). Deux variables aléatoires ayant la même fonction de répartition ont la même loi, c'est-à-dire la même distribution des probabilités.
+
+::: {.callout-caution}
+## Exemple 2
+
+Soit $a$ un réel strictement positif et soit $f$ la fonction définie sur $\mathbb{R}$ par $f(x) = a x^2 \cdot \mathbf{1}_{[0\,;\,2]}(x)$.^[Soit $I$ un intervalle ; on appelle **indicatrice** de $I$ la fonction $\mathbf{1}_I$ définie par $\mathbf{1}_I(x) = 1$ si $x \in I$, $0$ sinon.]
+
+1. Déterminer la valeur de $a$ pour laquelle $f$ est une densité de probabilité sur $\mathbb{R}$.
+2. $X$ est une variable aléatoire de densité $f$.
+   a. Calculer $P(X < 1{,}5)$.
+   b. Déterminer la fonction de répartition $F_X$.
+:::
+
+::: {.callout-tip collapse="true"}
+## Solution — Exemple 2
+
+**1.** $f$ est positive (car $a > 0$ et $x^2 \geq 0$) et continue par morceaux. Il reste à imposer $\int_\mathbb{R} f(x)\,dx = 1$ :
+$$\int_\mathbb{R} f(x)\,dx = \int_0^2 ax^2\,dx = a\left[\frac{x^3}{3}\right]_0^2 = a \cdot \frac{8}{3}.$$
+Donc $a \cdot \frac{8}{3} = 1$, d'où $\boxed{a = \dfrac{3}{8}}$.
+
+**2a.** Puisque $1{,}5 \in [0\,;\,2]$ et que $f$ est nulle sur $]-\infty\,;\,0[$ :
+$$P(X < 1{,}5) = \int_0^{1{,}5} \frac{3}{8}x^2\,dx = \frac{3}{8}\left[\frac{x^3}{3}\right]_0^{1{,}5} = \frac{1}{8}(1{,}5)^3 = \frac{1}{8}\cdot\frac{27}{8} = \frac{27}{64}.$$
+
+**2b.** On distingue trois cas :
+
+- Si $x < 0$ : $F_X(x) = \int_{-\infty}^x 0\,dt = 0$.
+
+- Si $0 \leq x \leq 2$ : $F_X(x) = \int_0^x \frac{3}{8}t^2\,dt = \frac{3}{8}\left[\frac{t^3}{3}\right]_0^x = \dfrac{x^3}{8}$.
+
+- Si $x > 2$ : $F_X(x) = 1$ (toute la probabilité a été accumulée).
+
+On vérifie la continuité en $x=2$ : $\dfrac{2^3}{8} = 1$ ✓. Donc :
+$$F_X(x) = \begin{cases} 0 & \text{si } x < 0, \\ \dfrac{x^3}{8} & \text{si } 0 \leq x \leq 2, \\ 1 & \text{si } x > 2. \end{cases}$$
+:::
+
+::: {.callout-caution}
+## Exemple 3 — Retour sur les variables aléatoires discrètes
+
+1. Soit $X$ une variable aléatoire suivant la loi $\mathcal{B}(p)$ avec $p \in\, ]0\,;\,1[$. Déterminer la fonction de répartition de $X$ et tracer sa représentation graphique.
+
+2. On lance un dé équilibré à six faces. On réalise un gain nul si l'on obtient 1, un gain de $1$€ si l'on obtient 2, 3 ou 4, et un gain de $2$€ si le résultat est 5 ou 6. On note $X$ la variable aléatoire égale au gain obtenu.
+   a. Déterminer la loi de $X$.
+   b. Déterminer la fonction de répartition de $X$ et tracer sa représentation graphique.
+
+3. Expliquer pourquoi, dans chacune des situations précédentes, $X$ n'est pas une variable aléatoire à densité.
+:::
+
+::: {.callout-tip collapse="true"}
+## Solution — Exemple 3
+
+**1.** $X \sim \mathcal{B}(p)$ prend les valeurs $0$ et $1$ avec $P(X=0) = 1-p$ et $P(X=1) = p$.
+
+$$F_X(x) = \begin{cases} 0 & \text{si } x < 0, \\ 1-p & \text{si } 0 \leq x < 1, \\ 1 & \text{si } x \geq 1. \end{cases}$$
+
+C'est une fonction en escalier avec deux paliers, présentant des sauts en $x=0$ (hauteur $1-p$) et en $x=1$ (hauteur $p$).
+
+**2a.** Les résultats $\{5, 6\}$ donnent $X=2$ (2 faces sur 6), $\{2,3,4\}$ donnent $X=1$ (3 faces), et $\{1\}$ donne $X=0$ (1 face) :
+
+| $k$ | $0$ | $1$ | $2$ |
+|:---:|:---:|:---:|:---:|
+| $P(X=k)$ | $\dfrac{1}{6}$ | $\dfrac{1}{2}$ | $\dfrac{1}{3}$ |
+
+**2b.**
+
+$$F_X(x) = \begin{cases} 0 & \text{si } x < 0, \\ \dfrac{1}{6} & \text{si } 0 \leq x < 1, \\ \dfrac{2}{3} & \text{si } 1 \leq x < 2, \\ 1 & \text{si } x \geq 2. \end{cases}$$
+
+**3.** Dans les deux cas, $F_X$ n'est **pas continue** sur $\mathbb{R}$ : elle présente des sauts aux valeurs prises par $X$. Or une v.a.r. à densité possède nécessairement une fonction de répartition continue (car $F_X$ est alors une primitive de $f_X$, donc continue). Ces variables aléatoires discrètes ne peuvent donc pas être à densité.
+:::
+
+::: {.callout-tip}
+## Remarque
+
+Dans le cas discret, la fonction de répartition n'est pas continue sur $\mathbb{R}$ ; elle est cependant **continue à droite**.
+:::
+
+La discontinuité de $F_X$ dans le cas discret est précisément ce qui distingue les deux types de variables. Pour une v.a. discrète, la probabilité se concentre en des points isolés, créant des **sauts** dans la fonction de répartition : la hauteur du saut en $x_0$ vaut exactement $P(X = x_0)$. Si $X$ était à densité, ces sauts seraient tous nuls, et $F_X$ serait continue.
+
+### 3. Lois à densité classiques
+
+#### Loi uniforme sur $[a\,;\,b]$
+
+::: {.callout-note}
+## Définition — Loi $\mathcal{U}([a\,;\,b])$
+
+Dire qu'une v.a.r. $X$ suit la **loi uniforme** sur $[a\,;\,b]$ (noté $X \sim \mathcal{U}([a\,;\,b])$) signifie qu'elle admet pour densité :
+$$f_X(x) = \frac{1}{b-a}\,\mathbf{1}_{[a\,;\,b]}(x).$$
+
+Sa fonction de répartition est :
+$$F_X(x) = \begin{cases} 0 & \text{si } x < a, \\ \dfrac{x-a}{b-a} & \text{si } a \leq x \leq b, \\ 1 & \text{si } x > b. \end{cases}$$
+:::
+
+La loi uniforme est la loi de **l'équiprobabilité continue** : elle modélise une situation où aucune valeur de l'intervalle $[a, b]$ n'est favorisée par rapport aux autres. La densité est donc **constante** sur $[a, b]$, et nulle en dehors.
+
+La valeur $\frac{1}{b-a}$ de cette constante s'impose naturellement : pour que l'aire totale du rectangle de base $(b-a)$ et de hauteur $h$ vaille 1, il faut $h \times (b-a) = 1$, soit $h = \frac{1}{b-a}$. Plus l'intervalle est large, plus la densité est faible : la probabilité est "diluée" sur un grand intervalle. À l'inverse, un intervalle court concentre la densité en une valeur élevée.
+
+Pour la **fonction de répartition** : avant $a$, aucune probabilité n'a été accumulée ($X$ ne peut pas être inférieure à $a$), donc $F_X(x) = 0$. Après $b$, toute la probabilité a été accumulée, donc $F_X(x) = 1$. Entre $a$ et $b$, la probabilité s'accumule **linéairement** : la quantité $\frac{x-a}{b-a}$ représente la **fraction de l'intervalle** $[a, b]$ déjà parcourue depuis $a$. Lorsque $x = a$, cette fraction vaut 0 ; lorsque $x = b$, elle vaut 1.
+
+*Démonstration :* *(à compléter)*
+
+::: {.callout-caution}
+## Exemple 4
+
+Dans un supermarché un jour de grande affluence, le temps d'attente $T$ à la caisse (en minutes) suit la loi uniforme sur $[2\,;\,20]$.
+
+1. Définir la densité de probabilité $f$ de la loi de $T$.
+2. Quelle est la probabilité que le temps d'attente soit inférieur à un quart d'heure ?
+:::
+
+::: {.callout-tip collapse="true"}
+## Solution — Exemple 4
+
+**1.** $T \sim \mathcal{U}([2\,;\,20])$, donc sa densité est la fonction constante sur $[2\,;\,20]$ de valeur $\dfrac{1}{20-2} = \dfrac{1}{18}$ :
+$$f(t) = \frac{1}{18}\,\mathbf{1}_{[2\,;\,20]}(t).$$
+
+**2.** Un quart d'heure correspond à $15$ minutes. Puisque $15 \in [2\,;\,20]$ :
+$$P(T < 15) = \int_2^{15} \frac{1}{18}\,dt = \frac{15 - 2}{18} = \frac{13}{18} \approx 72{,}2\%.$$
+:::
+
+#### Loi exponentielle de paramètre $\lambda > 0$
+
+::: {.callout-note}
+## Définition — Loi $\mathcal{E}(\lambda)$
+
+Dire qu'une v.a.r. $X$ suit la **loi exponentielle** de paramètre $\lambda$ (noté $X \sim \mathcal{E}(\lambda)$) signifie qu'elle admet pour densité :
+$$f_X(x) = \lambda e^{-\lambda x}\,\mathbf{1}_{[0\,;\,+\infty[}(x).$$
+
+Sa fonction de répartition est :
+$$F_X(x) = \begin{cases} 1 - e^{-\lambda x} & \text{si } x \geq 0, \\ 0 & \text{si } x < 0. \end{cases}$$
+:::
+
+La loi exponentielle est la loi de **l'attente sans mémoire** : elle modélise le temps qui s'écoule entre deux événements dans un processus de Poisson (pannes d'une machine, arrivées de clients, désintégrations radioactives, etc.). Sa caractéristique fondamentale — appelée **propriété d'absence de mémoire** — est que si l'on sait que l'événement ne s'est pas encore produit, cela ne change pas la distribution du temps d'attente restant.
+
+Dans la densité $f_X(x) = \lambda e^{-\lambda x}$, le facteur $\lambda$ joue deux rôles :
+
+- Il assure la normalisation : $\int_0^{+\infty} \lambda e^{-\lambda x}\,dx = 1$.
+- Il contrôle la **vitesse de décroissance**. Un grand $\lambda$ signifie que les événements sont fréquents : la densité décroît vite, les longues attentes sont très peu probables. Un petit $\lambda$ correspond à des événements rares : la densité décroît lentement, des attentes longues sont plausibles.
+
+La densité est nulle sur $]-\infty, 0[$ car on modélise un **temps d'attente** : il ne peut pas être négatif.
+
+Pour la **fonction de répartition** : $F_X(x) = 1 - e^{-\lambda x}$ pour $x \geq 0$. On peut la lire comme la probabilité que l'événement se soit déjà produit avant l'instant $x$. Lorsque $x \to +\infty$, $e^{-\lambda x} \to 0$ et $F_X(x) \to 1$ : l'événement finit toujours par se produire. La dérivée de $F_X$ redonne bien $f_X$ : $F_X'(x) = \lambda e^{-\lambda x}$.
+
+*Démonstration :* *(à compléter)*
+
+::: {.callout-caution}
+## Exemple 5
+
+Soit $X \sim \mathcal{E}(2)$. Calculer $P(X \geq 1)$, $P(X = 1)$, $P(X < 1)$, $P(-1 \leq X \leq 3)$ et $P(X \leq -1)$.
+:::
+
+::: {.callout-tip collapse="true"}
+## Solution — Exemple 5
+
+Pour $X \sim \mathcal{E}(2)$, on dispose de $F_X(x) = 1 - e^{-2x}$ pour $x \geq 0$, et $F_X(x) = 0$ pour $x < 0$.
+
+- $P(X \geq 1) = 1 - F_X(1) = 1 - (1-e^{-2}) = e^{-2} \approx 0{,}135$.
+
+- $P(X = 1) = 0$ : toute variable aléatoire à densité attribue une probabilité nulle à tout point isolé.
+
+- $P(X < 1) = F_X(1) = 1 - e^{-2} \approx 0{,}865$.
+
+- $P(-1 \leq X \leq 3) = F_X(3) - F_X(-1)$. Or $F_X(-1) = 0$ car $-1 < 0$, et $F_X(3) = 1 - e^{-6}$. Donc :
+$$P(-1 \leq X \leq 3) = 1 - e^{-6} \approx 0{,}998.$$
+
+- $P(X \leq -1) = F_X(-1) = 0$ : $X$ modélise un temps d'attente, elle ne peut être négative.
+:::
+
+::: {.callout-tip}
+## Remarque
+
+D'autres lois à densité seront étudiées en TD et dans le prochain chapitre.
+:::
+
+### 4. Lien entre densité et fonction de répartition
+
+::: {.callout-important}
+## Proposition
+
+Soit $X$ une variable aléatoire réelle. Si la fonction de répartition $F_X$ est **dérivable presque partout**, alors $X$ est une v.a.r. à densité et :
+$$F_X'(x) = f_X(x).$$
+:::
+
+Cette proposition est une application directe du **théorème fondamental de l'analyse** aux variables aléatoires : si $F_X(x) = \int_{-\infty}^x f_X(t)\,dt$ est une primitive de $f_X$, alors sa dérivée redonne $f_X$.
+
+La formule $F_X' = f_X$ établit une **réciprocité** entre les deux objets centraux du chapitre :
+
+- **De la densité à la fonction de répartition** : on intègre — $F_X(x) = \int_{-\infty}^x f_X(t)\,dt$.
+- **De la fonction de répartition à la densité** : on dérive — $f_X(x) = F_X'(x)$.
+
+La précision "*presque partout*" est importante : on tolère que $F_X$ ne soit pas dérivable en un nombre fini de points (par exemple aux jonctions d'une densité définie par morceaux). En ces points, la valeur de la densité est sans importance pour le calcul des probabilités, car une intégrale est insensible à la valeur d'une fonction en un nombre fini de points.
+
+En pratique, cette dualité est extrêmement utile. Parfois la densité est connue et on cherche $F_X$ (par intégration) ; parfois c'est $F_X$ qui est donnée et on cherche $f_X$ (par dérivation). Les exemples 2 et 6 illustrent ces deux directions.
+
+::: {.callout-caution}
+## Exemple 6
+
+1. Soit $X$ une variable aléatoire continue de fonction de répartition :
+$$F_X(x) = \begin{cases} 0 & \text{si } x < 1, \\ 1 - \dfrac{1}{x} & \text{si } x \geq 1. \end{cases}$$
+Déterminer une densité de $X$.
+
+2. Soit $Y$ une variable aléatoire continue de densité :
+$$f_Y(x) = \begin{cases} 0 & \text{si } x \leq 0, \\ \dfrac{1}{4\sqrt{x}} & \text{si } 0 < x < 1, \\ \dfrac{1}{2x^2} & \text{si } x \geq 1. \end{cases}$$
+Déterminer la fonction de répartition $F_Y$ de $Y$.
+:::
+
+::: {.callout-tip collapse="true"}
+## Solution — Exemple 6
+
+**1.** $F_X$ est dérivable sur $]-\infty\,;\,1[$ (où elle vaut 0) et sur $]1\,;\,+\infty[$ (où elle vaut $1 - 1/x$). On dérive :
+$$f_X(x) = F_X'(x) = \frac{1}{x^2}\quad\text{pour }x > 1,\qquad f_X(x) = 0\quad\text{pour }x < 1.$$
+
+Une densité de $X$ est donc $f_X(x) = \dfrac{1}{x^2}\,\mathbf{1}_{[1\,;\,+\infty[}(x)$.
+
+*Vérification :* $f_X \geq 0$ ✓ et $\displaystyle\int_1^{+\infty}\frac{1}{x^2}\,dx = \left[-\frac{1}{x}\right]_1^{+\infty} = 0 - (-1) = 1$ ✓.
+
+**2.** On intègre $f_Y$ par morceaux :
+
+- Pour $x \leq 0$ : $F_Y(x) = 0$.
+
+- Pour $0 < x < 1$ :
+$$F_Y(x) = \int_0^x \frac{1}{4\sqrt{t}}\,dt = \frac{1}{4}\Bigl[2\sqrt{t}\Bigr]_0^x = \frac{\sqrt{x}}{2}.$$
+
+- Pour $x \geq 1$ : on accumule la probabilité déjà obtenue en $x=1$, puis on intègre $f_Y$ sur $[1\,;\,x]$. Or $F_Y(1) = \frac{\sqrt{1}}{2} = \frac{1}{2}$, et :
+$$F_Y(x) = \frac{1}{2} + \int_1^x \frac{1}{2t^2}\,dt = \frac{1}{2} + \frac{1}{2}\left[-\frac{1}{t}\right]_1^x = \frac{1}{2} + \frac{1}{2}\!\left(1-\frac{1}{x}\right) = 1 - \frac{1}{2x}.$$
+
+*Vérification :* $F_Y$ est continue en $x=1$ (les deux expressions donnent $1/2$) ✓, et $\lim_{x\to+\infty}F_Y(x) = 1$ ✓.
+
+$$F_Y(x) = \begin{cases} 0 & \text{si } x \leq 0, \\ \dfrac{\sqrt{x}}{2} & \text{si } 0 < x < 1, \\ 1 - \dfrac{1}{2x} & \text{si } x \geq 1. \end{cases}$$
+:::
+
+---
+
+## III — Espérance et variance d'une variable aléatoire à densité
+
+### 1. Espérance
+
+::: {.callout-note}
+## Définition — Espérance
+
+Soit $X$ une v.a.r. de densité $f_X$.
+
+$X$ est dite **intégrable** lorsque $\displaystyle\int_{\mathbb{R}} |x|\,f_X(x)\,dx$ converge.
+
+Dans ce cas, on appelle **espérance** de $X$ le réel :
+$$\mathbb{E}(X) = \int_{\mathbb{R}} x\,f_X(x)\,dx.$$
+:::
+
+L'espérance est la **valeur moyenne** de $X$ : si l'on répétait l'expérience un très grand nombre de fois et qu'on calculait la moyenne des valeurs observées, on obtiendrait une valeur proche de $\mathbb{E}(X)$ (c'est la loi des grands nombres). C'est aussi le **centre de gravité** de la distribution : si l'on plaçait la courbe de $f_X$ sur un axe horizontal et qu'on cherchait le point d'équilibre, ce serait $\mathbb{E}(X)$.
+
+La formule $\mathbb{E}(X) = \int_{\mathbb{R}} x\,f_X(x)\,dx$ est le passage naturel de la somme discrète $\sum_k x_k P(X = x_k)$ au continu. On pondère chaque valeur possible $x$ par son "poids infinitésimal" $f_X(x)\,dx$, qui représente la probabilité que $X$ soit dans le petit intervalle $[x, x+dx]$.
+
+La condition d'**intégrabilité** $\int_{\mathbb{R}} |x|\,f_X(x)\,dx < +\infty$ est indispensable pour que $\mathbb{E}(X)$ soit bien définie. Sans elle, l'intégrale $\int_{\mathbb{R}} x\,f_X(x)\,dx$ pourrait ne pas converger, ou donner une valeur qui dépend de l'ordre d'intégration. On exige la convergence absolue (avec $|x|$ au lieu de $x$) pour garantir la stabilité du résultat. Il existe des distributions célèbres, comme la **loi de Cauchy**, qui ont une densité parfaitement régulière mais dont l'espérance n'existe pas — parce que les queues de la distribution sont trop lourdes.
+
+::: {.callout-tip}
+## Parallèle avec les variables discrètes
+
+|  | $P(X \in A)$ | $\mathbb{E}(X)$ |
+|---|---|---|
+| $X$ discrète | $\displaystyle\sum_{x \in A} P(X=x)$ | $\displaystyle\sum_{x \in X(\Omega)} x\,P(X=x)$ |
+| $X$ absolument continue | $\displaystyle\int_a^b f_X(x)\,dx$ | $\displaystyle\int_{\mathbb{R}} x\,f_X(x)\,dx$ |
+:::
+
+Ce tableau met en évidence la **symétrie profonde** entre les deux mondes. Le passage du discret au continu remplace la somme sur les valeurs possibles par une intégrale, et la probabilité ponctuelle $P(X = x)$ par la densité $f_X(x)\,dx$ — la masse infinitésimale portée par l'intervalle $[x, x+dx]$. Toutes les formules du cas discret ont un analogue intégral dans le cas continu, et les intuitions se transfèrent directement.
+
+::: {.callout-caution}
+## Exemple 7
+
+1. Démontrer que la variable aléatoire $X$ de l'exemple 6 n'admet pas d'espérance.
+2. Soit $Y$ une variable aléatoire continue de densité $f_Y(x) = e^{-x}\,\mathbf{1}_{[0\,;\,+\infty[}(x)$. $Y$ admet-elle une espérance ? Si oui, la calculer.
+:::
+
+::: {.callout-tip collapse="true"}
+## Solution — Exemple 7
+
+**1.** La densité de $X$ (exemple 6) est $f_X(x) = \dfrac{1}{x^2}\,\mathbf{1}_{[1\,;\,+\infty[}(x)$. On teste l'intégrabilité :
+$$\int_\mathbb{R} |x|\,f_X(x)\,dx = \int_1^{+\infty} x \cdot \frac{1}{x^2}\,dx = \int_1^{+\infty} \frac{1}{x}\,dx = \lim_{M\to+\infty}\ln M = +\infty.$$
+L'intégrale diverge : $X$ n'est **pas intégrable**, et n'admet donc pas d'espérance.
+
+**2.** La densité $f_Y(x) = e^{-x}\,\mathbf{1}_{[0\,;\,+\infty[}(x)$ est celle de la loi $\mathcal{E}(1)$. Vérifions l'intégrabilité :
+$$\int_0^{+\infty} x\,e^{-x}\,dx < +\infty\quad\text{(l'exponentielle l'emporte sur tout polynôme)}.$$
+On calcule par une intégration par parties avec $u = x$, $dv = e^{-x}\,dx$ :
+$$\mathbb{E}(Y) = \int_0^{+\infty} x\,e^{-x}\,dx = \Bigl[-xe^{-x}\Bigr]_0^{+\infty} + \int_0^{+\infty} e^{-x}\,dx = 0 + \Bigl[-e^{-x}\Bigr]_0^{+\infty} = 0-(-1) = 1.$$
+
+$Y$ admet une espérance et $\mathbb{E}(Y) = 1$, ce qui est cohérent avec $Y \sim \mathcal{E}(1)$ et la formule $\mathbb{E} = 1/\lambda$.
+:::
+
+::: {.callout-important}
+## Théorème de transfert
+
+Soit $X$ une v.a.r. de densité $f_X$, et $h$ une fonction c.p.m. sur $\mathbb{R}$ telle que $h(X)$ est intégrable. Alors :
+$$\mathbb{E}[h(X)] = \int_{\mathbb{R}} h(x)\,f_X(x)\,dx.$$
+:::
+
+Le théorème de transfert est l'un des résultats les plus puissants et les plus utilisés du cours. Son message est simple : **pour calculer l'espérance d'une fonction $h(X)$, il n'est pas nécessaire de connaître la loi de $h(X)$**. On peut rester dans le monde de $X$ et intégrer directement $h(x)$ contre la densité $f_X$.
+
+Sans ce théorème, il faudrait, pour calculer par exemple $\mathbb{E}(X^2)$, d'abord déterminer la loi de $X^2$ (ce qui peut être laborieux), puis calculer son espérance. Le théorème de transfert court-circuite cette étape : $\mathbb{E}(X^2) = \int_{\mathbb{R}} x^2 f_X(x)\,dx$, directement.
+
+Ce théorème est la justification rigoureuse des formules de la variance et des moments que nous utiliserons ensuite. En particulier, il permet de définir $\mathbb{E}(X^2)$, $\mathbb{E}(X^3)$, et plus généralement tout **moment d'ordre $n$** : $\mathbb{E}(X^n) = \int_{\mathbb{R}} x^n f_X(x)\,dx$.
+
+::: {.callout-important}
+## Proposition — Conséquences du théorème de transfert
+
+Soient $X$ et $Y$ deux v.a.r. intégrables et $(\lambda, \mu) \in \mathbb{R}^2$.
+
+1. **Linéarité :** $\lambda X + \mu Y$ est intégrable et $\mathbb{E}(\lambda X + \mu Y) = \lambda\,\mathbb{E}(X) + \mu\,\mathbb{E}(Y)$.
+2. **Positivité :** si $X \geq 0$ alors $\mathbb{E}(X) \geq 0$.
+3. **Croissance :** si $Y \geq X$ alors $\mathbb{E}(Y) \geq \mathbb{E}(X)$.
+:::
+
+Ces trois propriétés sont les piliers de l'algèbre des espérances.
+
+**Linéarité** : l'espérance se comporte comme une **intégrale** — c'est d'ailleurs ce qu'elle est. Doubler une variable double son espérance ; la somme de deux variables a pour espérance la somme des espérances, **qu'elles soient indépendantes ou non**. Cette dernière remarque est cruciale : la linéarité de l'espérance est inconditionnelle, ce qui n'est pas le cas pour la variance.
+
+**Positivité** : une variable qui ne prend que des valeurs positives a une espérance positive. C'est cohérent avec l'interprétation de l'espérance comme centre de gravité : si toutes les masses sont positives, leur centre de gravité l'est aussi.
+
+**Croissance** : si $Y$ est "plus grande" que $X$ valeur par valeur (en probabilité), alors en moyenne $Y$ est plus grande. C'est la traduction probabiliste de la **monotonie de l'intégrale** : si $h_1(x) \leq h_2(x)$ pour tout $x$, alors $\int h_1 \leq \int h_2$.
+
+::: {.callout-caution}
+## Exemple 8 — Application du théorème de transfert
+
+Soit $X \sim \mathcal{U}([0\,;\,1])$. Déterminer par changement de variable la loi de la variable aléatoire $Y = \dfrac{1}{X}$.
+:::
+
+::: {.callout-tip collapse="true"}
+## Solution — Exemple 8
+
+Puisque $X \sim \mathcal{U}([0\,;\,1])$, $X$ prend ses valeurs dans $]0\,;\,1]$ presque sûrement, donc $Y = 1/X$ prend ses valeurs dans $[1\,;\,+\infty[$.
+
+**Méthode : calcul de la fonction de répartition de $Y$.**
+
+Pour $y \geq 1$ (sinon $F_Y(y) = 0$) :
+$$F_Y(y) = P(Y \leq y) = P\!\left(\frac{1}{X} \leq y\right) = P\!\left(X \geq \frac{1}{y}\right) = 1 - P\!\left(X < \frac{1}{y}\right).$$
+Puisque $1/y \in ]0\,;\,1]$ pour $y \geq 1$ et que $F_X(t) = t$ sur $[0\,;\,1]$ :
+$$F_Y(y) = 1 - \frac{1}{y}.$$
+
+On en déduit la densité de $Y$ en dérivant :
+$$f_Y(y) = F_Y'(y) = \frac{1}{y^2}\,\mathbf{1}_{[1\,;\,+\infty[}(y).$$
+
+**Vérification via le théorème de transfert** (changement de variable $y = 1/x$) :
+
+Pour toute fonction $h$ c.p.m. à support compact :
+$$\mathbb{E}[h(Y)] = \mathbb{E}\!\left[h\!\left(\frac{1}{X}\right)\right] = \int_0^1 h\!\left(\frac{1}{x}\right)\cdot 1\,dx.$$
+On pose $y = 1/x$, d'où $x = 1/y$, $dx = -1/y^2\,dy$, et les bornes $x : 0^+ \to 1$ deviennent $y : +\infty \to 1$ :
+$$\mathbb{E}[h(Y)] = \int_{+\infty}^1 h(y)\cdot\frac{-1}{y^2}\,dy = \int_1^{+\infty} h(y)\cdot\frac{1}{y^2}\,dy.$$
+Par identification, $f_Y(y) = \dfrac{1}{y^2}\,\mathbf{1}_{[1\,;\,+\infty[}(y)$ ✓. C'est la même densité que la variable $X$ de l'exemple 6 (loi de Pareto de paramètre 1).
+:::
+
+::: {.callout-tip}
+## Remarque
+
+Si $Y = g(X)$ et que, pour toute fonction $h$ c.p.m. à support compact,
+$\mathbb{E}[h(Y)] = \displaystyle\int_{\mathbb{R}} h(x)\,f(x)\,dx$,
+alors $f$ est une densité de la v.a.r. $Y = g(X)$.
+:::
+
+Cette remarque fournit une méthode générale pour trouver la densité d'une variable transformée : si l'on arrive à exprimer $\mathbb{E}[h(Y)]$ comme une intégrale de la forme $\int h(x) f(x)\,dx$ pour toute fonction test $h$, alors $f$ est la densité de $Y$. C'est le principe utilisé dans l'exemple 8 et dans de nombreuses applications.
+
+### 2. Variance
+
+::: {.callout-note}
+## Définition — Carré intégrable et variance
+
+Soit $X$ une v.a.r. de densité $f_X$.
+
+$X$ est dite **de carré intégrable** lorsque $\displaystyle\mathbb{E}(X^2) = \int_{\mathbb{R}} x^2\,f_X(x)\,dx$ converge.
+
+Dans ce cas, $X$ est intégrable (admet une espérance) et on appelle **variance** de $X$ :
+$$\mathrm{Var}(X) = \mathbb{E}\!\left[(X - \mathbb{E}(X))^2\right] = \int_{\mathbb{R}} (x - \mathbb{E}(X))^2\,f_X(x)\,dx.$$
+:::
+
+La variance mesure la **dispersion** de $X$ autour de sa moyenne $\mathbb{E}(X)$. Plus précisément, $\mathrm{Var}(X)$ est la moyenne des carrés des écarts à la moyenne.
+
+Pourquoi utiliser le **carré** de l'écart et non l'écart lui-même ? Plusieurs raisons :
+
+- Les écarts positifs et négatifs doivent contribuer tous les deux positivement à la dispersion. Sans le carré, ils s'annuleraient et $\mathbb{E}[X - \mathbb{E}(X)] = 0$ toujours (par linéarité), ce qui est inutile.
+- Le carré **pénalise davantage** les grands écarts : un écart de 2 contribue 4 fois plus qu'un écart de 1 à la variance. Cela rend la variance sensible aux valeurs extrêmes.
+- Le carré garantit que $\mathrm{Var}(X) \geq 0$, avec égalité si et seulement si $X = \mathbb{E}(X)$ presque sûrement (c'est-à-dire si $X$ est constante).
+
+La condition de **carré intégrabilité** ($\mathbb{E}(X^2) < +\infty$) est plus forte que l'intégrabilité simple. On peut montrer, par l'inégalité de Cauchy-Schwarz, qu'elle implique l'intégrabilité : si $\mathbb{E}(X^2) < +\infty$ alors $\mathbb{E}(|X|) < +\infty$. L'implication réciproque est fausse.
+
+::: {.callout-tip}
+## Remarque — Moments
+
+Lorsque $X$ est de carré intégrable, on dit qu'elle possède un **moment d'ordre 2**, et en particulier un moment d'ordre 1 (espérance).
+:::
+
+Plus généralement, on appelle **moment d'ordre $n$** de $X$ la quantité $\mathbb{E}(X^n) = \int_{\mathbb{R}} x^n f_X(x)\,dx$, dès lors que cette intégrale converge. Les moments d'ordre 1 et 2 sont les plus utilisés : ils donnent respectivement la moyenne et la dispersion de la distribution. Les moments d'ordre supérieur mesurent d'autres aspects de la forme de la distribution : l'asymétrie (ordre 3, appelée *skewness*) et l'aplatissement (ordre 4, appelé *kurtosis*).
+
+::: {.callout-important}
+## Formule de König-Huygens
+
+$$\mathrm{Var}(X) = \mathbb{E}(X^2) - \bigl(\mathbb{E}(X)\bigr)^2.$$
+:::
+
+Cette formule est la **formule de calcul pratique** de la variance. Elle évite de calculer directement $\mathbb{E}[(X-\mathbb{E}(X))^2]$, ce qui nécessiterait de connaître $\mathbb{E}(X)$ au préalable et de l'injecter dans l'intégrale.
+
+Sa démonstration repose uniquement sur la linéarité de l'espérance. En notant $m = \mathbb{E}(X)$, on développe :
+$$(X - m)^2 = X^2 - 2mX + m^2.$$
+Par linéarité de l'espérance :
+$$\mathbb{E}[(X-m)^2] = \mathbb{E}(X^2) - 2m\,\mathbb{E}(X) + m^2 = \mathbb{E}(X^2) - 2m^2 + m^2 = \mathbb{E}(X^2) - m^2.$$
+
+En pratique, on calcule donc $\mathbb{E}(X^2)$ et $\mathbb{E}(X)$ séparément, puis on applique la formule. Cette stratégie est souvent bien plus efficace que le calcul direct.
+
+::: {.callout-note}
+## Définition — Écart-type
+
+Soit $X$ une v.a.r. de carré intégrable. On appelle **écart-type** de $X$ le réel :
+$$\sigma(X) = \sqrt{\mathrm{Var}(X)}.$$
+:::
+
+La variance est exprimée dans le **carré de l'unité** de $X$ : si $X$ représente une durée en secondes, $\mathrm{Var}(X)$ est en secondes². C'est difficile à interpréter directement. L'écart-type $\sigma(X)$ rétablit les unités d'origine : il est exprimé dans la même unité que $X$, ce qui le rend directement interprétable comme une **mesure typique de l'écart** entre $X$ et sa moyenne.
+
+Intuitivement, dans "la plupart des cas", $X$ s'éloigne de $\mathbb{E}(X)$ d'environ $\sigma(X)$. Cette intuition sera précisée par des inégalités comme l'inégalité de Bienaymé-Tchebychev, qui donnent des bornes quantitatives sur la probabilité que $X$ s'écarte de sa moyenne de plus de $k\sigma(X)$.
+
+::: {.callout-tip}
+## Remarque
+
+L'espérance donne une idée de l'ordre de grandeur de $X$ ; l'écart-type mesure la **dispersion** des valeurs de $X$ autour de l'espérance. Ces deux paramètres interviennent dans plusieurs inégalités qui seront étudiées ultérieurement.
+:::
+
+### 3. Retour sur les lois classiques
+
+#### Loi uniforme
+
+::: {.callout-important}
+## Proposition
+
+Si $X \sim \mathcal{U}([a\,;\,b])$, alors :
+$$\mathbb{E}(X) = \frac{a+b}{2} \qquad \text{et} \qquad \mathrm{Var}(X) = \frac{(b-a)^2}{12}.$$
+:::
+
+**Espérance** : Le résultat $\mathbb{E}(X) = \frac{a+b}{2}$ est la conséquence directe de la **symétrie** de la loi uniforme. Puisque $f_X$ est constante sur $[a, b]$ et nulle ailleurs, la distribution est parfaitement symétrique par rapport au milieu $\frac{a+b}{2}$ de l'intervalle. Le centre de gravité est donc ce point médian. On peut vérifier formellement :
+$$\mathbb{E}(X) = \int_a^b x \cdot \frac{1}{b-a}\,dx = \frac{1}{b-a} \cdot \frac{b^2 - a^2}{2} = \frac{(b-a)(b+a)}{2(b-a)} = \frac{a+b}{2}.$$
+
+**Variance** : La formule $\mathrm{Var}(X) = \frac{(b-a)^2}{12}$ montre que la dispersion dépend **uniquement de la largeur** $b-a$ de l'intervalle, et non de sa position sur l'axe réel. C'est cohérent : décaler l'intervalle vers la droite ou la gauche déplace la moyenne, mais ne change pas la dispersion interne. Le facteur $\frac{1}{12}$ provient du calcul intégral — il est inutile de le mémoriser, l'important est de savoir démontrer la formule. Notons que l'écart-type est $\sigma(X) = \frac{b-a}{2\sqrt{3}} \approx 0{,}29 \times (b-a)$, soit environ un tiers de la largeur de l'intervalle.
+
+*Démonstration :* *(à compléter)*
+
+#### Loi exponentielle
+
+::: {.callout-important}
+## Proposition
+
+Si $X \sim \mathcal{E}(\lambda)$, alors :
+$$\mathbb{E}(X) = \frac{1}{\lambda} \qquad \text{et} \qquad \mathrm{Var}(X) = \frac{1}{\lambda^2}.$$
+:::
+
+**Espérance** : $\mathbb{E}(X) = \frac{1}{\lambda}$ est la **durée d'attente moyenne**. C'est un résultat hautement intuitif : si des événements se produisent au rythme de $\lambda$ par unité de temps, alors on attend en moyenne $\frac{1}{\lambda}$ unité de temps entre deux événements. Par exemple, si des pannes surviennent en moyenne 3 fois par heure ($\lambda = 3$), le temps moyen entre deux pannes est $\frac{1}{3}$ heure, soit 20 minutes. Le calcul formel utilise une intégration par parties :
+$$\mathbb{E}(X) = \int_0^{+\infty} x \lambda e^{-\lambda x}\,dx = \frac{1}{\lambda}.$$
+
+**Variance** : La propriété $\mathrm{Var}(X) = \frac{1}{\lambda^2} = \bigl(\mathbb{E}(X)\bigr)^2$ implique que l'**écart-type est égal à la moyenne** : $\sigma(X) = \frac{1}{\lambda} = \mathbb{E}(X)$. C'est une propriété remarquable, spécifique à la loi exponentielle. Elle signifie que la dispersion relative (coefficient de variation $\frac{\sigma}{\mathbb{E}(X)}$) est toujours égale à 1, quelle que soit la valeur de $\lambda$. En pratique, cela se traduit par le fait que les temps d'attente exponentiels sont très variables : des valeurs bien supérieures à la moyenne sont fréquentes, ce qui est caractéristique des queues de distribution à décroissance lente.
+
+*Démonstration :* *(à compléter)*

@@ -1,0 +1,327 @@
+---
+title: "Feuille d'exercices — Lois à densité"
+---
+
+## Partie I — Intégrales généralisées
+
+### Exercice 1
+
+Calculer chacune des intégrales suivantes. Préciser pour chacune la méthode utilisée (intégration par parties, changement de variable, etc.).
+
+a. $\displaystyle I = \int_0^1 x\ln(x)\,dx$
+
+b. $\displaystyle J = \int_0^{+\infty} x^3 e^{-2x^2}\,dx$
+
+c. $\displaystyle K = \int_1^{+\infty} \frac{2}{3x^2+x}\,dx$ *(on pourra utiliser le changement de variable $u = \tfrac{1}{x}$)*
+
+::: {.callout-tip collapse="true"}
+## Solution
+
+**a.** On pose $u = \ln(x)$ et $dv = x\,dx$, d'où $du = \frac{dx}{x}$ et $v = \frac{x^2}{2}$.
+
+$$I = \left[\frac{x^2}{2}\ln x\right]_0^1 - \int_0^1 \frac{x^2}{2}\cdot\frac{1}{x}\,dx = 0 - \int_0^1\frac{x}{2}\,dx = -\left[\frac{x^2}{4}\right]_0^1 = -\frac{1}{4}.$$
+
+(On vérifie que $\lim_{x\to 0^+} x^2\ln x = 0$ par croissance comparée.)
+
+**b.** On pose $u = x^2$, d'où $du = 2x\,dx$. Alors $x^3\,dx = \frac{u}{2}\,du$.
+
+$$J = \int_0^{+\infty} \frac{u}{2}e^{-2u}\,du.$$
+
+Par intégration par parties ($p = u$, $dq = e^{-2u}du$) :
+
+$$J = \frac{1}{2}\left(\left[-\frac{u}{2}e^{-2u}\right]_0^{+\infty} + \int_0^{+\infty}\frac{1}{2}e^{-2u}\,du\right) = \frac{1}{2}\cdot\frac{1}{2}\cdot\frac{1}{2} = \frac{1}{8}.$$
+
+**c.** Changement de variable $u = \frac{1}{x}$ : $x = \frac{1}{u}$, $dx = -\frac{1}{u^2}du$. Quand $x = 1$, $u = 1$ ; quand $x\to+\infty$, $u\to 0^+$. On a $3x^2+x = \frac{3+u}{u^2}$, donc :
+
+$$K = \int_0^1 \frac{2u}{3+u}\,du = 2\int_0^1\left(1 - \frac{3}{3+u}\right)du = 2\Big[u - 3\ln(3+u)\Big]_0^1 = 2 + 6\ln\!\tfrac{3}{4}.$$
+:::
+
+---
+
+## Partie II — Densités de probabilité et fonctions de répartition
+
+### Exercice 2
+
+Vérifier que chacune de ces fonctions est une fonction de répartition d'une v.a.r. $X$, déterminer si $X$ est discrète ou absolument continue, et donner sa loi.
+
+**a)**
+$$F(x) = \begin{cases} 0 & \text{si } x < 0 \\ \tfrac{1}{4} & \text{si } 0 \leq x < 1 \\ \tfrac{3}{4} & \text{si } 1 \leq x < 2 \\ 1 & \text{si } x \geq 2 \end{cases}$$
+
+**b)**
+$$F(x) = \begin{cases} 0 & \text{si } x < 1 \\ \dfrac{x-1}{4} & \text{si } 1 \leq x \leq 5 \\ 1 & \text{si } x > 5 \end{cases}$$
+
+::: {.callout-tip collapse="true"}
+## Solution
+
+**a.** $F$ est croissante, continue à droite, avec $\lim_{-\infty} F = 0$ et $\lim_{+\infty} F = 1$ : c'est bien une fonction de répartition. Elle n'est **pas continue** (sauts en $x=0$, $x=1$ et $x=2$), donc $X$ est **discrète**. La hauteur des sauts donne les probabilités :
+
+$$P(X=0) = \frac{1}{4},\quad P(X=1) = \frac{1}{2},\quad P(X=2) = \frac{1}{4}.$$
+
+**b.** $F$ est croissante, continue sur $\mathbb{R}$, nulle à $-\infty$ et égale à 1 à $+\infty$ : c'est une fonction de répartition. Elle est **continue et dérivable sur** $]1;5[$, donc $X$ est **absolument continue**. On dérive :
+
+$$f(x) = F'(x) = \frac{1}{4}\,\mathbf{1}_{[1;5]}(x).$$
+
+On reconnaît $X \sim \mathcal{U}([1;5])$.
+:::
+
+### Exercice 3
+
+Soit $f$ la fonction définie sur $\mathbb{R}$ par :
+$$f(x) = \begin{cases} 0 & \text{si } x < -1 \text{ ou } x > 1 \\ x+1 & \text{si } -1 \leq x < 0 \\ -x+1 & \text{si } 0 \leq x \leq 1 \end{cases}$$
+
+1. Montrer que $f$ est une densité de probabilité et déterminer la fonction de répartition $F$ de $X$.
+2. Calculer $\mathbb{E}(X)$ et $\mathrm{Var}(X)$.
+3. Déterminer $P(|X| > 0{,}5)$.
+
+::: {.callout-tip collapse="true"}
+## Solution
+
+**1.** $f \geq 0$ par construction. On vérifie $\int_\mathbb{R} f = 1$ :
+
+$$\int_{-1}^0 (x+1)\,dx + \int_0^1 (-x+1)\,dx = \frac{1}{2} + \frac{1}{2} = 1.$$
+
+Fonction de répartition :
+
+- $x < -1$ : $F(x) = 0$.
+- $-1 \leq x < 0$ : $F(x) = \dfrac{(x+1)^2}{2}$.
+- $0 \leq x \leq 1$ : $F(x) = 1 - \dfrac{(x-1)^2}{2}$.
+- $x > 1$ : $F(x) = 1$.
+
+**2.** Par symétrie de $f$ autour de 0 : $\mathbb{E}(X) = 0$.
+
+$$\mathbb{E}(X^2) = 2\int_0^1 x^2(-x+1)\,dx = 2\left[\frac{x^3}{3}-\frac{x^4}{4}\right]_0^1 = \frac{1}{6}.$$
+
+Donc $\mathrm{Var}(X) = \dfrac{1}{6}$.
+
+**3.** $P(|X| > 0{,}5) = 1 - (F(0{,}5) - F(-0{,}5)) = 1 - \left(\frac{7}{8} - \frac{1}{8}\right) = \frac{1}{4}.$
+:::
+
+### Exercice 4
+
+Soit $f(x) = k(1-x^4)\,\mathbf{1}_{[-1;\,1]}(x)$.
+
+1. Déterminer $k$ pour que $f$ soit une densité de probabilité d'une v.a.r. $X$.
+2. Déterminer la fonction de répartition de $X$.
+3. Calculer $P(-0{,}5 < X < 2)$ et $P(|X| < 0{,}1)$.
+4. Calculer $\mathbb{E}(X)$ et $\mathrm{Var}(X)$.
+
+::: {.callout-tip collapse="true"}
+## Solution
+
+**1.** $\int_{-1}^1 k(1-x^4)\,dx = k\cdot\frac{8}{5} = 1 \implies k = \dfrac{5}{8}.$
+
+**2.** Pour $-1 \leq x \leq 1$ :
+
+$$F(x) = \frac{5x - x^5 + 4}{8}.$$
+
+$$F(x) = \begin{cases} 0 & x < -1 \\ \dfrac{5x - x^5 + 4}{8} & -1 \leq x \leq 1 \\ 1 & x > 1 \end{cases}$$
+
+**3.** $P(-0{,}5 < X < 2) = F(1) - F(-0{,}5) = 1 - \frac{5(-0{,}5)-(-0{,}5)^5+4}{8} \approx 0{,}810.$
+
+$P(|X| < 0{,}1) = F(0{,}1) - F(-0{,}1) \approx \frac{1}{8} = 0{,}125.$
+
+**4.** Par symétrie : $\mathbb{E}(X) = 0$. $\mathbb{E}(X^2) = \dfrac{5}{4}\left[\frac{x^3}{3}-\frac{x^7}{7}\right]_0^1 = \dfrac{5}{21}$. Donc $\mathrm{Var}(X) = \dfrac{5}{21}.$
+:::
+
+---
+
+## Partie III — Lois classiques
+
+### Exercice 5 — Loi uniforme
+
+Soit $X \sim \mathcal{U}([2\,;\,8])$.
+
+1. Calculer $P(X \geq 3)$ et $P(X < 4)$.
+2. Calculer $\mathbb{E}(X)$ et $\mathrm{Var}(X)$ en retrouvant les formules par le calcul.
+3. Soient $Y = \dfrac{X-5}{3}$ et $Z = X^2$. Déterminer les lois de $Y$ et $Z$.
+
+::: {.callout-tip collapse="true"}
+## Solution
+
+**1.** La densité est $f(x) = \frac{1}{6}\,\mathbf{1}_{[2;8]}(x)$.
+
+$P(X \geq 3) = \frac{8-3}{6} = \dfrac{5}{6}$. $\quad P(X < 4) = \frac{4-2}{6} = \dfrac{1}{3}$.
+
+**2.** $\mathbb{E}(X) = \int_2^8 \frac{x}{6}\,dx = 5 = \frac{2+8}{2}$ ✓.
+
+$\mathbb{E}(X^2) = \frac{1}{6}\cdot\frac{8^3-2^3}{3} = 28$. Donc $\mathrm{Var}(X) = 28 - 25 = 3 = \frac{36}{12}$ ✓.
+
+**3.** $Y = \frac{X-5}{3}$ : quand $X \in [2;8]$, $Y \in [-1;1]$. Donc $Y \sim \mathcal{U}([-1;1])$.
+
+$Z = X^2$, $Z \in [4;64]$ : $F_Z(z) = \frac{\sqrt{z}-2}{6}$ pour $z \in [4;64]$, donc $f_Z(z) = \dfrac{1}{12\sqrt{z}}\,\mathbf{1}_{[4;64]}(z)$.
+:::
+
+### Exercice 6 — Transformation de la loi uniforme
+
+Soit $\lambda > 0$ et $X \sim \mathcal{U}([0;1])$. Déterminer la loi de $Y = \dfrac{-\ln(X)}{\lambda}$.
+
+::: {.callout-tip collapse="true"}
+## Solution
+
+$X$ prend ses valeurs dans $]0;1]$, donc $Y \geq 0$. Pour $y \geq 0$ :
+
+$$F_Y(y) = P\!\left(-\frac{\ln X}{\lambda} \leq y\right) = P(X \geq e^{-\lambda y}) = 1 - e^{-\lambda y}.$$
+
+On reconnaît $\boxed{Y \sim \mathcal{E}(\lambda)}$.
+:::
+
+### Exercice 7 — Modélisation par une loi exponentielle
+
+Un marchand de jouets modélise par une loi exponentielle le temps $T$ (en semaines) qu'un jouet reste en boutique.
+
+1. Sachant qu'un jouet a 50 % de chances d'être vendu dans les quatre premières semaines, déterminer le paramètre $\lambda$.
+2. Calculer la probabilité qu'un jouet reste entre cinq et six semaines en boutique.
+3. En moyenne, combien de temps un jouet reste-t-il en boutique ? Calculer l'écart-type.
+
+::: {.callout-tip collapse="true"}
+## Solution
+
+**1.** $P(T \leq 4) = 1 - e^{-4\lambda} = 0{,}5 \implies \lambda = \dfrac{\ln 2}{4} \approx 0{,}173$ semaine$^{-1}$.
+
+**2.** $P(5 \leq T \leq 6) = e^{-5\lambda} - e^{-6\lambda} = 2^{-5/4} - 2^{-6/4} \approx 12{,}3\%$.
+
+**3.** $\mathbb{E}(T) = \dfrac{1}{\lambda} = \dfrac{4}{\ln 2} \approx 5{,}77$ semaines. Écart-type : $\sigma(T) = \dfrac{1}{\lambda} \approx 5{,}77$ semaines (égal à la moyenne : propriété remarquable de la loi exponentielle).
+:::
+
+### Exercice 8 — Calculs avec la loi exponentielle
+
+Soit $X \sim \mathcal{E}(2)$.
+
+1. Calculer $P(X \geq 1)$, $P(X < 2)$ et $P(-2 \leq X < 7)$.
+2. On pose $Y = 2X$. Déterminer la loi de $Y$.
+
+::: {.callout-tip collapse="true"}
+## Solution
+
+**1.** $F_X(x) = 1 - e^{-2x}$ pour $x \geq 0$, $F_X(x) = 0$ sinon.
+
+- $P(X \geq 1) = e^{-2} \approx 0{,}135$.
+- $P(X < 2) = 1 - e^{-4} \approx 0{,}982$.
+- $P(-2 \leq X < 7) = F_X(7) - F_X(-2) = 1 - e^{-14} \approx 1$.
+
+**2.** $F_Y(y) = P(2X \leq y) = 1 - e^{-y}$ pour $y \geq 0$. Donc $Y \sim \mathcal{E}(1)$.
+:::
+
+---
+
+## Partie IV — Espérance, variance et propriété sans mémoire
+
+### Exercice 9 — Propriété sans mémoire de la loi exponentielle
+
+Soit $\lambda > 0$ et $X \sim \mathcal{E}(\lambda)$.
+
+1. Exprimer en fonction de $\lambda$ : (a) $P(1 \leq X < 3)$, (b) $P(X \geq t)$ pour $t \in \mathbb{R}$.
+2. Montrer que pour tout $t > 0$ et $s > 0$ :
+$$P_{X \geq s}(X \geq t+s) = P(X \geq t).$$
+On dit que la loi exponentielle est **sans mémoire**.
+3. Soit $Y = aX + b$ avec $a > 0$ et $b \in \mathbb{R}$. Déterminer la loi de $Y$.
+
+::: {.callout-tip collapse="true"}
+## Solution
+
+**1a.** $P(1 \leq X < 3) = e^{-\lambda} - e^{-3\lambda}$.
+
+**1b.** $P(X \geq t) = e^{-\lambda t}$ pour $t > 0$ ; $P(X \geq t) = 1$ pour $t \leq 0$.
+
+**2.** $P_{X \geq s}(X \geq t+s) = \dfrac{P(X \geq t+s)}{P(X \geq s)} = \dfrac{e^{-\lambda(t+s)}}{e^{-\lambda s}} = e^{-\lambda t} = P(X \geq t).$
+
+Sachant que l'événement ne s'est pas encore produit à l'instant $s$, le temps restant suit encore la même loi $\mathcal{E}(\lambda)$.
+
+**3.** Pour $y > b$ : $F_Y(y) = P(X \leq \frac{y-b}{a}) = 1 - e^{-\lambda(y-b)/a}$. Si $b=0$, $Y \sim \mathcal{E}(\lambda/a)$ ; sinon, $Y$ suit une loi exponentielle décalée de paramètre $\lambda/a$ et de seuil $b$.
+:::
+
+### Exercice 10 — Variable aléatoire à queue lourde
+
+Soit $f(x) = \dfrac{\alpha^2}{2}e^{\alpha x}\,\mathbf{1}_{\mathbb{R}_-}(x)$.
+
+1. Déterminer $\alpha > 0$ pour que $f$ soit une densité de probabilité d'une v.a.r. $X$.
+2. Déterminer la fonction de répartition de $X$.
+3. Calculer $\mathbb{E}(X)$ et $\mathrm{Var}(X)$.
+4. Soit $Z = X^2$. Déterminer la fonction de répartition et la densité de $Z$.
+
+::: {.callout-tip collapse="true"}
+## Solution
+
+**1.** $\int_{-\infty}^0 \frac{\alpha^2}{2}e^{\alpha x}\,dx = \frac{\alpha^2}{2}\cdot\frac{1}{\alpha} = \frac{\alpha}{2} = 1 \implies \alpha = 2.$
+
+**2.** $F_X(x) = e^{2x}$ pour $x \leq 0$ ; $F_X(x) = 1$ pour $x > 0$.
+
+**3.** Par IPP : $\mathbb{E}(X) = -\dfrac{1}{2}$. $\mathbb{E}(X^2) = \dfrac{1}{2}$. $\mathrm{Var}(X) = \dfrac{1}{2} - \dfrac{1}{4} = \dfrac{1}{4}$.
+
+**4.** $Z = X^2 \geq 0$. Puisque $X \leq 0$, $X^2 \leq z \Leftrightarrow X \in [-\sqrt{z};0]$.
+
+$$F_Z(z) = F_X(0) - F_X(-\sqrt{z}) = 1 - e^{-2\sqrt{z}}\quad(z \geq 0).$$
+
+$$f_Z(z) = \frac{e^{-2\sqrt{z}}}{\sqrt{z}}\,\mathbf{1}_{[0;+\infty[}(z).$$
+:::
+
+---
+
+## Partie V — Lois remarquables (approfondissement)
+
+### Exercice 11 — Loi de Rayleigh
+
+Soit $f(x) = kx\,e^{-x^2/4}\,\mathbf{1}_{[0;+\infty[}(x)$, avec $k \in \mathbb{R}$.
+
+1. Déterminer $k$ pour que $f$ soit une densité de probabilité.
+2. Donner la fonction de répartition de $X$.
+3. Calculer $P(1 \leq X \leq 2)$.
+4. Soit $Y = X^2$. Déterminer la loi de $Y$ (donner sa densité). Que remarque-t-on ? En déduire $\mathbb{E}(Y)$ sans calcul.
+
+::: {.callout-tip collapse="true"}
+## Solution
+
+**1.** Changement de variable $u = x^2/4$ : $\int_0^{+\infty} kx\,e^{-x^2/4}\,dx = 2k = 1 \implies k = \dfrac{1}{2}$.
+
+**2.** $F_X(x) = 1 - e^{-x^2/4}$ pour $x \geq 0$.
+
+**3.** $P(1 \leq X \leq 2) = e^{-1/4} - e^{-1} \approx 0{,}411$.
+
+**4.** $F_Y(y) = P(X \leq \sqrt{y}) = 1 - e^{-y/4}$ : la densité est $f_Y(y) = \frac{1}{4}e^{-y/4}\,\mathbf{1}_{[0;+\infty[}(y)$.
+
+On reconnaît $Y \sim \mathcal{E}(1/4)$, donc $\mathbb{E}(Y) = 4$.
+:::
+
+### Exercice 12 — Loi de Pareto
+
+Soient $r > 0$ et $k > 0$. On définit $f(x) = \dfrac{kr^k}{x^{k+1}}\,\mathbf{1}_{[r;+\infty[}(x)$.
+
+1. Montrer que $f$ est une densité de probabilité.
+2. Déterminer la fonction de répartition de $X$.
+3. Pour quelles valeurs de $k$, $X$ est-elle intégrable ? Exprimer $\mathbb{E}(X)$.
+4. Pour quelles valeurs de $k$, $X$ est-elle de carré intégrable ? Exprimer $\mathrm{Var}(X)$.
+5. Déterminer le revenu médian (i.e. $m$ tel que $P(X \leq m) = 0{,}5$) en fonction de $r$ et $k$.
+
+::: {.callout-tip collapse="true"}
+## Solution
+
+**1.** $f \geq 0$ et $\int_r^{+\infty}\frac{kr^k}{x^{k+1}}\,dx = 1$ ✓.
+
+**2.** $F_X(x) = 1 - \left(\dfrac{r}{x}\right)^k$ pour $x \geq r$.
+
+**3.** $X$ intégrable ssi $k > 1$ : $\mathbb{E}(X) = \dfrac{kr}{k-1}$.
+
+**4.** $X$ de carré intégrable ssi $k > 2$ : $\mathrm{Var}(X) = \dfrac{kr^2}{(k-1)^2(k-2)}$.
+
+**5.** $1-(r/m)^k = 1/2 \implies m = r\cdot 2^{1/k}$.
+:::
+
+### Exercice 13 — Loi de Cauchy
+
+Soit $f(x) = \dfrac{1}{\pi}\cdot\dfrac{1}{1+x^2}$ et $X$ une v.a.r. de densité $f$.
+
+1. Vérifier que $f$ est bien une densité de probabilité.
+2. Montrer que $X$ n'admet pas d'espérance.
+3. Soit $Y = \dfrac{1}{X}$. Montrer que $Y$ suit également une loi de Cauchy.
+
+::: {.callout-tip collapse="true"}
+## Solution
+
+**1.** $\int_{-\infty}^{+\infty}\frac{dx}{\pi(1+x^2)} = \frac{1}{\pi}[\arctan x]_{-\infty}^{+\infty} = 1$ ✓.
+
+**2.** $\int_{-\infty}^{+\infty}|x|\cdot\frac{1}{\pi(1+x^2)}\,dx = \frac{2}{\pi}\int_0^{+\infty}\frac{x}{1+x^2}\,dx = \frac{1}{\pi}[\ln(1+x^2)]_0^{+\infty} = +\infty$.
+
+L'intégrale diverge : $X$ n'est pas intégrable.
+
+**3.** On calcule la densité de $Y = 1/X$ via la méthode de la fonction de répartition, puis en dérivant. On obtient $f_Y(y) = \dfrac{1}{\pi(1+y^2)}$ : $Y$ suit la même loi de Cauchy.
+:::
