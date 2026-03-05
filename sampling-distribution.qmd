@@ -1,0 +1,255 @@
+---
+title: "Distribution d'echantillonnage"
+abstract: |
+  Ce chapitre introduit la logique de l'**echantillonnage aleatoire** et la
+  notion centrale de **distribution d'echantillonnage** d'une statistique. On
+  precise d'abord le lien entre population, loi parente et n-echantillon
+  i.i.d., puis on etudie les statistiques fondamentales : la moyenne empirique,
+  la variance empirique non corrigee et la variance empirique corrigee. Le
+  chapitre etablit leurs proprietes d'esperance et de variance, met en evidence
+  le biais de la variance non corrigee, puis presente les lois exactes dans le
+  cas d'une loi parente gaussienne (loi normale et loi du khi-deux). Enfin, il
+  propose une methode pratique pour analyser et interpreter des resultats
+  d'echantillonnage en statistique inferentielle.
+date: 2026-03-05
+date-modified: 2026-03-05
+code-links:
+  href: worksheet-distribution-echantillonnage.qmd
+---
+
+> Dans tout ce chapitre, on considere des echantillons aleatoires simples preleves dans une population.
+
+## I - Echantillonnage
+
+On souhaite etudier un caractere $X$ sur une population $P$ de taille $N$. En pratique, on n'observe qu'une partie de la population : un **echantillon** de taille $n$.
+
+::: {.callout-note}
+## Definition - n-echantillon aleatoire
+
+Soit $X$ une variable de loi parente $\mathcal{L}$.
+Un **n-echantillon aleatoire** est un n-uplet
+$$
+(X_1,\dots,X_n)
+$$
+de variables aleatoires independantes et de meme loi
+$$
+X_i\sim\mathcal{L} \quad (i=1,\dots,n).
+$$
+:::
+
+Les valeurs observees changent d'un echantillon a l'autre : c'est la **fluctuation d'echantillonnage**.
+
+::: {.callout-tip}
+## Remarque - Avec ou sans remise
+
+- Avec remise : independance exacte entre tirages.
+- Sans remise : dependance faible si l'echantillon est petit devant la population.
+
+Pour une proportion, la loi hypergeometrique peut etre approximee par une loi binomiale si l'echantillon est tres petit devant la population (regle pratique : $n$ nettement inferieur a $N$).
+:::
+
+::: {.callout-caution}
+## Exemple 1 - Proportion d'un caractere
+
+Dans une population, on note $p$ la proportion d'individus ayant un caractere donne (par exemple "yeux bleus").
+On interroge $n$ personnes et on pose
+$$
+X_i=
+\begin{cases}
+1 & \text{si la personne i possede le caractere,}\\
+0 & \text{sinon.}
+\end{cases}
+$$
+
+1. Quelle est la loi de chaque $X_i$ ?
+2. Quelle est la loi de $\sum_{i=1}^n X_i$ dans un schema avec remise ?
+:::
+
+::: {.callout-tip collapse="true"}
+## Solution - Exemple 1
+
+- Chaque $X_i$ suit une loi de Bernoulli $\mathcal{B}(p)$.
+- La somme $\sum_{i=1}^n X_i$ suit une loi binomiale
+$$
+\mathcal{B}(n,p).
+$$
+:::
+
+---
+
+## II - Distribution d'echantillonnage
+
+::: {.callout-note}
+## Definition - Statistique
+
+Une **statistique** est toute fonction des variables d'echantillon :
+$$
+T=T(X_1,\dots,X_n).
+$$
+
+La **distribution d'echantillonnage** de $T$ est la loi de la variable aleatoire $T$.
+:::
+
+Ce point de vue est fondamental : en inferentielle, on n'observe pas un seul $T$ "fixe", mais une realisation d'une variable aleatoire dont la loi controle precision et incertitude.
+
+---
+
+## III - Moyenne empirique
+
+::: {.callout-note}
+## Definition
+
+La moyenne empirique est
+$$
+\overline{X}_n=\frac{1}{n}\sum_{i=1}^n X_i.
+$$
+:::
+
+::: {.callout-important}
+## Proposition
+
+Si la loi parente admet une moyenne $m$ et une variance $\sigma^2$, alors
+$$
+E(\overline{X}_n)=m,
+\qquad
+\mathrm{Var}(\overline{X}_n)=\frac{\sigma^2}{n}.
+$$
+:::
+
+La moyenne empirique est donc centree sur la vraie moyenne, et sa dispersion diminue en $1/n$.
+
+::: {.callout-important}
+## Cas gaussien
+
+Si $X_i\sim\mathcal{N}(m,\sigma^2)$ (i.i.d.), alors
+$$
+\overline{X}_n\sim\mathcal{N}\!\left(m,\frac{\sigma^2}{n}\right).
+$$
+:::
+
+::: {.callout-caution}
+## Exemple 2 - Notes d'examen
+
+Les notes suivent une loi normale $\mathcal{N}(10,25)$.
+
+1. Donner la loi de $\overline{X}_{100}$.
+2. Quelle est son esperance ?
+3. Que devient la variance si on passe a $n=400$ ?
+:::
+
+::: {.callout-tip collapse="true"}
+## Solution - Exemple 2
+
+- $\overline{X}_{100}\sim\mathcal{N}(10,25/100)=\mathcal{N}(10,0{,}25)$.
+- Esperance : $10$.
+- Pour $n=400$ : variance $25/400=0{,}0625$.
+:::
+
+---
+
+## IV - Variance empirique et variance corrigee
+
+### 1. Variance empirique non corrigee
+
+::: {.callout-note}
+## Definition
+
+$$
+S_n'^2=\frac{1}{n}\sum_{i=1}^n (X_i-\overline{X}_n)^2
+=\frac{1}{n}\sum_{i=1}^n X_i^2-(\overline{X}_n)^2.
+$$
+:::
+
+::: {.callout-important}
+## Proposition
+
+Si la loi parente a variance $\sigma^2$, alors
+$$
+E(S_n'^2)=\frac{n-1}{n}\sigma^2.
+$$
+:::
+
+Donc $S_n'^2$ sous-estime en moyenne $\sigma^2$ : c'est un estimateur biaise.
+
+### 2. Variance empirique corrigee
+
+::: {.callout-note}
+## Definition
+
+$$
+S_n^2=\frac{n}{n-1}S_n'^2
+=\frac{1}{n-1}\sum_{i=1}^n (X_i-\overline{X}_n)^2.
+$$
+:::
+
+::: {.callout-important}
+## Proposition
+
+$$
+E(S_n^2)=\sigma^2.
+$$
+
+La variance empirique corrigee est sans biais.
+:::
+
+### 3. Cas gaussien
+
+::: {.callout-important}
+## Lois associees (admis)
+
+Si $X_i\sim\mathcal{N}(m,\sigma^2)$ (i.i.d.), alors :
+
+$$
+\frac{1}{\sigma^2}\sum_{i=1}^n (X_i-m)^2\sim\chi_n^2,
+$$
+$$
+\frac{n}{\sigma^2}S_n'^2
+=\frac{n-1}{\sigma^2}S_n^2
+=\frac{1}{\sigma^2}\sum_{i=1}^n (X_i-\overline{X}_n)^2
+\sim\chi_{n-1}^2.
+$$
+:::
+
+La perte d'un degre de liberte vient de la contrainte introduite par l'estimation de la moyenne avec $\overline{X}_n$.
+
+::: {.callout-caution}
+## Exemple 3 - Esperance des variances empiriques
+
+On sait que $\sigma^2=25$ et $n=100$.
+
+1. Calculer $E(S_{100}'^2)$.
+2. Calculer $E(S_{100}^2)$.
+:::
+
+::: {.callout-tip collapse="true"}
+## Solution - Exemple 3
+
+$$
+E(S_{100}'^2)=\frac{99}{100}\times 25=24{,}75,
+$$
+$$
+E(S_{100}^2)=25.
+$$
+:::
+
+---
+
+## V - Lecture inferentielle
+
+L'interet de ces resultats est direct :
+
+- $\overline{X}_n$ sert a estimer $m$ (precision amelioree si $n$ augmente),
+- $S_n^2$ sert a estimer $\sigma^2$ sans biais,
+- les lois normales et khi-deux permettent de construire des intervalles de confiance et des tests.
+
+::: {.callout-note}
+## Methode pratique
+
+1. Verifier le modele d'echantillonnage (i.i.d., taille, contexte).
+2. Identifier la statistique cible ($\overline{X}_n$, $S_n'^2$, $S_n^2$, proportion...).
+3. Utiliser sa distribution d'echantillonnage.
+4. Quantifier l'incertitude (variance, quantiles, probabilites).
+5. Interpreter dans le contexte metier (risque, precision, decision).
+:::
+
+Cette logique constitue le passage cle entre statistique descriptive et statistique inferentielle.

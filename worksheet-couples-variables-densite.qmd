@@ -1,0 +1,109 @@
+---
+title: "Feuille d'exercices — Couples de variables continues"
+---
+
+## Partie I — Densités conjointes et domaine de définition
+
+### Exercice 1
+
+Soit la fonction
+$$f(x,y)=2\,\mathbf{1}_{\{0\le y\le x\le 1\}}.$$
+
+1. Montrer que $f$ est une densité sur $\mathbb{R}^2$.
+2. Soit $(X,Y)$ un couple de variables aléatoires de densité $f$.
+Calculer $P(X<Y)$ et $P(Y<X)$.
+3. Calculer $E(XY)$ puis $\mathrm{Cov}(X,Y)$.
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+- Le support est le triangle $0\le y\le x\le 1$.
+- $P(X<Y)$ correspond à une zone vide sur ce support.
+- Pour la covariance : $\mathrm{Cov}(X,Y)=E(XY)-E(X)E(Y)$.
+:::
+
+### Exercice 2
+
+Soit $\lambda>0$ et
+$$f(x,y)=\lambda^2e^{-\lambda x}\mathbf{1}_{\{0<y<x\}}.$$
+
+1. Vérifier que $f$ est une densité sur $\mathbb{R}^2$.
+2. Déterminer les lois marginales de $X$ et de $Y$.
+3. Les variables $X$ et $Y$ sont-elles indépendantes ?
+4. Calculer $P(X<Y)$, $P(Y<X)$ et $P\!\left(Y<\frac{X}{2}\right)$.
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+- Intégrer d'abord en $y$ entre 0 et $x$.
+- Pour la loi de $Y$, fixer $y$ puis intégrer en $x$ de $y$ à $+\infty$.
+- Sur le support, $y<x$ toujours, donc certaines probabilités sont immédiates.
+:::
+
+---
+
+## Partie II — Indépendance et minimum/maximum
+
+### Exercice 3
+
+Soient $\lambda,\mu>0$ et $X_1, X_2$ indépendantes, avec
+$$X_1\sim\mathcal{E}(\lambda),\qquad X_2\sim\mathcal{E}(\mu).$$
+
+1. Calculer $P(X_1=X_2)$ et $P(X_1<X_2)$.
+2. Déterminer la loi de
+$$Y=\min(X_1,X_2),\qquad Z=\max(X_1,X_2).$$
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+- Utiliser la continuité pour $P(X_1=X_2)$.
+- Pour $Y$ : $P(Y>t)=P(X_1>t, X_2>t)$.
+- Pour $Z$ : $P(Z\le t)=P(X_1\le t, X_2\le t)$.
+:::
+
+---
+
+## Partie III — Sommes de variables et convolution
+
+### Exercice 4
+
+Soient $X$ et $Y$ indépendantes, de même loi.
+On pose $Z=X+Y$.
+
+Déterminer la densité de $Z$ dans les deux cas suivants :
+
+1. $X,Y\sim\mathcal{U}([0,1])$.
+2. $X,Y\sim\mathcal{N}(0,1)$.
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+- Utiliser la formule de convolution :
+$$f_Z(z)=\int_{\mathbb{R}} f_X(x)f_Y(z-x)\,dx.$$
+- Cas uniforme : bien décrire l'intersection des intervalles.
+- Cas normal : on peut reconnaître directement la stabilité de la loi normale.
+:::
+
+### Exercice 5
+
+Soient $\sigma_1>0$, $\sigma_2>0$ et deux variables indépendantes
+$$X\sim\mathcal{N}(0,\sigma_1^2),\qquad Y\sim\mathcal{N}(0,\sigma_2^2).$$
+On pose $Z=X+Y$.
+
+1. Montrer que, pour tous $(x,t)\in\mathbb{R}^2$,
+$$\frac{x^2}{\sigma_1^2}+\frac{(t-x)^2}{\sigma_2^2}
+=\frac{\sigma^2}{\sigma_1^2\sigma_2^2}\left(x-\frac{\sigma_1^2}{\sigma^2}t\right)^2
++\frac{t^2}{\sigma^2},$$
+où $\sigma^2=\sigma_1^2+\sigma_2^2$.
+2. En déduire la loi de $Z$.
+3. Généraliser au cas
+$$X\sim\mathcal{N}(m_1,\sigma_1^2),\qquad Y\sim\mathcal{N}(m_2,\sigma_2^2).$$
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+- La question 1 correspond à un "carré complété".
+- Injecter ce résultat dans l'intégrale de convolution.
+- Retrouver la règle générale : somme de normales indépendantes.
+:::
+

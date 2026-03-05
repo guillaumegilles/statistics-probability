@@ -1,0 +1,163 @@
+---
+title: "Feuille d'exercices — Convergence de variables aléatoires"
+---
+
+## Partie I — Lois de Bernoulli, fréquences et précision
+
+### Exercice 1
+
+Dans une ville de 20 000 habitants, 75 % des personnes interrogées sont
+favorables à la rénovation du théâtre municipal.
+
+Pour $1\le k\le n$, on note $X_k=1$ si la $k$-ième personne est favorable,
+$X_k=0$ sinon.
+
+1. Donner la loi de $X_k$, son espérance $m$ et sa variance $\sigma^2$.
+2. On note
+$$M_n=\frac1n\sum_{k=1}^n X_k.$$
+Déterminer une taille d'échantillon $n$ pour obtenir :
+- une précision 0,05 avec risque 0,1, soit
+$$P(|M_n-m|\ge 0{,}05)\le 0{,}1,$$
+- une précision 0,01 avec risque 0,05.
+Commenter le réalisme de la seconde situation.
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+- $X_k\sim\mathcal{B}(p)$ avec $p=0{,}75$.
+- Utiliser l'inégalité de Bienaymé-Tchebychev :
+$$P(|M_n-m|\ge \varepsilon)\le \frac{\mathrm{Var}(M_n)}{\varepsilon^2}
+=\frac{p(1-p)}{n\varepsilon^2}.$$
+:::
+
+### Exercice 2
+
+On lance indéfiniment un dé équilibré à 6 faces.
+Pour $n\ge 1$, on note $X_n$ la moyenne des $n$ premiers lancers.
+
+1. Calculer $E(X_1)$, $\mathrm{Var}(X_1)$, puis $E(X_n)$ et $\mathrm{Var}(X_n)$.
+2. Avec Bienaymé-Tchebychev, déterminer $n$ tel que
+$$P(3{,}4\le X_n\le 3{,}6)\ge 0{,}8.$$
+3. Montrer que $(X_n)$ converge vers un réel $m$ à préciser :
+- en probabilité,
+- en moyenne quadratique,
+- en loi.
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+- Les lancers sont i.i.d. de moyenne $3{,}5$.
+- $\mathrm{Var}(X_n)=\mathrm{Var}(X_1)/n$.
+- Utiliser la LFGN pour la convergence en probabilité et
+$\mathrm{Var}(X_n)\to 0$ pour la convergence $L^2$.
+:::
+
+---
+
+## Partie II — Contre-exemple de convergence et suites exponentielles
+
+### Exercice 3
+
+On considère une suite $(X_n)$ définie par
+$$P(X_n=n)=\frac1n, \qquad P(X_n=0)=1-\frac1n.$$
+
+1. Pour $\varepsilon>0$, calculer $P(|X_n|>\varepsilon)$.
+En déduire que $X_n\to 0$ en probabilité.
+2. Calculer $E(X_n)$ et $\mathrm{Var}(X_n)$ et montrer que la convergence en
+moyenne quadratique vers 0 n'a pas lieu.
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+- Pour tout $\varepsilon>0$, dès que $n>\varepsilon$,
+$$P(|X_n|>\varepsilon)=P(X_n=n)=\frac1n.$$
+- Pour la convergence $L^2$ vers 0, il faut $E(X_n^2)\to 0$.
+:::
+
+### Exercice 4
+
+On considère une suite $(\lambda_n)$ de réels strictement positifs avec
+$\lambda_n\to\lambda\in(0,+\infty]$,
+et une suite $(X_n)$ telle que
+$$X_n\sim\mathcal{E}(\lambda_n).$$
+
+1. Étudier la convergence en loi de $(X_n)$.
+2. Étudier la convergence de $X_n$ vers 0 :
+- en probabilité,
+- en moyenne quadratique.
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+- Écrire la fonction de répartition :
+$$F_n(x)=\begin{cases}
+0,&x<0,\\
+1-e^{-\lambda_n x},&x\ge 0.
+\end{cases}$$
+- Si $\lambda_n\to+\infty$, la masse se concentre près de 0.
+- Utiliser $E(X_n)=1/\lambda_n$ et $E(X_n^2)=2/\lambda_n^2$.
+:::
+
+---
+
+## Partie III — TCL et dimensionnement
+
+### Exercice 5
+
+On contrôle un lot de 1000 ordinateurs. On suppose qu'un ordinateur a 1 % de
+probabilité de tomber en panne dans le mois.
+
+On pose, pour $i=1,\dots,1000$,
+$$X_i=\mathbf{1}_{\{\text{panne du }i\text{-ième ordinateur}\}},$$
+$$S_n=\sum_{i=1}^n X_i, \qquad \overline{X}_n=\frac{S_n}{n}.$$
+
+1. Que représentent $S_n$ et $\overline{X}_n$ ? Donner la loi de $S_n$.
+2. Calculer la moyenne et la variance de $X_1$.
+3. À l'aide du TCL, approcher la probabilité
+$$P(0{,}005\le \overline{X}_{1000}\le 0{,}015).$$
+(Arrondir à 0,1 %.)
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+- $S_n\sim\mathcal{B}(n,0{,}01)$.
+- Standardiser $\overline{X}_n$ avec
+$$\frac{\overline{X}_n-p}{\sqrt{p(1-p)/n}}\approx\mathcal{N}(0,1).$$
+:::
+
+### Exercice 6
+
+Une école compte 2000 élèves. En moyenne, 60 % fréquentent le restaurant
+scolaire.
+
+Combien de repas faut-il prévoir pour que la probabilité d'en manquer soit
+inférieure à 0,28 % ?
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+- Modéliser le nombre de présents par une binomiale
+$\mathcal{B}(2000,0{,}6)$.
+- Approcher par une loi normale (avec correction de continuité si souhaité).
+- Chercher un quantile haut correspondant à une queue de probabilité 0,0028.
+:::
+
+### Exercice 7
+
+Après la panne d'un avion, 400 passagers sont répartis au hasard entre deux
+avions identiques de $n$ places chacun ($n\ge 200$).
+
+On note $X$ et $Y$ les nombres de passagers affectés à chaque avion.
+
+1. Donner la loi de $X$ et de $Y$. Par quelle loi continue peut-on les approcher ?
+2. Déterminer la valeur minimale de $n$ pour que la probabilité qu'un voyageur
+n'ait pas de place soit inférieure à $10^{-3}$.
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+- $X\sim\mathcal{B}(400,0{,}5)$ et $Y=400-X$.
+- "Un voyageur sans place" signifie $X>n$ ou $Y>n$, soit
+$X>n$ ou $X<400-n$.
+- Approcher la binomiale par une normale centrée en 200.
+:::

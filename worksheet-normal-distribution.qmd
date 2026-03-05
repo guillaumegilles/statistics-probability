@@ -1,0 +1,315 @@
+---
+title: "Feuille d'exercices — Lois normales et applications"
+---
+
+## Partie I — Loi normale centrée réduite
+
+### Exercice 1
+
+Soit $X \sim \mathcal{N}(0,1)$.
+
+1. Calculer les probabilités suivantes :
+- $P(X < 1{,}23)$,
+- $P(X > 0{,}96)$,
+- $P(-2{,}05 < X < 1)$,
+- $P(X^2 < 1{,}44)$.
+
+2. Déterminer $k$ dans les cas suivants :
+- $P(X < k) = 0{,}7$,
+- $P(X > k) = 0{,}962$,
+- $P(|X| > k) = 0{,}6$.
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+Utiliser directement la table de $\Phi$ et les relations :
+$P(X>a)=1-\Phi(a)$, $P(-a<X<a)=2\Phi(a)-1$, $P(X^2<c)=P(-\sqrt c<X<\sqrt c)$.
+:::
+
+### Exercice 2
+
+Soit $X \sim \mathcal{N}(1,0{,}5^2)$.
+
+1. Calculer $P(X < 1{,}91)$, $P(X > 0{,}82)$ et $P(0{,}82 < X < 1{,}91)$.
+2. Trouver $t$ tel que :
+- $P(X < t) = 0{,}670$,
+- $P(X \ge t) = 0{,}791$,
+- $P(|X-1| < t) = 0{,}866$.
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+Standardiser avec $Z=\dfrac{X-1}{0{,}5}$, puis revenir à $X$ via
+$t=1+0{,}5z$.
+:::
+
+### Exercice 3
+
+Soit $X \sim \mathcal{N}(m,\sigma^2)$.
+
+Calculer :
+- $P(|X-m|<\sigma)$,
+- $P(|X-m|<2\sigma)$,
+- $P(|X-m|<3\sigma)$.
+
+Arrondir à $10^{-3}$ près.
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+Poser $Z=\dfrac{X-m}{\sigma}$ :
+$P(|X-m|<k\sigma)=P(|Z|<k)=2\Phi(k)-1$ pour $k\in\{1,2,3\}$.
+:::
+
+### Exercice 4
+
+Soit $X$ une variable aléatoire.
+
+1. Si $X \sim \mathcal{N}(10,4)$, calculer $P(X<14)$.
+2. Si $X \sim \mathcal{N}(0,1)$, calculer $P(|X-1|>0{,}5)$.
+3. Si $X \sim \mathcal{N}(1,4)$, déterminer $a>0$ tel que
+$P(|X-1|>a)\le 0{,}03$.
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+Pour la question 3 :
+$P(|X-1|>a)\le 0{,}03 \iff P(|Z|\le a/2)\ge 0{,}97$,
+avec $Z\sim\mathcal{N}(0,1)$.
+:::
+
+---
+
+## Partie II — Identification des paramètres
+
+### Exercice 5
+
+Soit $X \sim \mathcal{N}(m,\sigma^2)$.
+
+1. Sachant que $\mathrm{Var}(X)=4$ et $P(X>2)=0{,}4$, calculer $E(X)$.
+2. Sachant que $E(X)=-2{,}56$ et $P(X<0)=0{,}9$, calculer $\mathrm{Var}(X)$.
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+Écrire chaque condition sous la forme
+$\Phi\!\left(\dfrac{x_0-m}{\sigma}\right)=p$ puis utiliser la table inverse.
+:::
+
+### Exercice 6
+
+Un lot contient des pièces défectueuses dont le nombre aléatoire $X$ suit une loi
+$\mathcal{N}(m,\sigma^2)$.
+
+On sait que :
+- $P(X\le 204)=0{,}58$,
+- $P(X\ge 235)=0{,}04$.
+
+Déterminer $m$ et $\sigma$.
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+Transformer en :
+$\dfrac{204-m}{\sigma}=z_{0{,}58}$ et
+$\dfrac{235-m}{\sigma}=z_{0{,}96}$,
+puis résoudre le système à deux inconnues.
+:::
+
+### Exercice 7
+
+Dans la ville de Prairie, la taille $X$ des individus (en cm) suit une loi
+$\mathcal{N}(m,\sigma^2)$.
+
+On observe que :
+- 30,85 % des individus mesurent moins de 165 cm,
+- 15,87 % mesurent plus de 180 cm.
+
+Déterminer $m$ et $\sigma$.
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+Utiliser :
+$\Phi\!\left(\dfrac{165-m}{\sigma}\right)=0{,}3085$ et
+$\Phi\!\left(\dfrac{180-m}{\sigma}\right)=0{,}8413$.
+:::
+
+---
+
+## Partie III — Sommes, transformations et indépendance
+
+### Exercice 8
+
+Soit $X \sim \mathcal{N}(20,4)$. On pose :
+- $Y=50X$,
+- $Z=\sum_{i=1}^{50} X_i$ où les $X_i$ sont indépendantes et de même loi que $X$,
+- $W=\dfrac{Z}{50}$.
+
+Déterminer la loi de $Y$, $Z$ et $W$.
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+Utiliser :
+- transformation affine d'une normale,
+- stabilité par somme de normales indépendantes.
+:::
+
+### Exercice 9
+
+Un étudiant passe un examen comportant deux épreuves de même coefficient,
+notées indépendantes $X$ et $Y$ avec :
+- $X \sim \mathcal{N}(12,2)$,
+- $Y \sim \mathcal{N}(13,5)$.
+
+1. Déterminer la loi de la moyenne $Z=\dfrac{X+Y}{2}$.
+2. Calculer $P(Z\ge 10)$.
+3. Déterminer un intervalle centré sur $E(Z)$ contenant $Z$ avec probabilité 0,9.
+4. Calculer $P(X\ge 10\ \text{et}\ Y\ge 10)$.
+5. Une mention est attribuée si $Z\ge 14$ et si aucune note n'est en dessous de 10.
+Calculer la probabilité d'obtenir la mention.
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+- Question 4 : utiliser l'indépendance,
+$P(X\ge 10, Y\ge 10)=P(X\ge 10)P(Y\ge 10)$.
+- Question 5 : l'événement est
+$\{Z\ge 14\}\cap\{X\ge 10\}\cap\{Y\ge 10\}$.
+:::
+
+### Exercice 10
+
+Une entreprise reçoit un chargement de 100 wagons de céréales.
+Les masses transportées (en tonnes) sont des v.a.r. indépendantes $M_i$ suivant
+la loi $\mathcal{N}(55,0{,}25)$.
+
+1. Déterminer la loi de la masse totale $M_T=\sum_{i=1}^{100} M_i$.
+2. Déterminer la loi de la masse moyenne $\overline{M}=\dfrac{1}{100}\sum_{i=1}^{100}M_i$.
+3. Déterminer $a>0$ tel que
+$P\big(\overline{M}\in[55-a\,;\,55+a]\big)>0{,}95$.
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+$\overline{M}$ est normale de moyenne 55 et de variance $0{,}25/100$.
+Ramener ensuite à $P(|Z|\le z_{0{,}975})$.
+:::
+
+### Exercice 11
+
+Soit $X \sim \mathcal{N}(1,4)$ et $Y=2X+1$.
+
+1. Déterminer la loi de $Y$.
+2. Calculer $E(Y^2)$.
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+Utiliser $E(Y^2)=\mathrm{Var}(Y)+E(Y)^2$.
+:::
+
+### Exercice 12
+
+Soient $X \sim \mathcal{N}(m,\sigma^2)$ et $b>0$.
+Déterminer $x$ tel que $P(x<X<x+b)$ soit maximale.
+
+(On pourra étudier $f(x)=P(x<X<x+b)$.)
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+Par symétrie de la densité normale, l'intervalle de longueur fixée $b$ qui
+maximise la probabilité est centré en $m$.
+:::
+
+### Exercice 13
+
+Soient $X \sim \mathcal{N}(m,\sigma^2)$ et $Y=aX+b$ avec $(a,b)\in\mathbb{R}^*\times\mathbb{R}$.
+
+1. Calculer $E(Y)$ et $\mathrm{Var}(Y)$.
+2. Montrer que $Y \sim \mathcal{N}(am+b, a^2\sigma^2)$.
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+Montrer que $\dfrac{Y-(am+b)}{|a|\sigma}=\operatorname{sgn}(a)\dfrac{X-m}{\sigma}$,
+puis utiliser l'invariance de la loi de $Z\sim\mathcal{N}(0,1)$ par symétrie.
+:::
+
+### Exercice 14
+
+Soient $X \sim \mathcal{N}(0,1)$ et $U$ une v.a.r. telle que
+$P(U=1)=P(U=-1)=0{,}5$.
+
+En supposant $X$ et $U$ indépendantes, déterminer la loi de $Z=XU$.
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+Conditionner par $U=1$ et $U=-1$.
+Comparer les lois de $X$ et $-X$.
+:::
+
+---
+
+## Partie IV — Loi log-normale
+
+### Exercice 15
+
+Soit $Y$ une v.a.r. suivant une loi log-normale de paramètres $m$ et $\sigma$,
+c'est-à-dire telle que $X=\ln(Y)\sim\mathcal{N}(m,\sigma^2)$.
+
+1. Cas $m=3$, $\sigma=2$ : calculer $P(1\le Y\le e^5)$.
+2. Cas général :
+- déterminer une densité de $Y$,
+- en admettant $X=m+\sigma Z$ avec $Z\sim\mathcal{N}(0,1)$, montrer que
+$E(Y)=e^m E(e^{\sigma Z})$,
+- en déduire $E(Y)$ et $\mathrm{Var}(Y)$,
+- déterminer la loi de $W=\dfrac{1}{Y}$.
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+- Pour la densité : dériver $F_Y(y)=P(X\le\ln y)$ pour $y>0$.
+- Pour $W=1/Y$, remarquer que $\ln(W)=-\ln(Y)$.
+:::
+
+### Exercice 16
+
+Dans certains modèles financiers, le cours futur d'une action est :
+$$S_T=S_0e^X,$$
+où $S_0>0$ et $X\sim\mathcal{N}(m,\sigma^2)$.
+
+1. Justifier que $S_T$ suit une loi log-normale et en donner les paramètres.
+2. Vérifier que $E(S_T)=S_0 \iff m=-\dfrac{\sigma^2}{2}$.
+3. Exprimer alors $\mathrm{Var}(S_T)$ en fonction de $\sigma$ et $S_0$.
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+Utiliser $E(e^X)=e^{m+\sigma^2/2}$ et
+$\mathrm{Var}(S_T)=S_0^2\mathrm{Var}(e^X)$.
+:::
+
+---
+
+## Partie V — Loi du khi-deux
+
+### Exercice 17
+
+Soit $X\sim\chi^2_3$.
+
+1. Déterminer :
+- $P(X>7{,}815)$,
+- $P(2{,}366<X<4{,}108)$.
+2. Démontrer que $E(X)=3$ et $\mathrm{Var}(X)=6$.
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+- Question 1 : utiliser la table de la loi du khi-deux.
+- Question 2 : écrire $X=Z_1^2+Z_2^2+Z_3^2$ avec $Z_i\sim\mathcal{N}(0,1)$
+indépendantes.
+:::

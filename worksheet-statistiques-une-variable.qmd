@@ -1,0 +1,106 @@
+---
+title: "Feuille d'exercices — Statistiques à une variable"
+---
+
+## Partie I — Séries discrètes
+
+### Exercice 1
+
+Le nombre de clients reçus chaque jour dans une boutique a été relevé pendant
+une semaine :
+
+| Jour | Lundi | Mardi | Mercredi | Jeudi | Vendredi | Samedi |
+|---|---:|---:|---:|---:|---:|---:|
+| Nombre de clients | 23 | 42 | 38 | 41 | 55 | 51 |
+
+Déterminer la moyenne, la variance et l'écart-type de la série.
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+- Considérer les 6 valeurs comme une série quantitative discrète simple.
+- Utiliser :
+$$\bar x=\frac{1}{n}\sum_{i=1}^n x_i, \qquad
+V=\frac{1}{n}\sum_{i=1}^n (x_i-\bar x)^2, \qquad
+\sigma=\sqrt{V}.$$
+:::
+
+### Exercice 2
+
+Voici un relevé des tirs réussis sur 6 tirs lors d'une campagne :
+
+| Tirs réussis $x_i$ | 0 | 1 | 2 | 3 | 4 | 5 | 6 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Nombre de tireurs $n_i$ | 3 | 15 | 9 | 11 | 8 | 4 | 2 |
+
+1. Déterminer la population, le caractère, et le type du caractère étudiés.
+2. Représenter cette série par un diagramme en bâtons.
+3. Déterminer les couples suivants :
+- (mode, étendue),
+- (médiane, écart interquartile),
+- (moyenne, écart-type).
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+- Effectif total : $N=\sum n_i$.
+- Médiane et quartiles : travailler avec les effectifs cumulés croissants.
+- Moyenne pondérée :
+$$\bar x=\frac{1}{N}\sum n_i x_i.$$
+- Variance pondérée :
+$$V=\frac{1}{N}\sum n_i(x_i-\bar x)^2.$$
+:::
+
+---
+
+## Partie II — Séries groupées en classes
+
+### Exercice 3
+
+Dans une région, l'étude des exploitations agricoles a conduit au tableau
+suivant (surface en hectares) :
+
+| Surface (ha) | $[0;2[$ | $[2;3[$ | $[3;4[$ | $[4;5[$ | $[5;6[$ |
+|---|---:|---:|---:|---:|---:|
+| Nombre d'exploitations | 15 | 25 | 30 | 25 | 5 |
+
+1. Déterminer la population, le caractère, et le type du caractère étudiés.
+2. Représenter cette série par un histogramme.
+3. Représenter la fonction de répartition empirique associée.
+4. Calculer les couples :
+- (médiane, écart interquartile),
+- (moyenne, écart-type).
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+- Ici, le caractère est quantitatif continu, regroupé en classes.
+- Pour l'histogramme, tenir compte des amplitudes de classes.
+- Pour les estimations de moyenne/variance, utiliser les centres de classes.
+- Pour médiane et quartiles, procéder par interpolation linéaire dans la classe
+qui contient le quantile.
+:::
+
+---
+
+## Partie III — Transformation affine d'une série
+
+### Exercice 4
+
+Un service de ressources humaines étudie la masse salariale $S$ et trouve :
+- moyenne : $\bar S=37\,000$ euros,
+- écart-type : $\sigma_S=700$ euros.
+
+Pour faciliter les calculs, il pose :
+$$Y=\frac{S-35\,000}{1\,000}.$$
+
+Déterminer la moyenne, la variance et l'écart-type de la nouvelle série $Y$.
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+Pour une transformation affine $Y=aX+b$ :
+- $E(Y)=aE(X)+b$,
+- $\mathrm{Var}(Y)=a^2\mathrm{Var}(X)$,
+- $\sigma_Y=|a|\sigma_X$.
+:::

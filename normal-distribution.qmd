@@ -1,283 +1,361 @@
-ECE LYON - ING 3
-COURS DE MATHÉMATIQUES
-PROBABILITÉS ET STATISTIQUES
-CHAPITRE 02 : LOIS NORMALES ET APPLICATIONS
-Dans tout ce chapitre, nous nous plaçons dans un espace probabilisé quelconque (Ω,τ,P).
-I LOI NORMALE CENTRÉE RÉDUITE N (0 ; 1)
-DÉFINITION :
-Soit X une v.a.r. absolument continue.
-Dire que X suit la loi normale centrée réduite, notée N (0 ; 1), signifie que sa densité de probabilité est
-la fonction fX définie sur R par : fX (x) =
-1
-󲅮2π
-e−x2
-2 .
-Remarque : On admettra que
-󰁝
-R
-fX (x)dx = 1.
-La fonction fX étant paire, sa courbe représentative est symétrique
-par rapport à l’axe des ordonnées.
-Donc P(X ≤ 0) = P(X ≥ 0) =
-1
-2
-.
-On dit que la courbe représentant fX est une « courbe en
-cloche » ou courbe de Gauss.
-DÉFINITION :
-Soit X 󲅦→N (0 ; 1). La fonction de répartition de X est la fonction notée Φ et définie par :
-Φ(x) = P(X ≤ x) =
-󰁝x
-−∞
-fX (t )dt .
-Remarque : On utilise une table pour lire les valeurs de Φ car elle ne peut pas s’exprimer avec les fonctions
-usuelles.
-PROPOSITION :
-1. Pour tout réel x, Φ(−x) = 1−Φ(x) et en particulier Φ(0) =
-1
-2
-.
-2. Pour tout réel x > 0, P(−x ≤ X ≤ x) = 2Φ(x)−1.
-DÉMONSTRATION 1 :...
-Page 1/8
-Exemple 1
-1. Lecture directe : Soit X 󲅦→N (0; 1). A l’aide de la table de la fonction Φ, calculer les probabilités suivantes :
-a. P(X ≤ 1,3) b. P(X > 0,22) c.P(X < −1,57)
-d. P(−1,5 ≤ X ≤ 2,2) e. P(−1,96 ≤ X ≤ 1,96) f. P(−2,58 ≤ X ≤ 2,58).
-2. Lecture inverse : Soit X 󲅦→N (0; 1). A l’aide de la table de la fonction Φ, déterminer les réels a, b, c et d tels
-que : a. P(X ≤ a) = 0,1251 b. P(X > b) = 0,2327 c. P(0 < X < c) = 0,4984 d. P(−d ≤ X ≤ d) = 0,95
-PROPOSITION : Si X 󲅦→N (0 ; 1) alors E(X) = 0 et Var(X) = 1.
-DÉMONSTRATION 2 :...
-II LOIS NORMALES N (m; σ2)
-DÉFINITION :
-Soit X une v.a.r. absolument continue. Soientm un réel et σ un réel strictement positif.
-Dire que X suit la loi normaleN (m; σ2), signifie que sa densité de probabilité est la fonction fX définie
-sur R par : fX (x) =
-1
-σ󲅮2π
-e−(x−m)2
-2σ2 .
-PROPOSITION :
-Soient X et T deux v.a.r. absolument continues. Alors : X 󲅦→N (m; σ2) ⇐⇒ T =
-X −m
-σ
-󲅦→N (0 ; 1).
-DÉMONSTRATION 3 :...
-Page 2/8
-Exemple 2
-1. Lecture directe : Soit X 󲅦→N (30 ; 9). Calculer les probabilités suivantes : a. P(X > 36) b. P(25 ≤ X ≤ 35).
-2. Lecture inverse : Soit X 󲅦→N (90 ; 400).
-a. Déterminer le réel k tel que P(X < k) = 0,9798.
-b. Déterminer le réel k′ tel que P(X > k′) = 0,6026.
-c. Déterminer un intervalle I de centre 90 tel que P(X ∈ I ) = 0,85.
-PROPOSITION : Si X 󲅦→N (m; σ2) alors E(X) =m et Var(X) = σ2.
-DÉMONSTRATION 4 :...
-Exemple 3
-Lors d’un test de connaissances, 70% des individus ont un score inférieur à 60 points. De plus, les résultats
-suivent une loi normale d’écart-type 20.
-Calculer l’espérancem de cette loi.
-PROPOSITION (ADMISE) :
-Soient X1,X2, ...,Xn des v.a.r. indépendantes∗ qui suivent respectivement des loisN (mi ; σ2i
-).
-Alors la v.a.r. Y définie par Y =
-󰁛n
-i=1
-Xi suit la loiN (m; σ2) avecm =
-󰁛n
-i=1
-mi et σ2 =
-󰁛n
-i=1
-σ2i
-.
-∗ La notion d’indépendance des v.a.r. à densité sera définie ultérieurement. Il s’agit d’une généralisation de
-l’indépendance des variables aléatoires discrètes.
-Exemple 4
-Soient X et Y deux v.a.r. indépendantes de loiN (0 ; 2). Calculer P(X +Y ≤ 1).
-III APPLICATION À LA LOI LOG-NORMALE
-1. Loi log-normale et loi normale centrée réduite
-DÉFINITION :
-Dire qu’une v.a.r. X suit une loi log-normale de paramètres 0 et 1 signifie que la v.a.r. Y = ln(X) suit la loi
-N (0 ; 1).
-PROPOSITION :
-Si X suit une loi log-normale de paramètres 0 et 1 alors sa fonction de densité fX est définie sur R par
-fX (x) =
-1
-x󲅮2π
-e−12
-(lnx)2
-1]0 ;+∞[(x).
-De plus : E(X) = e
-12
-et Var(X) = e(e−1).
-DÉMONSTRATION 5 :
-• Densité fX de X :
-Soit FX la fonction de répartition de X.
-∀x > 0, FX (x) = P(X ≤ x) = P(eY ≤ x) = P(Y ≤ lnx) = Φ(lnx) où Φ est la fonction de répartition de la v.a.r.
-Y de loiN (0 ; 1). Donc fX (x) = F′X (x) =Φ′(lnx)×
-1
-x =
-1
-x
-fY (lnx) =
-1
-x󲅮2π
-e−12
-(lnx)2 .
-Page 3/8
-• Espérance :
-E(X) =
-󰁝
-R
-x fX (x)dx =
-1
-󲅮2π
-󰁝
-+∞
-0
-e−12
-(lnx)2
-dx.
-A l’aide du changement de variable u = lnx, on obtient alors : E(X) =
-1
-󲅮2π
-󰁝
-R
-e−12
-u2+udu.
-Or, −
-1
-2
-u2+u = −
-1
-2
-(u2−2u) = −
-1
-2
-((u −1)2−1). Donc E(X) =
-e
-12
-󲅮2π
-󰁝
-R
-e−12
-(u−1)2
-du.
-Le changement de variable v = u −1 conduit alors à : E(X) =
-e
-12
-󲅮2π
-󰁝
-R
-e−12
-v2
-du = e
-12
-.
-• Variance :
-Var(X) = E(X2)−E(X)2. Le calcul de E(X2) se traite de façon analogue au calcul précédent. On trouve alors :
-E(X2) = e2 et donc Var(X) = e(e−1).
-2. Loi log-normale et loi normale
-DÉFINITION :
-Soientm un réel et σ un réel strictement positif.
-Dire qu’une v.a.r. X suit la loi log-normale de paramètres m et σ signifie que la v.a.r. Y = ln(X) suit la loi
-N (m; σ2).
-Les résultats démontrés précédemment se généralisent (la démonstration vous sera proposée en TD) :
-PROPOSITION :
-Si X suit une loi log-normale de paramètres m et σ alors sa fonction de densité fX est définie sur R par
-fX (x) =
-1
-σ󲅮2π
-1
-x
-e−12
-( lnx−m
-σ )2
-1]0 ;+∞[(x).
-De plus : E(X) = em+σ2
-2 et Var(X) = e2m+σ2 (eσ2
-−1).
-Exemple 5
-Soit X une v.a.r. suivant la loi log-normale de paramètresm = 1 et σ = 1. Calculer P(X > 1).
-Page 4/8
-IV APPLICATION À LA LOI DU KHI-2
-1. Loi du khi-2 à un degré de liberté
-DÉFINITION :
-Soit X 󲅦→N (0 ; 1).
-La v.a.r. Y = X2 suit la loi du khi-2 à un degré de liberté et on note Y 󲅦→χ21
-.
-PROPOSITION :
-Soit Y 󲅦→χ21
-.
-Alors sa fonction de densité fY est définie sur R par fY (x) =
-1
-󲅮2π
-x−12
-e−x
-2 1]0 ;+∞[(x).
-De plus : E(Y ) = 1 et Var(Y ) = 2.
-DÉMONSTRATION 6 :
-• Densité fY de Y :
-Soit Φ la fonction de répartition de X et soit FY celle de Y .
-FY (x) = P(Y ≤ x) = P(X2 ≤ x) =
-󰀫
-P(󲅭) si x < 0
-P(−󲅮x ≤ X ≤󲅮x) si x ≥ 0 =
-󰀫
-0 si x < 0
-2Φ(󲅮x)−1 si x ≥ 0
-.
-On obtient alors la densité de Y en dérivant sa fonction de répartition...
-• Espérance : Le résultat est immédiat ! E(Y ) = E(X2) = Var(X)+E(X)2 = 1+02 = 1.
-• Variance : Var(Y ) = E(Y 2)−E(Y )2 = E(Y 2)−1.
-A l’aide d’une intégration par parties, on obtient E(Y 2) = 3. Ainsi, Var(Y ) = 2.
-2. Loi du khi-2 à n degrés de liberté
-DÉFINITION :
-X1,X2, ...,Xn désignent n variables aléatoires indépendantes de loiN (0 ; 1).
-On pose X =
-󰁛n
-i=1
-X2
-i .
-La v.a.r. X suit la loi du khi-2 à n degrés de liberté et on note X 󲅦→χ2
-n.
-Remarque : L’expression de la fonction de densité de la v.a.r. X fait appel à la fonction Γ très connue en
-mathématiques.
-Pour information, X a pour densité la fonction fX définie par : fX (x) =
-󰀃 12
-󰀄n2
-Γ(n2
-)
-x
-n−2
-2 e−x
-2 1]0 ;+∞[(x).
-Page 5/8
-PROPOSITION :
-Soit X 󲅦→χ2
-n.
-Alors : E(X) = n et Var(X) = 2n.
-DÉMONSTRATION 7 :
-Cette proposition résulte du fait que X est la somme de n v.a. indépendantes et chacune d’elle suit la loi χ21
-.
-Donc E(X) =
-󰁛n
-i=1
-E(Xi ) = n et Var(X) =
-󰁛n
-i=1
-Var(Xi ) = 2n.
-Exemple 6
-Soit X 󲅦→χ27
-.
-1. Calculer : a. P(X < 4,255) b. P(X ≥ 9,037) c. P(2,167 ≤ X ≤ 12,02)
-2. Déterminer le réel x tel que P(X < x) = 0,1.
-Page 6/8
-FONCTION DE RÉPARTITION DE LA LOI NORMALE CENTRÉE RÉDUITE
-Lorsque X 󲅦→N (0 ; 1), la table donne la valeur de Φ(t ) = P(X ≤ t ).
-Page 7/8
-TABLE DU KHI-2
-Lorsque X 󲅦→χ2
-n, F(x) = P(X ≤ x) = p.
-La table donne x pour différentes valeurs de n et p.
-Page 8/8
+---
+title: "Loi normale et applications"
+abstract: |
+  Ce chapitre présente la **loi normale**, modèle central en probabilités et en
+  statistique. On introduit d'abord la loi normale centrée réduite
+  $\mathcal{N}(0,1)$, sa densité en cloche et sa fonction de répartition
+  $\Phi$, puis les règles de calcul associées (symétrie, lecture directe et
+  inverse des probabilités). On généralise ensuite à la loi
+  $\mathcal{N}(m,\sigma^2)$ et à la **standardisation**, outil clé pour ramener
+  tout calcul à la table de $\Phi$. Le chapitre inclut les propriétés
+  fondamentales (espérance, variance, somme de normales indépendantes) et se
+  prolonge par deux applications classiques : la **loi log-normale** et la
+  **loi du khi-deux**.
+date: 2026-03-05
+date-modified: 2026-03-05
+---
+
+> Dans tout ce chapitre, nous nous plaçons dans un espace probabilisé quelconque $(\Omega, \mathcal{F}, P)$.
+
+## I - Loi normale centrée réduite $\mathcal{N}(0,1)$
+
+::: {.callout-note}
+## Définition
+
+Une variable aléatoire réelle $X$ suit la **loi normale centrée réduite**,
+notée $\mathcal{N}(0,1)$, si sa densité est
+$$f_X(x) = \frac{1}{\sqrt{2\pi}}\exp\left(-\frac{x^2}{2}\right), \quad x \in \mathbb{R}.$$
+:::
+
+Cette densité est positive, intégrée à 1 sur $\mathbb{R}$, et paire. La courbe de
+$f_X$ est donc symétrique par rapport à l'axe des ordonnées. En particulier :
+$$P(X \leq 0) = P(X \geq 0) = \frac{1}{2}.$$
+
+::: {.callout-note}
+## Définition - Fonction de répartition
+
+Si $X \sim \mathcal{N}(0,1)$, on note
+$$\Phi(x) = P(X \leq x) = \int_{-\infty}^x \frac{1}{\sqrt{2\pi}}\exp\left(-\frac{t^2}{2}\right)dt.$$
+:::
+
+La primitive de $e^{-t^2/2}$ n'étant pas élémentaire, les valeurs de $\Phi$ se
+lisent en pratique dans une table, via calculatrice ou logiciel.
+
+::: {.callout-important}
+## Propriétés utiles
+
+Pour tout réel $x$ :
+
+- $\Phi(-x) = 1 - \Phi(x)$,
+- $\Phi(0) = 0{,}5$,
+- pour $x > 0$, $P(-x \leq X \leq x) = 2\Phi(x) - 1$.
+:::
+
+::: {.callout-caution}
+## Exemple 1 - Lecture de table pour $\mathcal{N}(0,1)$
+
+Soit $X \sim \mathcal{N}(0,1)$.
+
+1. Calculer :
+- $P(X \leq 1{,}3)$,
+- $P(X > 0{,}22)$,
+- $P(X < -1{,}57)$,
+- $P(-1{,}5 \leq X \leq 2{,}2)$,
+- $P(-1{,}96 \leq X \leq 1{,}96)$,
+- $P(-2{,}58 \leq X \leq 2{,}58)$.
+
+2. Déterminer les réels $a,b,c,d$ tels que :
+- $P(X \leq a)=0{,}1251$,
+- $P(X > b)=0{,}2327$,
+- $P(0 < X < c)=0{,}4984$,
+- $P(-d \leq X \leq d)=0{,}95$.
+:::
+
+::: {.callout-tip collapse="true"}
+## Solution - Exemple 1
+
+Avec la table de $\Phi$ :
+
+- $P(X \leq 1{,}3)=\Phi(1{,}3)\approx 0{,}9032$.
+- $P(X > 0{,}22)=1-\Phi(0{,}22)\approx 1-0{,}5871=0{,}4129$.
+- $P(X < -1{,}57)=\Phi(-1{,}57)=1-\Phi(1{,}57)\approx 0{,}0582$.
+- $P(-1{,}5 \leq X \leq 2{,}2)=\Phi(2{,}2)-\Phi(-1{,}5)\approx 0{,}9193$.
+- $P(-1{,}96 \leq X \leq 1{,}96)=2\Phi(1{,}96)-1\approx 0{,}95$.
+- $P(-2{,}58 \leq X \leq 2{,}58)=2\Phi(2{,}58)-1\approx 0{,}9901$.
+
+Lecture inverse :
+
+- $a \approx -1{,}15$ car $\Phi(-1{,}15)=0{,}1251$.
+- $b \approx 0{,}73$ car $1-\Phi(b)=0{,}2327 \iff \Phi(b)=0{,}7673$.
+- $c \approx 2{,}95$ car $\Phi(c)-0{,}5=0{,}4984 \iff \Phi(c)=0{,}9984$.
+- $d \approx 1{,}96$ car $2\Phi(d)-1=0{,}95$.
+:::
+
+::: {.callout-important}
+## Proposition
+
+Si $X \sim \mathcal{N}(0,1)$, alors
+$$E(X)=0 \quad \text{et} \quad \mathrm{Var}(X)=1.$$
+:::
+
+## II - Loi normale générale $\mathcal{N}(m,\sigma^2)$
+
+::: {.callout-note}
+## Définition
+
+Soient $m \in \mathbb{R}$ et $\sigma > 0$. On dit que $X$ suit la loi normale
+$\mathcal{N}(m,\sigma^2)$ si sa densité est
+$$f_X(x)=\frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(x-m)^2}{2\sigma^2}\right), \quad x\in\mathbb{R}.$$
+:::
+
+Ici, $m$ est le paramètre de position (centre), et $\sigma$ contrôle la
+dispersion autour de $m$.
+
+::: {.callout-important}
+## Proposition - Standardisation
+
+Si $X \sim \mathcal{N}(m,\sigma^2)$, alors la variable
+$$Z=\frac{X-m}{\sigma}$$
+suit $\mathcal{N}(0,1)$.
+
+Réciproquement, si $Z \sim \mathcal{N}(0,1)$, alors $X=m+\sigma Z$ suit
+$\mathcal{N}(m,\sigma^2)$.
+:::
+
+Cette proposition est l'outil central de calcul : toute probabilité sur une loi
+normale se ramène à une lecture de $\Phi$.
+
+::: {.callout-caution}
+## Exemple 2 - Calculs sur une loi normale générale
+
+1. Soit $X \sim \mathcal{N}(30,9)$. Calculer :
+- $P(X>36)$,
+- $P(25 \leq X \leq 35)$.
+
+2. Soit $X \sim \mathcal{N}(90,400)$. Déterminer :
+- $k$ tel que $P(X<k)=0{,}9798$,
+- $k'$ tel que $P(X>k')=0{,}6026$,
+- un intervalle $I$ centré en 90 tel que $P(X\in I)=0{,}85$.
+:::
+
+::: {.callout-tip collapse="true"}
+## Solution - Exemple 2
+
+**1.** $X \sim \mathcal{N}(30,9)$ donc $\sigma=3$ et
+$Z=(X-30)/3 \sim \mathcal{N}(0,1)$.
+
+- $P(X>36)=P\!\left(Z>\frac{36-30}{3}\right)=P(Z>2)=1-\Phi(2)\approx 0{,}0228$.
+- $P(25 \leq X \leq 35)=P\!\left(-\frac{5}{3} \leq Z \leq \frac{5}{3}\right)
+\approx 2\Phi(1{,}67)-1 \approx 0{,}9044$.
+
+**2.** $X \sim \mathcal{N}(90,400)$ donc $\sigma=20$.
+
+- $P(X<k)=0{,}9798 \Rightarrow \dfrac{k-90}{20}=2{,}05$, donc $k=131$.
+- $P(X>k')=0{,}6026 \Rightarrow P(X\leq k')=0{,}3974$,
+donc $\dfrac{k'-90}{20}\approx -0{,}26$ et $k'\approx 84{,}8$.
+- On cherche $I=[90-a,90+a]$ avec $P(|X-90|\leq a)=0{,}85$.
+En standardisant : $P(|Z|\leq a/20)=0{,}85$, donc $2\Phi(a/20)-1=0{,}85$,
+d'où $\Phi(a/20)=0{,}925$ et $a/20\approx 1{,}44$. Ainsi $a\approx 28{,}8$,
+et $I\approx[61{,}2\,;\,118{,}8]$.
+:::
+
+::: {.callout-important}
+## Proposition
+
+Si $X \sim \mathcal{N}(m,\sigma^2)$, alors
+$$E(X)=m \quad \text{et} \quad \mathrm{Var}(X)=\sigma^2.$$
+:::
+
+::: {.callout-important}
+## Proposition (admise) - Somme de normales indépendantes
+
+Si $X_1,\dots,X_n$ sont indépendantes et $X_i\sim\mathcal{N}(m_i,\sigma_i^2)$,
+alors
+$$Y=\sum_{i=1}^n X_i \sim \mathcal{N}\left(\sum_{i=1}^n m_i,\sum_{i=1}^n \sigma_i^2\right).$$
+:::
+
+::: {.callout-caution}
+## Exemple 3
+
+Lors d'un test, 70 % des individus ont un score inférieur à 60. On suppose une
+loi normale d'écart-type 20. Déterminer l'espérance $m$.
+:::
+
+::: {.callout-tip collapse="true"}
+## Solution - Exemple 3
+
+Si $X\sim\mathcal{N}(m,20^2)$ et $P(X\leq 60)=0{,}70$, alors
+$$\frac{60-m}{20}=z_{0{,}70}\approx 0{,}5244.$$
+Donc
+$$m \approx 60-20\times 0{,}5244 \approx 49{,}5.$$
+:::
+
+::: {.callout-caution}
+## Exemple 4
+
+Soient $X$ et $Y$ indépendantes de loi $\mathcal{N}(0,2)$. Calculer
+$P(X+Y\leq 1)$.
+:::
+
+::: {.callout-tip collapse="true"}
+## Solution - Exemple 4
+
+Par stabilité de la loi normale,
+$$X+Y \sim \mathcal{N}(0,4).$$
+Donc
+$$P(X+Y\leq 1)=P\left(\frac{X+Y}{2}\leq \frac12\right)=\Phi(0{,}5)\approx 0{,}6915.$$
+:::
+
+## III - Application : loi log-normale
+
+::: {.callout-note}
+## Définition
+
+On dit que $X$ suit une **loi log-normale** de paramètres $m\in\mathbb{R}$ et
+$\sigma>0$ si
+$$\ln(X)\sim\mathcal{N}(m,\sigma^2).$$
+En particulier, $X>0$ presque sûrement.
+:::
+
+::: {.callout-important}
+## Proposition
+
+Si $X$ est log-normale de paramètres $(m,\sigma)$, alors pour $x>0$ :
+$$f_X(x)=\frac{1}{x\sigma\sqrt{2\pi}}\exp\left(-\frac{1}{2}\left(\frac{\ln x-m}{\sigma}\right)^2\right).$$
+
+De plus,
+$$E(X)=e^{m+\sigma^2/2}, \qquad \mathrm{Var}(X)=e^{2m+\sigma^2}(e^{\sigma^2}-1).$$
+:::
+
+::: {.callout-caution}
+## Exemple 5
+
+Soit $X$ log-normale de paramètres $m=1$ et $\sigma=1$. Calculer $P(X>1)$.
+:::
+
+::: {.callout-tip collapse="true"}
+## Solution - Exemple 5
+
+Comme $\ln(X)\sim\mathcal{N}(1,1)$,
+$$P(X>1)=P(\ln(X)>0)=P(Z>-1)=\Phi(1)\approx 0{,}8413.$$
+:::
+
+## IV - Application : loi du khi-deux
+
+::: {.callout-note}
+## Définition - 1 degré de liberté
+
+Si $Z\sim\mathcal{N}(0,1)$, alors $Y=Z^2$ suit la loi du khi-deux à 1 degré de
+liberté, notée $\chi^2_1$.
+:::
+
+::: {.callout-important}
+## Propriétés de $\chi^2_1$
+
+La densité de $Y\sim\chi^2_1$ est, pour $x>0$,
+$$f_Y(x)=\frac{1}{\sqrt{2\pi}}x^{-1/2}e^{-x/2},$$
+et
+$$E(Y)=1, \qquad \mathrm{Var}(Y)=2.$$
+:::
+
+::: {.callout-note}
+## Définition - $n$ degrés de liberté
+
+Si $Z_1,\dots,Z_n$ sont indépendantes et suivent toutes
+$\mathcal{N}(0,1)$, alors
+$$X=\sum_{i=1}^n Z_i^2$$
+suit la loi $\chi^2_n$.
+:::
+
+::: {.callout-important}
+## Proposition
+
+Si $X\sim\chi^2_n$, alors
+$$E(X)=n \qquad \text{et} \qquad \mathrm{Var}(X)=2n.$$
+:::
+
+::: {.callout-caution}
+## Exemple 6 - Lecture de table $\chi^2$
+
+Soit $X\sim\chi^2_7$. À l'aide de la table :
+
+1. Calculer :
+- $P(X<4{,}255)$,
+- $P(X\geq 9{,}037)$,
+- $P(2{,}167\leq X\leq 12{,}02)$.
+
+2. Déterminer $x$ tel que $P(X<x)=0{,}1$.
+:::
+
+::: {.callout-tip collapse="true"}
+## Solution - Exemple 6
+
+Pour $n=7$, la table donne approximativement :
+
+- $F(4{,}255)=0{,}25$,
+- $F(9{,}037)=0{,}75$,
+- $F(2{,}167)=0{,}10$,
+- $F(12{,}02)=0{,}90$.
+
+Donc :
+
+- $P(X<4{,}255)=0{,}25$,
+- $P(X\geq 9{,}037)=1-0{,}75=0{,}25$,
+- $P(2{,}167\leq X\leq 12{,}02)=0{,}90-0{,}10=0{,}80$,
+- le quantile d'ordre 0,1 vaut $x=2{,}167$.
+:::
+
+## V - Exercice de synthèse
+
+::: {.callout-caution}
+## Exercice 7 - D'une mesure physique à une probabilité de dépassement
+
+La résistance à la rupture (en MPa) d'un matériau est modélisée par une variable
+aléatoire $R$ de loi normale $\mathcal{N}(250,15^2)$. On considère la charge
+appliquée par une machine, modélisée par $C\sim\mathcal{N}(220,10^2)$,
+indépendante de $R$.
+
+1. Calculer $P(R<230)$.
+2. Déterminer le seuil $s$ tel que $P(R\geq s)=0{,}10$.
+3. On définit la marge de sécurité $M=R-C$.
+- Déterminer la loi de $M$.
+- Calculer $P(M>0)$ et interpréter le résultat.
+:::
+
+::: {.callout-tip collapse="true"}
+## Solution - Exercice 7
+
+1. **Probabilité de résistance insuffisante**
+$$P(R<230)=P\left(\frac{R-250}{15}<\frac{230-250}{15}\right)=P(Z<-1{,}33)
+\approx 0{,}0918.$$
+
+2. **Quantile à 90 %**
+$$P(R\geq s)=0{,}10 \iff P(R\leq s)=0{,}90.$$
+Avec $z_{0{,}90}\approx 1{,}28$,
+$$s=250+15\times 1{,}28\approx 269{,}2\ \text{MPa}.$$
+
+3. **Marge de sécurité**
+
+Comme $R$ et $C$ sont indépendantes et normales,
+$$M=R-C \sim \mathcal{N}(250-220,15^2+10^2)=\mathcal{N}(30,325).$$
+Donc $\sigma_M=\sqrt{325}\approx 18{,}03$.
+
+Alors
+$$P(M>0)=P\left(\frac{M-30}{18{,}03}>\frac{0-30}{18{,}03}\right)
+= P(Z>-1{,}66)=\Phi(1{,}66)\approx 0{,}9515.$$
+
+Interprétation : dans ce modèle, la résistance dépasse la charge dans environ
+95 % des cas.
+:::
+
+::: {.callout-tip}
+## À retenir
+
+- La standardisation $Z=(X-m)/\sigma$ est la clé de presque tous les calculs sur
+les lois normales.
+- La loi normale est stable par somme de variables indépendantes.
+- Les lois log-normale et khi-deux se construisent directement à partir de la
+loi normale.
+- Les quantiles (lecture inverse) sont indispensables pour fixer des seuils de
+risque.
+:::

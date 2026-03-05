@@ -1,0 +1,147 @@
+---
+title: "Feuille d'exercices — Distribution d'échantillonnage"
+---
+
+## Partie I — Vocabulaire et statistiques d'échantillon
+
+### Exercice 1
+
+Lors d'une élection, un sondage sur un échantillon de 1000 personnes attribue au
+candidat Durand 50,2 % des voix. Le résultat final publié est 51,1 %.
+
+Identifier dans cet énoncé :
+- la population,
+- la variable étudiée,
+- la loi du caractère observé,
+- la statistique utilisée.
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+On modélise en général chaque réponse par une variable de Bernoulli
+(valeur 1 si vote Durand, 0 sinon). La statistique naturelle est la proportion
+empirique dans l'échantillon.
+:::
+
+### Exercice 2
+
+Soit $n\ge 1$ et $(X_1,\dots,X_n)$ un $n$-échantillon d'une loi parente
+$\mathcal{N}(m,\sigma^2)$.
+
+On considère :
+$$\overline{X}_n=\frac1n\sum_{i=1}^n X_i,
+\qquad V_n=\frac1n\sum_{i=1}^n (X_i-m)^2,$$
+$$S_n'^2=\frac1n\sum_{i=1}^n (X_i-\overline{X}_n)^2,
+\qquad S_n^2=\frac1{n-1}\sum_{i=1}^n (X_i-\overline{X}_n)^2.$$
+
+1. Nommer chacune de ces variables.
+2. Donner les lois de :
+$$\overline{X}_n,\qquad \frac{n}{\sigma^2}V_n,
+\qquad \frac{n}{\sigma^2}S_n'^2,
+\qquad \frac{n-1}{\sigma^2}S_n^2.$$
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+- $\overline{X}_n$ est la moyenne empirique.
+- $S_n'^2$ est la variance empirique non corrigée.
+- $S_n^2$ est la variance empirique corrigée.
+- En loi normale, les sommes de carrés standardisées suivent une loi
+$\chi^2$.
+:::
+
+---
+
+## Partie II — Applications numériques
+
+### Exercice 3
+
+Lors d'un examen, les notes suivent la loi $\mathcal{N}(10,25)$.
+
+1. Pour $n=25$, calculer
+$$P(9{,}5\le \overline{X}_n\le 11).$$
+Que devient cette probabilité pour $n=100$ ? Commenter.
+
+2. Pour $n=25$, évaluer
+$$P(S_n'^2>36{,}42)$$
+et résoudre
+$$P(S_n^2>a)=0{,}05.$$
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+- $\overline{X}_n\sim \mathcal{N}\!\left(10,\frac{25}{n}\right)$.
+- Pour la question 2, ramener à des quantiles de loi $\chi^2$ via :
+$$\frac{n}{\sigma^2}S_n'^2\sim\chi_n^2,
+\qquad
+\frac{n-1}{\sigma^2}S_n^2\sim\chi_{n-1}^2.$$
+:::
+
+### Exercice 4
+
+Six personnes (trois hommes et trois femmes) montent dans un ascenseur de
+charge maximale 450 kg.
+
+- poids d'un homme : $\mathcal{N}(77,144)$,
+- poids d'une femme : $\mathcal{N}(63,100)$,
+- indépendance supposée.
+
+1. Déterminer les lois du poids total $T$ et du poids moyen $\overline{T}$.
+2. Calculer $P(T>450)$.
+3. Dans un scénario pessimiste, chaque personne suit $\mathcal{N}(77,144)$.
+Déterminer la charge maximale réelle $M$ pour que
+$$P(T>M)\le 0{,}005.$$
+(Arrondir aux 10 kg supérieurs.)
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+- Somme de normales indépendantes : moyenne = somme des moyennes,
+variance = somme des variances.
+- Question 3 : chercher un quantile haut de la loi normale de $T$.
+:::
+
+### Exercice 5
+
+Les bouteilles de bière ont une contenance moyenne de 300 ml avec écart-type
+5 ml. Elles sont vendues par packs de 6.
+
+1. Déterminer l'écart-type de la contenance moyenne d'un pack.
+2. En supposant la normalité, quelle valeur la contenance moyenne d'un pack a-t-elle
+1,7 % de chances de dépasser ? (Arrondir à 0,1 ml.)
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+Si $\overline{X}_6$ est la moyenne du pack :
+$$\sigma_{\overline{X}_6}=\frac{\sigma}{\sqrt{6}}.$$
+Puis utiliser un quantile normal tel que
+$P(\overline{X}_6>c)=0{,}017$.
+:::
+
+---
+
+## Partie III — Étude complète d'un échantillonnage discret
+
+### Exercice 6
+
+On considère un lot de billets : 40 billets de 50 euros et 60 billets de 20 euros.
+On prélève des échantillons de 3 billets avec remise.
+
+1. Calculer la moyenne et la variance de la population.
+2. Lister tous les échantillons-types de taille 3 (en distinguant les compositions)
+et calculer les moyennes correspondantes.
+3. Retrouver les résultats précédents avec les propriétés de la moyenne empirique.
+4. Calculer la moyenne des variances empiriques non corrigées obtenues.
+5. Retrouver ce résultat via les propriétés de la variance empirique.
+6. Déterminer $E(S_3^2)$ (variance empirique corrigée) à l'aide du cours.
+
+::: {.callout-tip collapse="true"}
+## Indication
+
+- La variable de base prend les valeurs 20 et 50 avec probabilités 0,6 et 0,4.
+- Pour la moyenne empirique :
+$$E(\overline{X}_n)=m, \qquad \mathrm{Var}(\overline{X}_n)=\frac{\sigma^2}{n}.$$
+- Pour la variance empirique corrigée en i.i.d. :
+$$E(S_n^2)=\sigma^2.$$
+:::
