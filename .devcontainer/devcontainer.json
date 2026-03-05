@@ -20,16 +20,7 @@
   // Finalize devcontainer setup
   "waitFor": "onCreateCommand",
   "updateContentCommand": "python3 -m pip install -r requirements.txt",
-  "postAttachCommand": {
-   "server": "quarto preview --output-dir _pages --no-browser --port 8000"
-  },
-  "portsAttributes": {
-    "8000": {
-      "label": "Quarto Preview",
-      "onAutoForward": "openPreview"
-    }
-  },
-  
+    
   "customizations": {
 	// Configure VSCode to our needs
     "vscode": {
@@ -39,7 +30,5 @@
         "ms-toolsai.jupyter"       
       ]
     }
-  },
-
-  "forwardPorts": [8000]
+  }
 }
